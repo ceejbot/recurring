@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plans type="array">
+  <plan href="https://api.recurly.com/v2/plans/kip-test-voxer-plan">
+    <add_ons href="https://api.recurly.com/v2/plans/kip-test-voxer-plan/add_ons"/>
+    <plan_code>kip-test-voxer-plan</plan_code>
+    <name>kip-test-voxer-plan</name>
+    <description>Test plan for the kip.voxer.com cluster</description>
+    <success_url>https://kip-01.voxer.com:10443/business/billing/success/{{account_code}}/{{plan_code}}</success_url>
+    <cancel_url>https://kip-01.voxer.com:10443/business/billing/cancel/{{account_code}}/{{plan_code}}</cancel_url>
+    <display_donation_amounts type="boolean">false</display_donation_amounts>
+    <display_quantity type="boolean">false</display_quantity>
+    <display_phone_number type="boolean">false</display_phone_number>
+    <bypass_hosted_confirmation type="boolean">false</bypass_hosted_confirmation>
+    <unit_name>unit</unit_name>
+    <payment_page_tos_link nil="nil"></payment_page_tos_link>
+    <plan_interval_length type="integer">1</plan_interval_length>
+    <plan_interval_unit>months</plan_interval_unit>
+    <trial_interval_length type="integer">0</trial_interval_length>
+    <trial_interval_unit>days</trial_interval_unit>
+    <total_billing_cycles nil="nil"></total_billing_cycles>
+    <accounting_code></accounting_code>
+    <created_at type="datetime">2012-09-26T18:09:17Z</created_at>
+    <unit_amount_in_cents>
+      <USD type="integer">0</USD>
+    </unit_amount_in_cents>
+    <setup_fee_in_cents>
+      <USD type="integer">0</USD>
+    </setup_fee_in_cents>
+  </plan>
+  <plan href="https://api.recurly.com/v2/plans/stage-test-plan">
+    <add_ons href="https://api.recurly.com/v2/plans/stage-test-plan/add_ons"/>
+    <plan_code>stage-test-plan</plan_code>
+    <name>stage-test-plan</name>
+    <description>test plan for the stage.voxer.com cluster</description>
+    <success_url>https://stage-06.voxer.com:10443/business/billing/success/{{account_code}}/{{plan_code}}</success_url>
+    <cancel_url>https://stage-06.voxer.com:10443/business/billing/cancel/{{account_code}}/{{plan_code}}</cancel_url>
+    <display_donation_amounts type="boolean">false</display_donation_amounts>
+    <display_quantity type="boolean">false</display_quantity>
+    <display_phone_number type="boolean">false</display_phone_number>
+    <bypass_hosted_confirmation type="boolean">false</bypass_hosted_confirmation>
+    <unit_name>unit</unit_name>
+    <payment_page_tos_link nil="nil"></payment_page_tos_link>
+    <plan_interval_length type="integer">1</plan_interval_length>
+    <plan_interval_unit>months</plan_interval_unit>
+    <trial_interval_length type="integer">0</trial_interval_length>
+    <trial_interval_unit>days</trial_interval_unit>
+    <total_billing_cycles nil="nil"></total_billing_cycles>
+    <accounting_code></accounting_code>
+    <created_at type="datetime">2012-09-26T18:08:03Z</created_at>
+    <unit_amount_in_cents>
+      <USD type="integer">0</USD>
+    </unit_amount_in_cents>
+    <setup_fee_in_cents>
+      <USD type="integer">0</USD>
+    </setup_fee_in_cents>
+  </plan>
+  <plan href="https://api.recurly.com/v2/plans/ceej-test-voxer-plan">
+    <add_ons href="https://api.recurly.com/v2/plans/ceej-test-voxer-plan/add_ons"/>
+    <plan_code>ceej-test-voxer-plan</plan_code>
+    <name>ceej-test-voxer-plan</name>
+    <description>test plan for the ceej.voxer.com cluster</description>
+    <success_url>https://ceej-01.voxer.com:10443/business/billing/success/{{account_code}}/{{plan_code}}</success_url>
+    <cancel_url>https://ceej-01.voxer.com:10443/business/billing/cancel/{{account_code}}/{{plan_code}}</cancel_url>
+    <display_donation_amounts type="boolean">false</display_donation_amounts>
+    <display_quantity type="boolean">false</display_quantity>
+    <display_phone_number type="boolean">false</display_phone_number>
+    <bypass_hosted_confirmation type="boolean">false</bypass_hosted_confirmation>
+    <unit_name>unit</unit_name>
+    <payment_page_tos_link nil="nil"></payment_page_tos_link>
+    <plan_interval_length type="integer">1</plan_interval_length>
+    <plan_interval_unit>months</plan_interval_unit>
+    <trial_interval_length type="integer">0</trial_interval_length>
+    <trial_interval_unit>days</trial_interval_unit>
+    <total_billing_cycles nil="nil"></total_billing_cycles>
+    <accounting_code></accounting_code>
+    <created_at type="datetime">2012-09-26T18:06:46Z</created_at>
+    <unit_amount_in_cents>
+      <USD type="integer">0</USD>
+    </unit_amount_in_cents>
+    <setup_fee_in_cents>
+      <USD type="integer">0</USD>
+    </setup_fee_in_cents>
+  </plan>
+  <plan href="https://api.recurly.com/v2/plans/voxer-test">
+    <add_ons href="https://api.recurly.com/v2/plans/voxer-test/add_ons"/>
+    <plan_code>voxer-test</plan_code>
+    <name>voxer-test</name>
+    <description>This is the test plan used by Voxer development boxes.</description>
+    <success_url></success_url>
+    <cancel_url></cancel_url>
+    <display_donation_amounts type="boolean">false</display_donation_amounts>
+    <display_quantity type="boolean">false</display_quantity>
+    <display_phone_number type="boolean">false</display_phone_number>
+    <bypass_hosted_confirmation type="boolean">false</bypass_hosted_confirmation>
+    <unit_name>unit</unit_name>
+    <payment_page_tos_link nil="nil"></payment_page_tos_link>
+    <plan_interval_length type="integer">1</plan_interval_length>
+    <plan_interval_unit>months</plan_interval_unit>
+    <trial_interval_length type="integer">0</trial_interval_length>
+    <trial_interval_unit>days</trial_interval_unit>
+    <total_billing_cycles nil="nil"></total_billing_cycles>
+    <accounting_code></accounting_code>
+    <created_at type="datetime">2012-09-24T23:13:40Z</created_at>
+    <unit_amount_in_cents>
+      <USD type="integer">0</USD>
+    </unit_amount_in_cents>
+    <setup_fee_in_cents>
+      <USD type="integer">0</USD>
+    </setup_fee_in_cents>
+  </plan>
+</plans>

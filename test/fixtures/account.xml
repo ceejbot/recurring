@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accounts type="array">
+  <account href="https://api.recurly.com/v2/accounts/1">
+    <adjustments href="https://api.recurly.com/v2/accounts/1/adjustments"/>
+    <billing_info href="https://api.recurly.com/v2/accounts/1/billing_info"/>
+    <invoices href="https://api.recurly.com/v2/accounts/1/invoices"/>
+    <redemption href="https://api.recurly.com/v2/accounts/1/redemption"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/1/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/1/transactions"/>
+    <account_code>1</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>verena@example.com</email>
+    <first_name>Verena</first_name>
+    <last_name>Example</last_name>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>a92468579e9c4231a6c0031c4716c01d</hosted_login_token>
+    <created_at type="datetime">2011-10-25T12:00:00</created_at>
+  </account>
+  <!-- Continued... -->
+</accounts>
