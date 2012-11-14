@@ -11,12 +11,13 @@ var
 	helpers = require('./helpers'),
 	parser = require('../lib/parser'),
 	recurly = require('../lib/recurly'),
-	util = require('util')
+	util = require('util'),
+	uuid = require('node-uuid')
 	;
 
 
 var config, rparser;
-var plan, account, subscription;
+var plan, account, subscription, account_id;
 
 before(function()
 {
@@ -57,11 +58,35 @@ describe('Plan', function()
             done();
         });
     });
+
+    // create
+    // modify
+    // delete
 });
 
 describe('Account', function()
 {
 	var cached;
+
+    it('can create an account', function(done)
+    {
+        account_id = uuid.v4();
+
+        account = new recurly.Account();
+        account.id = account_id;
+        account.email = 'test@example.com';
+        account.first_name = 'John';
+        account.last_name = 'Whorfin';
+        account.company_name = 'Yoyodyne Propulsion Systems';
+        account.create(function(err, newAccount)
+        {
+            should.not.exist(err);
+            newAccount.should.be.an('object');
+            newAccount.id.should.equal(account_id);
+            newAccount.company_name.should.equal('Yoyodyne Propulsion Systems');
+            done();
+        });
+    });
 
     it('can fetch all accounts from the test Recurly account', function(done)
     {
@@ -79,26 +104,49 @@ describe('Account', function()
     it('can fetch a single account', function(done)
     {
         account = new recurly.Account();
-        account.id = cached[0];
+        account.id = account_id;
         account.fetch(function(err)
         {
             should.not.exist(err);
             account.should.be.an('object');
+            account.email.should.equal('test@example.com');
             done();
         });
     });
 
-    it('can serialize an account to xml', function(done)
+    // modify
+
+});
+
+describe('BillingInfo', function()
+{
+    var binfo;
+
+    it('can fetch the billing info for an account', function(done)
     {
-        var xml = account.serialize();
-        console.log(xml);
-        done();
+        account.fetchBillingInfo(function(err, info)
+        {
+            should.not.exist(err);
+            binfo = info;
+            // er, what to test?
+            done();
+        });
     });
 });
 
 describe('Subscription', function()
 {
 	var cached, subscription;
+
+	it('can create a subscription for an account', function(done)
+	{
+	    // unimplemented
+        //subscription = new recurly.Subscription();
+        //subscription.plan_code = '';
+        //subscription.account = '';
+        //subscription.currency = '';
+	    done();
+	});
 
     it('can fetch all subscriptions associated with an account', function(done)
     {
@@ -127,16 +175,6 @@ describe('Subscription', function()
             done();
         });
     });
-
-    it('can create a subscription', function(done)
-    {
-        //subscription = new recurly.Subscription();
-        //subscription.plan_code = '';
-        //subscription.account = '';
-        //subscription.currency = '';
-        done();
-    });
-
 
     it('throws an error when attempting to modify a subscription without a timeframe', function(done)
     {
@@ -183,19 +221,21 @@ describe('Subscription', function()
 });
 
 
-describe('BillingInfo', function()
+describe('deleting things', function()
 {
-    var binfo;
-
-    it('can fetch the billing info for an account', function(done)
+    it('can delete an account', function(done)
     {
-        account.fetchBillingInfo(function(err, info)
+        account = new recurly.Account();
+        account.id = account_id;
+
+        account.destroy(function(err, removed)
         {
             should.not.exist(err);
-            binfo = info;
-            // er, what to test?
+            removed.should.equal(true);
             done();
         });
     });
+
+
 });
 

@@ -1,6 +1,6 @@
 A node client for [recurly](https://recurly.com)'s v2 api, with support for secure parameter signing for [recurly.js](https://docs.recurly.com/recurlyjs) embedded forms.
 
-__This code is still in development and is not ready for production use.__ In particular, the example usage below might radically change.
+__This code is still in development and is not ready for production use.__ 
 
 ## Recurly API
 
@@ -10,7 +10,8 @@ A work in progress.
 var recurly = require('recurring');
 recurly.setAPIKey('your-api-key');
 
-var account = new recurly.Account('account-id');
+var account = new recurly.Account();
+account.id = 'account-uuid';
 account.fetch(function(err)
 {
     account.fetchSubscriptions(function(err, subscriptions)

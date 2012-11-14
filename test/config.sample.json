@@ -1,3 +1,5 @@
 {
-	"apikey": "your-recurly-api-key-here"
+	"apikey": "your-recurly-api-key-here",
+	"plan_code": "recurring-test",
+	"subdomain": "recurring-testing"
 }
