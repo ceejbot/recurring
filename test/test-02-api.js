@@ -24,8 +24,8 @@ var config =
 };
 
 var rparser, plan, account, subscription;
-var accountID1 = 'test-account-1';
-var accountID2;
+var old_account_id = 'test-account-1';
+var fresh_account_id;
 
 before(function()
 {
@@ -77,28 +77,44 @@ describe('Account', function()
 
 	it('can create an account', function(done)
 	{
-		accountID2 = uuid.v4();
+		fresh_account_id = uuid.v4();
+		var data =
+		{
+			id: fresh_account_id,
+			email: 'test@example.com',
+			first_name: 'John',
+			last_name: 'Whorfin',
+			company_name: 'Yoyodyne Propulsion Systems',
+		};
 
-		account = new recurly.Account();
-		account.id = accountID2;
-		account.email = 'test@example.com';
-		account.first_name = 'John';
-		account.last_name = 'Whorfin';
-		account.company_name = 'Yoyodyne Propulsion Systems';
-		account.create(function(err, newAccount)
+		recurly.Account.create(data, function(err, newAccount)
 		{
 			should.not.exist(err);
 			newAccount.should.be.an('object');
-			newAccount.id.should.equal(accountID2);
+			newAccount.id.should.equal(fresh_account_id);
 			newAccount.company_name.should.equal('Yoyodyne Propulsion Systems');
 			done();
 		});
 	});
+	it('can create or reopen a previously-closed account, transparently', function(done)
+	{
+		var data = { id: old_account_id };
+
+		recurly.Account.create(data, function(err, newAccount)
+		{
+			should.not.exist(err);
+			newAccount.should.be.an('object');
+			newAccount.first_name.should.equal('John'); // from old data
+			newAccount.last_name.should.equal('Whorfin'); // from old data
+			done();
+		});
+	});
+
 
 	it('can fetch a single account', function(done)
 	{
 		account = new recurly.Account();
-		account.id = accountID2;
+		account.id = fresh_account_id;
 		account.fetch(function(err)
 		{
 			should.not.exist(err);
@@ -124,7 +140,7 @@ describe('Account', function()
 
 	it('can update an account', function(done)
 	{
-		account.username = 'username';
+		account.company_name = 'Yoyodyne Propulsion, International';
 		account.update(function(err, updated)
 		{
 			should.not.exist(err);
@@ -135,15 +151,10 @@ describe('Account', function()
 			testAcc.fetch(function(err)
 			{
 				should.not.exist(err);
+				testAcc.company_name.should.equal(account.company_name);
 				done();
 			});
 		});
-	});
-
-	it('can reopen a previously-closed account', function(done)
-	{
-	    // TODO
-        done();
 	});
 
 });
@@ -155,7 +166,7 @@ describe('BillingInfo', function()
 	it('can add billing info to an account', function(done)
 	{
 		binfo = new recurly.BillingInfo();
-		binfo.account_code = accountID2;
+		binfo.account_code = fresh_account_id;
 		var billing_data = {
 			first_name: account.first_name,
 			last_name: account.last_name,
@@ -176,7 +187,7 @@ describe('BillingInfo', function()
 	it('throws an error when missing a required billing data field', function(done)
 	{
 		var binfo2 = new recurly.BillingInfo();
-		binfo2.account_code = accountID2;
+		binfo2.account_code = fresh_account_id;
 
 		var wrong = function()
 		{
@@ -304,16 +315,26 @@ describe('Subscription', function()
 
 describe('deleting things', function()
 {
-	it('can delete an account', function(done)
+	it('can close an account', function(done)
 	{
 		account = new recurly.Account();
-		account.id = accountID2;
+		account.id = fresh_account_id;
 
-		account.destroy(function(err, removed)
+		account.close(function(err, closed)
 		{
 			should.not.exist(err);
-			removed.should.equal(true);
-			done();
+			closed.should.equal(true);
+
+			// TOOD refetch and verify status as stored with recurly
+
+			// and nuke the other one too while we're at it
+			account = new recurly.Account();
+			account.id = old_account_id;
+			account.close(function(err, closed)
+			{
+				should.not.exist(err);
+				done();
+			});
 		});
 	});
 
