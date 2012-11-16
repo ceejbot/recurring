@@ -99,7 +99,8 @@ describe('recurly xml parser', function()
 	{
 		var item = typesResult[0];
 		item.datetime_value.should.be.a('date');
-		item.datetime_value.toString().should.equal('Tue Apr 19 2011 00:00:00 GMT-0700 (PDT)');
+		var comparisonDate = new Date('Tue Apr 19 2011 00:00:00 GMT-0700 (PDT)');
+		item.datetime_value.getTime().should.equal(comparisonDate.getTime());
 	});
 
 	it('can parse subobjects', function()
