@@ -8,11 +8,25 @@ var
 	;
 
 var
-	helpers = require('./helpers'),
+    fs = require('fs'),
 	parser = require('../lib/parser'),
+	path = require('path'),
 	util = require('util')
 	;
 
+
+// ----------------------------------------------------------------------
+
+var testdir = __dirname;
+if (path.basename(testdir) !== 'test')
+	testdir = path.join(testdir, 'test');
+
+function readFixture(fixture)
+{
+	var fpath = path.join(testdir, 'fixtures', fixture);
+	var data = fs.readFileSync(fpath, 'utf8');
+	return data;
+}
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +40,7 @@ before(function()
 
 describe('recurly xml parser', function()
 {
-	var data = helpers.readFixture('types.xml');
+	var data = readFixture('types.xml');
 	var typesResult;
 
 	it('can parse basic data types', function(done)
@@ -47,7 +61,7 @@ describe('recurly xml parser', function()
 
 	it('can parse single-item subarrays', function(done)
 	{
-    	var blortdata = helpers.readFixture('single-item.xml');
+    	var blortdata = readFixture('single-item.xml');
 		rparser.parseXML(blortdata, function(err, result)
 		{
 			should.not.exist(err);
@@ -100,7 +114,7 @@ describe('recurly xml parser', function()
 
 	it('can parse sample plan xml', function(done)
 	{
-        var data = helpers.readFixture('plans.xml');
+        var data = readFixture('plans.xml');
         rparser.parseXML(data, function(err, result)
         {
             should.not.exist(err);
@@ -113,7 +127,7 @@ describe('recurly xml parser', function()
 
 	it('can parse sample subscription xml', function(done)
 	{
-        var data = helpers.readFixture('subscription.xml');
+        var data = readFixture('subscription.xml');
         rparser.parseXML(data, function(err, result)
         {
             should.not.exist(err);
@@ -128,7 +142,7 @@ describe('recurly xml parser', function()
 
 	it('can parse sample transaction xml', function(done)
 	{
-        var data = helpers.readFixture('transactions.xml');
+        var data = readFixture('transactions.xml');
         rparser.parseXML(data, function(err, result)
         {
             should.not.exist(err);

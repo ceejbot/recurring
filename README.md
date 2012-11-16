@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ceejbot/recurring.png)](https://travis-ci.org/ceejbot/recurring)
+
 A node client for [recurly](https://recurly.com)'s v2 api, with support for secure parameter signing for [recurly.js](https://docs.recurly.com/recurlyjs) embedded forms.
 
 __This code is still in development and is not ready for production use.__ 

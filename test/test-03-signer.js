@@ -8,7 +8,6 @@ var
 	;
 
 var
-	helpers = require('./helpers'),
 	qs = require('qs'),
 	SignedQuery = require('../lib/signer').SignedQuery,
 	util = require('util')

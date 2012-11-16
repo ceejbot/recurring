@@ -8,21 +8,28 @@ var
 	;
 
 var
-	helpers = require('./helpers'),
 	parser = require('../lib/parser'),
 	recurly = require('../lib/recurly'),
 	util = require('util'),
 	uuid = require('node-uuid')
 	;
 
+// This recurly account is an empty test account connected to their
+// development gateway.
+var config =
+{
+	"apikey": "3dacdb54665b44b8a8c5e10238b7a11c",
+	"plan_code": "recurring-test",
+	"subdomain": "recurring-testing"
+};
 
-var config, rparser;
-var plan, account, subscription, account_id;
+var rparser, plan, account, subscription;
+var accountID1 = 'test-account-1';
+var accountID2;
 
 before(function()
 {
 	rparser = parser.createParser();
-	config = helpers.readTestConfig();
 	recurly.setAPIKey(config.apikey);
 });
 
@@ -70,10 +77,10 @@ describe('Account', function()
 
 	it('can create an account', function(done)
 	{
-		account_id = uuid.v4();
+		accountID2 = uuid.v4();
 
 		account = new recurly.Account();
-		account.id = account_id;
+		account.id = accountID2;
 		account.email = 'test@example.com';
 		account.first_name = 'John';
 		account.last_name = 'Whorfin';
@@ -82,7 +89,7 @@ describe('Account', function()
 		{
 			should.not.exist(err);
 			newAccount.should.be.an('object');
-			newAccount.id.should.equal(account_id);
+			newAccount.id.should.equal(accountID2);
 			newAccount.company_name.should.equal('Yoyodyne Propulsion Systems');
 			done();
 		});
@@ -91,7 +98,7 @@ describe('Account', function()
 	it('can fetch a single account', function(done)
 	{
 		account = new recurly.Account();
-		account.id = account_id;
+		account.id = accountID2;
 		account.fetch(function(err)
 		{
 			should.not.exist(err);
@@ -133,6 +140,12 @@ describe('Account', function()
 		});
 	});
 
+	it('can reopen a previously-closed account', function(done)
+	{
+	    // TODO
+        done();
+	});
+
 });
 
 describe('BillingInfo', function()
@@ -142,7 +155,7 @@ describe('BillingInfo', function()
 	it('can add billing info to an account', function(done)
 	{
 		binfo = new recurly.BillingInfo();
-		binfo.account_code = account_id;
+		binfo.account_code = accountID2;
 		var billing_data = {
 			first_name: account.first_name,
 			last_name: account.last_name,
@@ -163,7 +176,7 @@ describe('BillingInfo', function()
 	it('throws an error when missing a required billing data field', function(done)
 	{
 		var binfo2 = new recurly.BillingInfo();
-		binfo2.account_code = account_id;
+		binfo2.account_code = accountID2;
 
 		var wrong = function()
 		{
@@ -236,6 +249,7 @@ describe('Subscription', function()
 		subscription.fetch(function(err)
 		{
 			should.not.exist(err);
+			subscription.should.have.property('account');
 			subscription.account.should.be.an('object');
 			subscription.account.should.have.property('href');
 			subscription.account_id.should.equal(account.id);
@@ -252,8 +266,6 @@ describe('Subscription', function()
 			subscription.update({ inadequate: true }, function() {} );
 		};
 		expect(wrong).to.throw(Error);
-
-
 		done();
 	});
 
@@ -295,7 +307,7 @@ describe('deleting things', function()
 	it('can delete an account', function(done)
 	{
 		account = new recurly.Account();
-		account.id = account_id;
+		account.id = accountID2;
 
 		account.destroy(function(err, removed)
 		{
