@@ -23,7 +23,7 @@
 	},
 	"scripts": 
 	{
-		"test": "mocha -R spec"
+		"test": "mocha -R spec --timeout 5000 --slow 1000"
 	},
 	"repository": { "type": "git", "url": "git://github.com/ceejbot/recurring.git" },
 	"keywords": [  "recurly",  "payments" ],
