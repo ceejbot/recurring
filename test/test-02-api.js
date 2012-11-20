@@ -96,15 +96,25 @@ describe('Account', function()
 			done();
 		});
 	});
+
+	it('can close an account', function(done)
+	{
+		account = new recurly.Account();
+		account.id = fresh_account_id;
+
+		account.close(function(err, closed)
+		{
+			should.not.exist(err);
+			closed.should.equal(true);
+			done();
+		});
+	});
+
 	it('can create or reopen a previously-closed account, transparently', function(done)
 	{
 		var data =
 		{
-			id: old_account_id,
-			email: 'test@example.com',
-			first_name: 'John',
-			last_name: 'Smallberries',
-			company_name: 'Yoyodyne Propulsion Systems',
+			id: fresh_account_id,
 		};
 
 		recurly.Account.create(data, function(err, newAccount)
@@ -112,7 +122,7 @@ describe('Account', function()
 			should.not.exist(err);
 			newAccount.should.be.an('object');
 			newAccount.first_name.should.equal('John'); // from old data
-			newAccount.last_name.should.equal('Smallberries'); // from old data
+			newAccount.last_name.should.equal('Whorfin'); // from old data
 			done();
 		});
 	});
@@ -355,34 +365,3 @@ describe('Subscription', function()
 		});
 	});
 });
-
-
-describe('deleting things', function()
-{
-	it('can close an account', function(done)
-	{
-		account = new recurly.Account();
-		account.id = fresh_account_id;
-
-		account.close(function(err, closed)
-		{
-			should.not.exist(err);
-			closed.should.equal(true);
-
-			// TOOD refetch and verify status as stored with recurly
-
-			// and nuke the other one too while we're at it
-			account = new recurly.Account();
-			account.id = old_account_id;
-			account.close(function(err, closed)
-			{
-				should.not.exist(err);
-				done();
-			});
-		});
-	});
-
-	// delete plan, restoring test account to beautiful emptiness
-
-});
-
