@@ -98,14 +98,21 @@ describe('Account', function()
 	});
 	it('can create or reopen a previously-closed account, transparently', function(done)
 	{
-		var data = { id: old_account_id };
+		var data =
+		{
+			id: old_account_id,
+			email: 'test@example.com',
+			first_name: 'John',
+			last_name: 'Smallberries',
+			company_name: 'Yoyodyne Propulsion Systems',
+		};
 
 		recurly.Account.create(data, function(err, newAccount)
 		{
 			should.not.exist(err);
 			newAccount.should.be.an('object');
 			newAccount.first_name.should.equal('John'); // from old data
-			newAccount.last_name.should.equal('Whorfin'); // from old data
+			newAccount.last_name.should.equal('Smallberries'); // from old data
 			done();
 		});
 	});
@@ -296,19 +303,25 @@ describe('Subscription', function()
 		});
 	});
 
-	it('can postpone a subscription', function(done)
+	it('can postpone a subscription (unimplemented)', function(done)
 	{
 		done();
 	});
 
-	it('can cancel a subscription', function(done)
+	it('can cancel a subscription (unimplemented)', function(done)
 	{
 		done();
 	});
 
-	it('can terminate a subscription', function(done)
+	it('can terminate a subscription without a refund', function(done)
 	{
-		done();
+		subscription.terminate('none', function(err, sub)
+		{
+			should.not.exist(err);
+			sub.state.should.equal('expired');
+			sub.canceled_at.should.be.a('date');
+			done();
+		});
 	});
 });
 
