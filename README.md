@@ -61,16 +61,16 @@ Most data types have an `update()` method that changes the stored data.
 
 ### Plan
 
-Plan.all()
+Plan.all()  
 plan.fetchAddOns(callback)
 
 ### Account
 
-Account.all(state, callback)
-account.update(options, callback)
-account.close()
-account.reopen()
-account.fetchBillingInfo()
+Account.all(state, callback)  
+account.update(options, callback)  
+account.close()  
+account.reopen()  
+account.fetchBillingInfo()  
 account.fetchSubscriptions()
 
 ### Billing Info
@@ -79,10 +79,10 @@ update()
 
 ### Subscription
 
-subscription.update(options, callback)
-subscription.reactivate(callback)
-subscription.cancel(callback)
-subscription.postpone(nextRenewalDate, callback)
+subscription.update(options, callback)  
+subscription.reactivate(callback)  
+subscription.cancel(callback)  
+subscription.postpone(nextRenewalDate, callback)  
 subscription.terminate(refundType, callback)
 
 ### Coupon
