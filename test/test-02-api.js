@@ -303,12 +303,37 @@ describe('Subscription', function()
 		});
 	});
 
-	it('can postpone a subscription (unimplemented)', function(done)
+	it('can cancel a subscription', function(done)
 	{
-		done();
+		subscription.cancel(function(err, sub)
+		{
+			should.not.exist(err);
+			sub.state.should.equal('canceled');
+			sub.canceled_at.should.be.a('date');
+			sub.expires_at.should.be.a('date'); // in the future, even
+
+			subscription = sub;
+			done();
+		});
 	});
 
-	it('can cancel a subscription (unimplemented)', function(done)
+	it('can reactivate a subscription', function(done)
+	{
+		subscription.reactivate(function(err, sub)
+		{
+			should.not.exist(err);
+			sub.state.should.equal('active');
+			sub.activated_at.should.be.a('date');
+			sub.activated_at.getTime().should.equal(sub.current_period_started_at.getTime());
+			sub.canceled_at.should.be.a('string');
+			sub.expires_at.should.be.a('string');
+
+			subscription = sub;
+			done();
+		});
+	});
+
+	it('can postpone a subscription (unimplemented)', function(done)
 	{
 		done();
 	});
