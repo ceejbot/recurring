@@ -237,7 +237,7 @@ describe('BillingInfo', function()
 
 describe('Subscription', function()
 {
-	var cached, subscription;
+	var cached;
 
 	it('can create a subscription for an account', function(done)
 	{
@@ -369,4 +369,32 @@ describe('Subscription', function()
 			done();
 		});
 	});
+});
+
+describe('RecurlyError', function()
+{
+
+	it('calls back with a RecurlyError object on transaction errors', function(done)
+	{
+		var binfo = new recurly.BillingInfo();
+		binfo.account_code = fresh_account_id;
+		var billing_data = {
+			first_name: account.first_name,
+			last_name: account.last_name,
+			number: '4111-1111', // Note invalid format
+			month: 1,
+			year: 2010,
+			verification_value: '111',
+		};
+
+		binfo.update(billing_data, function(err)
+		{
+			err.should.be.an('object');
+			err.should.have.property('errors');
+			err.errors.should.be.an('array');
+			err.errors.length.should.equal(2);
+			done();
+		});
+	});
+
 });

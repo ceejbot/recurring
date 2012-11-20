@@ -2,13 +2,11 @@
 
 A node client for [recurly](https://recurly.com)'s v2 api, with support for secure parameter signing for [recurly.js](https://docs.recurly.com/recurlyjs) embedded forms.
 
-__This code is still in development and is not ready for production use.__ 
+__This code is still in development.__ I don't have complete coverage of the API yet.
 
 ## Recurly API
 
-A work in progress.
-
-Recurly is not consistent about how it names the ID fields for each data type. For some it's `uuid` and for others `foo_code`. Recurring hides this away: every data type has an `id` property that sets the correct field name for Recurly.
+An example of typical usage:
 
 ```javascript
 var recurly = require('recurring');
@@ -40,9 +38,88 @@ recurly.Plan.all(function(plans)
 
 ```
 
+### All data types
+
+Recurly is not consistent about how it names the ID fields for each data type. For some it's `uuid` and for others `foo_code`. Recurring hides this away: every data type has an `id` property that sets the correct field name for Recurly.
+
+
+*DataType.create(optionsHash, function(err, object))*
+
+Create an object of the given type by POSTing to Recurly.
+
+*instance.fetch(function(err))*
+
+Fetch an item of a given type from Recurly. The item must have an id.
+
+*instance.destroy(function(err))*
+
+Destroy, delete, close, cancel, or otherwise remove the specified object. Invokes http `DELETE` on the item's href. The item must have an id.
+
+*instance.update(options, function(err))*
+
+Most data types have an `update()` method that changes the stored data.
+
+### Plan
+
+Plan.all()
+plan.fetchAddOns(callback)
+
+### Account
+
+Account.all(state, callback)
+account.update(options, callback)
+account.close()
+account.reopen()
+account.fetchBillingInfo()
+account.fetchSubscriptions()
+
+### Billing Info
+
+update()
+
+### Subscription
+
+subscription.update(options, callback)
+subscription.reactivate(callback)
+subscription.cancel(callback)
+subscription.postpone(nextRenewalDate, callback)
+subscription.terminate(refundType, callback)
+
+### Coupon
+
+coupon.redeem(options, function(err, redemption))
+
+### Redemption
+
+
+### Transaction
+
+refund() -- unimplemented
+
 ### Errors
 
-Eventually I'll document RecurlyError here.
+All callbacks follow the node convention of reporting any error in the first parameter. If a transaction with Recurly succeeds but is rejected by Recurly for some reason-- inconsistent data, perhaps, or some other reason-- that err parameter is an instance of RecurlyError. The original [transaction errors](http://docs.recurly.com/api/transactions/error-codes) reported by Recurly are available as an array of structs in the `errors` parameter. For instance, here's the result of a billing info update with an invalid, expired CC:
+
+```javascript
+{
+	name: 'RecurlyError',
+	message: '2 transaction errors',
+	errors: [
+		{ 
+			field: 'billing_info.number',
+			symbol: 'invalid',
+			message: 'is not a valid credit card number'
+		},
+		{
+			field: 'billing_info.number',
+			symbol: 'expired',
+			message: 'is expired or has an invalid expiration date'
+		}
+	]
+}
+
+```
+
 
 ## SignedQuery
 
@@ -57,6 +134,30 @@ var signedParameters = signer.toString();
 ```
 
 The `nonce` & `timestamp` parameters are generated for you if you don't provide them. The nonce is created using [node-uuid](https://github.com/broofa/node-uuid).
+
+## FormResponseToken
+
+After Recurly handles a form submission, it posts to you a token pointing to the form
+results. Use a FormResponseToken object to fetch the results object represented by the token.
+
+```javascript
+var recurly = require('recurring');
+
+var recurlyResponse = new recurly.FormResponseToken(token, 'subscription');
+recurlyResponse.process(function(err, subscription)
+{
+	if (err)
+		return handleError(err);
+	
+	// subscription contains the new subscription data;
+});
+```
+
+Having to hint about the type of the response is clunky; TODO fix.
+
+## Contributing
+
+Unit tests for whatever you fix/implement/improve would be awesome. Recurring's are written with [mocha](http://visionmedia.github.com/mocha/) and [chai](http://chaijs.com).
 
 ## License
 
