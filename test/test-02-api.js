@@ -294,57 +294,63 @@ describe('Subscription', function()
 			quantity: subscription.quantity + 3,
 		};
 
-		subscription.update(mods, function(err, updated)
+		subscription.update(mods, function(err)
 		{
 			should.not.exist(err);
-			updated.should.be.an('object');
-			updated.quantity.should.equal(mods.quantity);
+			subscription.should.be.an('object');
+			subscription.quantity.should.equal(mods.quantity);
+
 			done();
 		});
 	});
 
 	it('can cancel a subscription', function(done)
 	{
-		subscription.cancel(function(err, sub)
+		subscription.cancel(function(err)
 		{
 			should.not.exist(err);
-			sub.state.should.equal('canceled');
-			sub.canceled_at.should.be.a('date');
-			sub.expires_at.should.be.a('date'); // in the future, even
+			subscription.state.should.equal('canceled');
+			subscription.canceled_at.should.be.a('date');
+			subscription.expires_at.should.be.a('date'); // in the future, even
 
-			subscription = sub;
 			done();
 		});
 	});
 
 	it('can reactivate a subscription', function(done)
 	{
-		subscription.reactivate(function(err, sub)
+		subscription.reactivate(function(err)
 		{
 			should.not.exist(err);
-			sub.state.should.equal('active');
-			sub.activated_at.should.be.a('date');
-			sub.activated_at.getTime().should.equal(sub.current_period_started_at.getTime());
-			sub.canceled_at.should.be.a('string');
-			sub.expires_at.should.be.a('string');
+			subscription.state.should.equal('active');
+			subscription.activated_at.should.be.a('date');
+			subscription.activated_at.getTime().should.equal(subscription.current_period_started_at.getTime());
+			subscription.canceled_at.should.be.a('string');
+			subscription.expires_at.should.be.a('string');
 
-			subscription = sub;
 			done();
 		});
 	});
 
-	it('can postpone a subscription (unimplemented)', function(done)
+	it('can postpone a subscription', function(done)
 	{
-		done();
+		var nextDate = new Date(2013, 11, 1);
+
+		subscription.postpone(nextDate, function(err)
+		{
+			should.not.exist(err);
+			nextDate.getTime().should.equal(subscription.current_period_ends_at.getTime());
+			done();
+		});
 	});
 
 	it('can terminate a subscription without a refund', function(done)
 	{
-		subscription.terminate('none', function(err, sub)
+		subscription.terminate('none', function(err)
 		{
 			should.not.exist(err);
-			sub.state.should.equal('expired');
-			sub.canceled_at.should.be.a('date');
+			subscription.state.should.equal('expired');
+			subscription.canceled_at.should.be.a('date');
 			done();
 		});
 	});
