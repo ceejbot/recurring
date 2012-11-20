@@ -193,10 +193,10 @@ describe('BillingInfo', function()
 			verification_value: '111'
 		};
 
-		binfo.update(billing_data, function(err, updated)
+		binfo.update(billing_data, function(err)
 		{
 			should.not.exist(err);
-			updated.last_four.should.equal('1111');
+			binfo.last_four.should.equal('1111');
 			done();
 		});
 	});
