@@ -190,7 +190,11 @@ describe('BillingInfo', function()
 			number: '4111-1111-1111-1111',
 			month: 1,
 			year: 2015,
-			verification_value: '111'
+			verification_value: '111',
+			address1: '760 Market Street',
+			address2: 'Suite 500',
+			city: 'San Francisco',
+			state: 'CA'
 		};
 
 		binfo.update(billing_data, function(err)
@@ -225,6 +229,7 @@ describe('BillingInfo', function()
 			should.not.exist(err);
 			info.first_name.should.equal(account.first_name);
 			info.last_four.should.equal('1111');
+			info.address2.should.be.a('string');
 			done();
 		});
 	});

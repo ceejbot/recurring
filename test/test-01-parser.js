@@ -155,4 +155,17 @@ describe('recurly xml parser', function()
             done();
         });
 	});
+
+	it('can parse sample billing info xml', function(done)
+	{
+	    var data = readFixture('billing_info_cc.xml');
+	    rparser.parseXML(data, function(err, result)
+	    {
+            should.not.exist(err);
+            result.should.not.be.an('array');
+            result.should.have.property('href');
+            result.should.have.property('type');
+            done();
+	    });
+	});
 });
