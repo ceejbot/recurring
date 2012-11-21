@@ -77,8 +77,10 @@ describe('recurly xml parser', function()
 	it('can parse boolean types', function()
 	{
 		var item = typesResult[0];
-		item.boolean_value.should.be.a('boolean');
-		item.boolean_value.should.equal(false);
+		item.boolean_true.should.be.a('boolean');
+		item.boolean_true.should.equal(true);
+		item.boolean_false.should.be.a('boolean');
+		item.boolean_false.should.equal(false);
 	});
 
 	it('can parse integer types', function()

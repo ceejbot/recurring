@@ -371,6 +371,78 @@ describe('Subscription', function()
 	});
 });
 
+describe('Coupons', function()
+{
+	var coupon;
+
+	it('can create a coupon', function(done)
+	{
+		var data = {
+			coupon_code: 'test',
+			name: 'Test Coupon',
+			discount_type: 'percent',
+			discount_percent: 50,
+			single_use: true,
+			invoice_description: 'The coupon, as invoiced',
+			hosted_description: 'This is a description of a coupon',
+		};
+
+		recurly.Coupon.create(data, function(err, coup)
+		{
+			should.not.exist(err);
+			coup.id.should.equal('test');
+			coup.state.should.equal('redeemable');
+			coup.single_use.should.equal(true);
+			coup.applies_to_all_plans.should.equal(true);
+			done();
+		});
+	});
+
+	it('can fetch a coupon', function(done)
+	{
+		coupon = new recurly.Coupon();
+		coupon.id = 'test';
+		coupon.fetch(function(err)
+		{
+			should.not.exist(err);
+			coupon.id.should.equal('test');
+			coupon.state.should.equal('redeemable');
+			coupon.single_use.should.equal(true);
+			coupon.applies_to_all_plans.should.equal(true);
+			coupon.name.should.equal('Test Coupon');
+			done();
+		});
+	});
+
+	it('can redeem a coupon', function(done)
+	{
+		var options = {
+			account_code: fresh_account_id,
+			currency: 'USD'
+		};
+
+		coupon.redeem(options, function(err, redemption)
+		{
+			should.not.exist(err);
+			redemption.coupon.href.should.equal(coupon.href);
+			redemption.single_use.should.equal(true);
+			done();
+		});
+	});
+
+
+	// examine a redemption object
+
+	it('can delete a coupon', function(done)
+	{
+		coupon.destroy(function(err)
+		{
+			should.not.exist(err);
+			done();
+		});
+	});
+});
+
 describe('RecurlyError', function()
 {
 

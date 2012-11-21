@@ -66,12 +66,30 @@ plan.fetchAddOns(callback)
 
 ### Account
 
-Account.all(state, callback)  
-account.update(options, callback)  
-account.close()  
-account.reopen()  
-account.fetchBillingInfo()  
-account.fetchSubscriptions()
+*Account.all(state, function(err, accounts))*
+
+Responds with an array of all accounts in the passed-in state. Defaults to 'active'.
+  
+
+*account.update(data, function(err))*  
+
+Modifies the account data with the passed-in hash.
+
+*account.close()*  
+
+Alias for delete.
+
+*account.reopen()*
+
+Reopens a closed account.
+
+*account.fetchBillingInfo(function(err, info))*  
+
+Responds with a BillingInfo object for this account.
+
+*account.fetchSubscriptions(function(err, subscriptions)*
+
+Responds with an array of subscriptions for this account.
 
 ### Billing Info
 
