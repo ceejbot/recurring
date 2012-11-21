@@ -373,12 +373,14 @@ describe('Subscription', function()
 
 describe('Coupons', function()
 {
-	var coupon;
+	var coupon, coupon_code;
 
 	it('can create a coupon', function(done)
 	{
+		coupon_code = uuid.v4();
+
 		var data = {
-			coupon_code: 'test',
+			coupon_code: coupon_code,
 			name: 'Test Coupon',
 			discount_type: 'percent',
 			discount_percent: 50,
@@ -390,7 +392,7 @@ describe('Coupons', function()
 		recurly.Coupon.create(data, function(err, coup)
 		{
 			should.not.exist(err);
-			coup.id.should.equal('test');
+			coup.id.should.equal(coupon_code);
 			coup.state.should.equal('redeemable');
 			coup.single_use.should.equal(true);
 			coup.applies_to_all_plans.should.equal(true);
@@ -401,11 +403,11 @@ describe('Coupons', function()
 	it('can fetch a coupon', function(done)
 	{
 		coupon = new recurly.Coupon();
-		coupon.id = 'test';
+		coupon.id = coupon_code;
 		coupon.fetch(function(err)
 		{
 			should.not.exist(err);
-			coupon.id.should.equal('test');
+			coupon.id.should.equal(coupon_code);
 			coupon.state.should.equal('redeemable');
 			coupon.single_use.should.equal(true);
 			coupon.applies_to_all_plans.should.equal(true);
