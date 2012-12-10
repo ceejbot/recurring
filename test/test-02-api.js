@@ -282,12 +282,11 @@ describe('Subscription', function()
 		subscription.fetch(function(err)
 		{
 			should.not.exist(err);
-			subscription.should.have.property('account');
-			subscription.account.should.be.an('object');
-			subscription.account.should.have.property('href');
+			subscription.should.have.property('_resources');			
+			subscription._resources.should.be.an('object');
+			subscription._resources.should.have.property('account');
 			subscription.account_id.should.equal(account.id);
 
-			// TODO
 			done();
 		});
 	});
@@ -426,7 +425,7 @@ describe('Coupons', function()
 		coupon.redeem(options, function(err, redemption)
 		{
 			should.not.exist(err);
-			redemption.coupon.href.should.equal(coupon.href);
+			redemption._resources.coupon.should.equal(coupon.href);
 			redemption.single_use.should.equal(true);
 			done();
 		});
