@@ -110,9 +110,16 @@ coupon.redeem(options, function(err, redemption))
 ### Redemption
 
 
+
 ### Transaction
 
-refund() -- unimplemented
+*Transaction.create(options, function(err, transaction))*  
+
+Post a transaction with the given options. Fields in the hash are named exactly as in the recurly documentation. Responds with the newly-created transaction.
+
+*transaction.refund(amountInCents, function(err))*  
+
+If amountInCents is omitted, the transaction is refunded in full. Responds with any errors; the transaction object is updated.
 
 ### Errors
 
