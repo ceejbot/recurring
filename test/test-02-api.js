@@ -282,12 +282,11 @@ describe('Subscription', function()
 		subscription.fetch(function(err)
 		{
 			should.not.exist(err);
-			subscription.should.have.property('account');
-			subscription.account.should.be.an('object');
-			subscription.account.should.have.property('href');
+			subscription.should.have.property('_resources');			
+			subscription._resources.should.be.an('object');
+			subscription._resources.should.have.property('account');
 			subscription.account_id.should.equal(account.id);
 
-			// TODO
 			done();
 		});
 	});
@@ -426,7 +425,7 @@ describe('Coupons', function()
 		coupon.redeem(options, function(err, redemption)
 		{
 			should.not.exist(err);
-			redemption.coupon.href.should.equal(coupon.href);
+			redemption._resources.coupon.should.equal(coupon.href);
 			redemption.single_use.should.equal(true);
 			done();
 		});
@@ -443,6 +442,113 @@ describe('Coupons', function()
 			done();
 		});
 	});
+});
+
+describe('Transactions', function()
+{
+	var trans1, trans2;
+	
+	it('requires an account parameter with account code', function()
+	{
+		var wrong = function()
+		{
+			var inadequate = {
+				amount_in_cents: 10,
+				currency: 'USD',
+			};
+			ecurly.Transaction.create(inadequate, function() {} );
+		};
+		expect(wrong).to.throw(Error);
+	});
+
+	it('requires an amount_in_cents parameter when creating a transaction', function()
+	{
+		var wrong = function()
+		{
+			var inadequate = {
+				account: { account_code: fresh_account_id },
+				currency: 'USD',
+			};
+			ecurly.Transaction.create(inadequate, function() {} );
+		};
+		expect(wrong).to.throw(Error);
+	});
+
+	it('requires an currency parameter when creating a transaction', function()
+	{
+		var wrong = function()
+		{
+			var inadequate = {
+				account: { account_code: fresh_account_id },
+				amount_in_cents: 10,
+			};
+			ecurly.Transaction.create(inadequate, function() {} );
+		};
+		expect(wrong).to.throw(Error);
+	});
+
+	it('can create a transaction', function(done)
+	{
+		var options = {
+			amount_in_cents: 100,
+			currency: 'USD',
+			account: { account_code: fresh_account_id }
+		};
+		
+		recurly.Transaction.create(options, function(err, transaction)
+		{
+			should.not.exist(err);
+			transaction.action.should.equal('purchase');
+			transaction.amount_in_cents.should.equal(100);
+			transaction.currency.should.equal('USD');
+			transaction.status.should.equal('success');
+			transaction.reference.should.be.ok;
+			transaction.voidable.should.equal(true);
+			transaction.refundable.should.equal(true);
+			
+			transaction.details.should.have.property('account');
+			transaction.details.account.account_code.should.equal(fresh_account_id);
+			
+			trans1 = transaction;
+			done();
+		});	
+	});
+	
+	it('can refund a transaction fully', function(done)
+	{
+		trans1.refund(function(err)
+		{
+			should.not.exist(err);
+			trans1.status.should.equal('void');
+			trans1.voidable.should.equal(false);
+			trans1.refundable.should.equal(false);
+			done();
+		});
+	});
+
+	it('can refund a transaction partially', function(done)
+	{
+		var options = {
+			amount_in_cents: 500,
+			currency: 'USD',
+			account: { account_code: fresh_account_id }
+		};
+		
+		recurly.Transaction.create(options, function(err, transaction)
+		{
+			should.not.exist(err);
+			transaction.refund(250, function(err)
+			{
+				should.not.exist(err);
+				transaction.amount_in_cents.should.equal(250);
+				transaction.status.should.equal('success');
+				transaction.voidable.should.equal(true);
+				transaction.refundable.should.equal(false);
+				done();
+			});
+		});	
+	});
+
 });
 
 describe('RecurlyError', function()

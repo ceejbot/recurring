@@ -1,6 +1,6 @@
 {
 	"name": "recurring",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "a recurly v2 api client for node.js",
 	"main": "lib/index.js",
 	"directories":
@@ -26,6 +26,7 @@
 		"test": "mocha -R spec --timeout 5000 --slow 1000"
 	},
 	"repository": { "type": "git", "url": "git://github.com/ceejbot/recurring.git" },
+	"bugs": "http://github.com/ceejbot/recurring/issues",
 	"keywords": [  "recurly",  "payments" ],
 	"author": "C J Silverio <ceejceej@gmail.com> (http://ceejbot.tumblr.com/)",
 	"license": "MIT",
