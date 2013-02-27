@@ -112,10 +112,7 @@ describe('Account', function()
 
 	it('can create or reopen a previously-closed account, transparently', function(done)
 	{
-		var data =
-		{
-			id: fresh_account_id,
-		};
+		var data = { id: fresh_account_id };
 
 		recurly.Account.create(data, function(err, newAccount)
 		{
@@ -180,11 +177,36 @@ describe('BillingInfo', function()
 {
 	var binfo;
 
+	it('can retrieve billing info for an account that does not exist', function(done)
+	{
+		var data =
+		{
+			id: uuid.v4(),
+			email: 'test2@example.com',
+			first_name: 'John',
+			last_name: 'Smallberries',
+			company_name: 'Yoyodyne Propulsion Systems',
+		};
+
+		recurly.Account.create(data, function(err, newAccount)
+		{
+			should.not.exist(err);
+            newAccount.fetchBillingInfo(function(err, info)
+            {
+                err.should.be.ok;
+                err.message.should.equal('not_found');
+                should.not.exist(info);
+                done();
+            });
+		});
+	});
+
 	it('can add billing info to an account', function(done)
 	{
 		binfo = new recurly.BillingInfo();
 		binfo.account_code = fresh_account_id;
-		var billing_data = {
+		var billing_data =
+		{
 			first_name: account.first_name,
 			last_name: account.last_name,
 			number: '4111-1111-1111-1111',
@@ -201,7 +223,6 @@ describe('BillingInfo', function()
 
 		binfo.update(billing_data, function(err)
 		{
-		    console.log(err);
 			should.not.exist(err);
 			binfo.last_four.should.equal('1111');
 			done();
@@ -215,7 +236,8 @@ describe('BillingInfo', function()
 
 		var wrong = function()
 		{
-			var inadequate = {
+			var inadequate =
+			{
 				first_name: account.first_name,
 				last_name: account.last_name,
 			};
@@ -246,9 +268,7 @@ describe('Subscription', function()
 	{
 		var data = {
 			plan_code: config.plan_code,
-			account: {
-				account_code: account.id
-			},
+			account: { account_code: account.id },
 			currency: 'USD',
 			quantity: 10,
 		};
@@ -306,7 +326,8 @@ describe('Subscription', function()
 
 	it('can modify a subscription', function(done)
 	{
-		var mods = {
+		var mods =
+		{
 			timeframe: 'now',
 			quantity: subscription.quantity + 3,
 		};
@@ -380,8 +401,8 @@ describe('Coupons', function()
 	it('can create a coupon', function(done)
 	{
 		coupon_code = uuid.v4();
-
-		var data = {
+		var data =
+		{
 			coupon_code: coupon_code,
 			name: 'Test Coupon',
 			discount_type: 'percent',
@@ -420,7 +441,8 @@ describe('Coupons', function()
 
 	it('can redeem a coupon', function(done)
 	{
-		var options = {
+		var options =
+		{
 			account_code: fresh_account_id,
 			currency: 'USD'
 		};
@@ -455,11 +477,12 @@ describe('Transactions', function()
 	{
 		var wrong = function()
 		{
-			var inadequate = {
+			var inadequate =
+			{
 				amount_in_cents: 10,
 				currency: 'USD',
 			};
-			ecurly.Transaction.create(inadequate, function() {} );
+			recurly.Transaction.create(inadequate, function() {} );
 		};
 		expect(wrong).to.throw(Error);
 	});
@@ -468,11 +491,12 @@ describe('Transactions', function()
 	{
 		var wrong = function()
 		{
-			var inadequate = {
+			var inadequate =
+			{
 				account: { account_code: fresh_account_id },
 				currency: 'USD',
 			};
-			ecurly.Transaction.create(inadequate, function() {} );
+			recurly.Transaction.create(inadequate, function() {} );
 		};
 		expect(wrong).to.throw(Error);
 	});
@@ -481,18 +505,20 @@ describe('Transactions', function()
 	{
 		var wrong = function()
 		{
-			var inadequate = {
+			var inadequate =
+			{
 				account: { account_code: fresh_account_id },
 				amount_in_cents: 10,
 			};
-			ecurly.Transaction.create(inadequate, function() {} );
+			recurly.Transaction.create(inadequate, function() {} );
 		};
 		expect(wrong).to.throw(Error);
 	});
 
 	it('can create a transaction', function(done)
 	{
-		var options = {
+		var options =
+		{
 			amount_in_cents: 100,
 			currency: 'USD',
 			account: { account_code: fresh_account_id }
@@ -531,7 +557,8 @@ describe('Transactions', function()
 
 	it('can refund a transaction partially', function(done)
 	{
-		var options = {
+		var options =
+		{
 			amount_in_cents: 500,
 			currency: 'USD',
 			account: { account_code: fresh_account_id }
@@ -561,7 +588,8 @@ describe('RecurlyError', function()
 	{
 		var binfo = new recurly.BillingInfo();
 		binfo.account_code = fresh_account_id;
-		var billing_data = {
+		var billing_data =
+		{
 			first_name: account.first_name,
 			last_name: account.last_name,
 			number: '4111-1111', // Note invalid format
