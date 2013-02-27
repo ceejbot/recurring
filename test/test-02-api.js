@@ -194,11 +194,14 @@ describe('BillingInfo', function()
 			address1: '760 Market Street',
 			address2: 'Suite 500',
 			city: 'San Francisco',
-			state: 'CA'
+			state: 'CA',
+			country: 'USA',
+			zip: '94102'
 		};
 
 		binfo.update(billing_data, function(err)
 		{
+		    console.log(err);
 			should.not.exist(err);
 			binfo.last_four.should.equal('1111');
 			done();
@@ -282,7 +285,7 @@ describe('Subscription', function()
 		subscription.fetch(function(err)
 		{
 			should.not.exist(err);
-			subscription.should.have.property('_resources');			
+			subscription.should.have.property('_resources');
 			subscription._resources.should.be.an('object');
 			subscription._resources.should.have.property('account');
 			subscription.account_id.should.equal(account.id);
@@ -447,7 +450,7 @@ describe('Coupons', function()
 describe('Transactions', function()
 {
 	var trans1, trans2;
-	
+
 	it('requires an account parameter with account code', function()
 	{
 		var wrong = function()
@@ -494,7 +497,7 @@ describe('Transactions', function()
 			currency: 'USD',
 			account: { account_code: fresh_account_id }
 		};
-		
+
 		recurly.Transaction.create(options, function(err, transaction)
 		{
 			should.not.exist(err);
@@ -505,15 +508,15 @@ describe('Transactions', function()
 			transaction.reference.should.be.ok;
 			transaction.voidable.should.equal(true);
 			transaction.refundable.should.equal(true);
-			
+
 			transaction.details.should.have.property('account');
 			transaction.details.account.account_code.should.equal(fresh_account_id);
-			
+
 			trans1 = transaction;
 			done();
-		});	
+		});
 	});
-	
+
 	it('can refund a transaction fully', function(done)
 	{
 		trans1.refund(function(err)
@@ -533,7 +536,7 @@ describe('Transactions', function()
 			currency: 'USD',
 			account: { account_code: fresh_account_id }
 		};
-		
+
 		recurly.Transaction.create(options, function(err, transaction)
 		{
 			should.not.exist(err);
@@ -546,7 +549,7 @@ describe('Transactions', function()
 				transaction.refundable.should.equal(false);
 				done();
 			});
-		});	
+		});
 	});
 
 });
