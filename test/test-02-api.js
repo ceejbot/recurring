@@ -193,10 +193,9 @@ describe('BillingInfo', function()
 			should.not.exist(err);
             newAccount.fetchBillingInfo(function(err, info)
             {
-                should.not.exist(err);
-                info.should.be.an('object');
-                info.should.have.property('symbol');
-                info.symbol.should.equal('not_found');
+                err.should.be.ok;
+                err.message.should.equal('not_found');
+                should.not.exist(info);
                 done();
             });
 		});
@@ -224,7 +223,6 @@ describe('BillingInfo', function()
 
 		binfo.update(billing_data, function(err)
 		{
-		    console.log(err);
 			should.not.exist(err);
 			binfo.last_four.should.equal('1111');
 			done();
