@@ -1,6 +1,6 @@
 {
 	"name": "recurring",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "a recurly v2 api client for node.js",
 	"main": "lib/index.js",
 	"directories":
