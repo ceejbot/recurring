@@ -1,16 +1,13 @@
 /*global describe:true, it:true, before:true, after:true */
 
 var
-	chai = require('chai'),
-	assert = chai.assert,
-	expect = chai.expect,
-	should = chai.should()
-	;
-
-var
-	qs = require('qs'),
+	chai        = require('chai'),
+	assert      = chai.assert,
+	expect      = chai.expect,
+	should      = chai.should(),
+	qs          = require('qs'),
 	SignedQuery = require('../lib/signer').SignedQuery,
-	util = require('util')
+	util        = require('util')
 	;
 
 // For all tests the expected values are borrowed from recurly's own Ruby gem test suite.
