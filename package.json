@@ -1,6 +1,6 @@
 {
 	"name":        "recurring",
-	"version":     "0.0.7",
+	"version":     "0.0.8",
 	"description": "a recurly v2 api client for node.js",
 	"keywords":    [ "recurly", "payments" ],
 	"license":     "MIT",
@@ -32,7 +32,8 @@
 	"contributors":
 	[
 		"C J Silverio <ceejceej@gmail.com> (http://ceejbot.github.io/)",
-		"Julian Gautier <julian.gautier@alumni.neumont.edu> (http://www.juliangautier.com/)"
+		"Julian Gautier <julian.gautier@alumni.neumont.edu> (http://www.juliangautier.com/)",
+		"Simon Tabor"
 	],
 	"readmeFilename": "README.md"
 }
