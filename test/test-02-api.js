@@ -18,9 +18,9 @@ var
 // development gateway.
 var config =
 {
-	"apikey": "3dacdb54665b44b8a8c5e10238b7a11c",
+	"apikey": "8fa00f53641f45c08a1e2be7ab02d163",
 	"plan_code": "recurring-test",
-	"subdomain": "recurring-testing"
+	"subdomain": "recurring-test"
 };
 
 var rparser, plan, account, subscription;
