@@ -1,6 +1,6 @@
 {
 	"name":        "recurring",
-	"version":     "0.0.8",
+	"version":     "0.0.9",
 	"description": "a recurly v2 api client for node.js",
 	"keywords":    [ "recurly", "payments" ],
 	"license":     "MIT",
