@@ -372,7 +372,8 @@ describe('Subscription', function()
 
 	it('can postpone a subscription', function(done)
 	{
-		var nextDate = new Date(2013, 11, 1);
+		var now = new Date();
+		var nextDate = new Date(now.getUTCFullYear(), now.getUTCMonth() + 1, 1);
 
 		subscription.postpone(nextDate, function(err)
 		{
