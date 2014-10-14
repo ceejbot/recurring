@@ -1,6 +1,7 @@
-[![Build Status](https://travis-ci.org/ceejbot/recurring.png)](https://travis-ci.org/ceejbot/recurring)
-
 A node client for [recurly](https://recurly.com)'s v2 api, with support for secure parameter signing for [recurly.js](https://docs.recurly.com/recurlyjs) embedded forms.
+
+[![on npm](http://img.shields.io/npm/v/recurring.svg?style=flat)](https://www.npmjs.org/package/recurring)  [![Tests](http://img.shields.io/travis/ceejbot/recurring.svg?style=flat)](http://travis-ci.org/ceejbot/recurring)  [![Dependencies](http://img.shields.io/david/ceejbot/recurring.svg?style=flat)](https://david-dm.org/ceejbot/recurring)
+
 
 __This code is still in development.__ I don't have complete coverage of the API yet.
 
@@ -69,7 +70,7 @@ plan.fetchAddOns(callback)
 *Account.all(state, function(err, accounts))*
 
 Responds with an array of all accounts in the passed-in state. Defaults to 'active'.
-  
+
 
 *account.update(data, function(err))*  
 
@@ -130,7 +131,7 @@ All callbacks follow the node convention of reporting any error in the first par
 	name: 'RecurlyError',
 	message: '2 transaction errors',
 	errors: [
-		{ 
+		{
 			field: 'billing_info.number',
 			symbol: 'invalid',
 			message: 'is not a valid credit card number'
@@ -173,7 +174,7 @@ recurlyResponse.process(function(err, subscription)
 {
 	if (err)
 		return handleError(err);
-	
+
 	// subscription contains the new subscription data;
 });
 ```
