@@ -1,17 +1,11 @@
 /*global describe:true, it:true, before:true, after:true */
 
 var
-	chai = require('chai'),
-	assert = chai.assert,
-	expect = chai.expect,
-	should = chai.should()
-	;
-
-var
-	parser = require('../lib/parser'),
-	recurly = require('../lib/recurly'),
-	util = require('util'),
-	uuid = require('node-uuid')
+	demand  = require('must'),
+	parser  = require('../lib/parser'),
+	recurly = require('../lib/recurly')(),
+	util    = require('util'),
+	uuid    = require('node-uuid')
 	;
 
 // This recurly account is an empty test account connected to their
@@ -43,10 +37,10 @@ describe('Plan', function()
 	{
 		recurly.Plan.all(function(plans)
 		{
-			plans.should.be.an('object');
+			plans.must.be.an.object();
 			var plan_codes = Object.keys(plans);
-			expect(plan_codes.length).to.be.above(0);
-			plan_codes[0].should.not.equal('undefined');
+			plan_codes.length.must.be.above(0);
+			plan_codes[0].must.not.equal('undefined');
 			cached = plan_codes;
 			done();
 		});
@@ -58,12 +52,12 @@ describe('Plan', function()
 		plan.id = cached[0];
 		plan.fetch(function(err)
 		{
-			should.not.exist(err);
-			plan.href.length.should.be.above(0);
-			plan.should.have.property('name');
-			plan.should.have.property('description');
-			plan.name.should.be.ok;
-			plan.description.should.be.ok;
+			demand(err).not.exist();
+			plan.href.length.must.be.above(0);
+			plan.must.have.property('name');
+			plan.must.have.property('description');
+			plan.name.must.exist();
+			plan.description.must.exist();
 			done();
 		});
 	});
@@ -89,10 +83,10 @@ describe('Account', function()
 
 		recurly.Account.create(data, function(err, newAccount)
 		{
-			should.not.exist(err);
-			newAccount.should.be.an('object');
-			newAccount.id.should.equal(fresh_account_id);
-			newAccount.company_name.should.equal('Yoyodyne Propulsion Systems');
+			demand(err).not.exist();
+			newAccount.must.be.an.object();
+			newAccount.id.must.equal(fresh_account_id);
+			newAccount.company_name.must.equal('Yoyodyne Propulsion Systems');
 			done();
 		});
 	});
@@ -104,8 +98,8 @@ describe('Account', function()
 
 		account.close(function(err, closed)
 		{
-			should.not.exist(err);
-			closed.should.equal(true);
+			demand(err).not.exist();
+			closed.must.equal(true);
 			done();
 		});
 	});
@@ -116,10 +110,10 @@ describe('Account', function()
 
 		recurly.Account.create(data, function(err, newAccount)
 		{
-			should.not.exist(err);
-			newAccount.should.be.an('object');
-			newAccount.first_name.should.equal('John'); // from old data
-			newAccount.last_name.should.equal('Whorfin'); // from old data
+			demand(err).not.exist();
+			newAccount.must.be.an.object();
+			newAccount.first_name.must.equal('John'); // from old data
+			newAccount.last_name.must.equal('Whorfin'); // from old data
 			done();
 		});
 	});
@@ -131,10 +125,10 @@ describe('Account', function()
 		account.id = fresh_account_id;
 		account.fetch(function(err)
 		{
-			should.not.exist(err);
-			account.should.be.an('object');
-			account.email.should.equal('test@example.com');
-			account.company_name.should.equal('Yoyodyne Propulsion Systems');
+			demand(err).not.exist();
+			account.must.be.an.object();
+			account.email.must.equal('test@example.com');
+			account.company_name.must.equal('Yoyodyne Propulsion Systems');
 			done();
 		});
 	});
@@ -143,10 +137,10 @@ describe('Account', function()
 	{
 		recurly.Account.all(function(accounts)
 		{
-			accounts.should.be.an('object');
+			accounts.must.be.an.object();
 			var uuids = Object.keys(accounts);
-			expect(uuids.length).to.be.above(0);
-			uuids[0].should.not.equal('undefined');
+			uuids.length.must.be.above(0);
+			uuids[0].must.not.equal('undefined');
 			cached = uuids;
 			done();
 		});
@@ -157,15 +151,15 @@ describe('Account', function()
 		account.company_name = 'Yoyodyne Propulsion, International';
 		account.update(function(err, updated)
 		{
-			should.not.exist(err);
-			updated.should.be.an('object');
+			demand(err).not.exist();
+			updated.must.be.an.object();
 
 			var testAcc = new recurly.Account();
 			testAcc.id = account.id;
 			testAcc.fetch(function(err)
 			{
-				should.not.exist(err);
-				testAcc.company_name.should.equal(account.company_name);
+				demand(err).not.exist();
+				testAcc.company_name.must.equal(account.company_name);
 				done();
 			});
 		});
@@ -190,12 +184,12 @@ describe('BillingInfo', function()
 
 		recurly.Account.create(data, function(err, newAccount)
 		{
-			should.not.exist(err);
+			demand(err).not.exist();
             newAccount.fetchBillingInfo(function(err, info)
             {
-                err.should.be.ok;
-                err.message.should.equal('not_found');
-                should.not.exist(info);
+                err.must.exist();
+                err.message.must.equal('not_found');
+				demand(info).not.exist();
                 done();
             });
 		});
@@ -223,8 +217,8 @@ describe('BillingInfo', function()
 
 		binfo.update(billing_data, function(err)
 		{
-			should.not.exist(err);
-			binfo.last_four.should.equal('1111');
+			demand(err).not.exist();
+			binfo.last_four.must.equal('1111');
 			done();
 		});
 	});
@@ -243,7 +237,7 @@ describe('BillingInfo', function()
 			};
 			binfo2.update(inadequate, function() {} );
 		};
-		expect(wrong).to.throw(Error);
+		wrong.must.throw(Error);
 		done();
 	});
 
@@ -251,10 +245,10 @@ describe('BillingInfo', function()
 	{
 		account.fetchBillingInfo(function(err, info)
 		{
-			should.not.exist(err);
-			info.first_name.should.equal(account.first_name);
-			info.last_four.should.equal('1111');
-			info.address2.should.be.a('string');
+			demand(err).not.exist();
+			info.first_name.must.equal(account.first_name);
+			info.last_four.must.equal('1111');
+			info.address2.must.be.a.string();
 			done();
 		});
 	});
@@ -275,11 +269,11 @@ describe('Subscription', function()
 
 		recurly.Subscription.create(data, function(err, newsub)
 		{
-			should.not.exist(err);
-			newsub.id.should.be.ok;
-			newsub.quantity.should.equal(10);
-			newsub.plan.should.be.an('object');
-			newsub.plan.plan_code.should.equal(config.plan_code);
+			demand(err).not.exist();
+			newsub.id.must.exist();
+			newsub.quantity.must.equal(10);
+			newsub.plan.must.be.an.object();
+			newsub.plan.plan_code.must.equal(config.plan_code);
 
 			subscription = newsub;
 			done();
@@ -290,8 +284,8 @@ describe('Subscription', function()
 	{
 		account.fetchSubscriptions(function(err, subscriptions)
 		{
-			should.not.exist(err);
-			subscriptions.should.be.an('array');
+			demand(err).not.exist();
+			subscriptions.must.be.an.array();
 			cached = subscriptions;
 			done();
 		});
@@ -304,11 +298,11 @@ describe('Subscription', function()
 		subscription.id = uuid;
 		subscription.fetch(function(err)
 		{
-			should.not.exist(err);
-			subscription.should.have.property('_resources');
-			subscription._resources.should.be.an('object');
-			subscription._resources.should.have.property('account');
-			subscription.account_id.should.equal(account.id);
+			demand(err).not.exist();
+			subscription.must.have.property('_resources');
+			subscription._resources.must.be.an.object();
+			subscription._resources.must.have.property('account');
+			subscription.account_id.must.equal(account.id);
 
 			done();
 		});
@@ -320,7 +314,7 @@ describe('Subscription', function()
 		{
 			subscription.update({ inadequate: true }, function() {} );
 		};
-		expect(wrong).to.throw(Error);
+		wrong.must.throw(Error);
 		done();
 	});
 
@@ -334,9 +328,9 @@ describe('Subscription', function()
 
 		subscription.update(mods, function(err)
 		{
-			should.not.exist(err);
-			subscription.should.be.an('object');
-			subscription.quantity.should.equal(mods.quantity);
+			demand(err).not.exist();
+			subscription.must.be.an.object();
+			subscription.quantity.must.equal(mods.quantity);
 
 			done();
 		});
@@ -346,10 +340,10 @@ describe('Subscription', function()
 	{
 		subscription.cancel(function(err)
 		{
-			should.not.exist(err);
-			subscription.state.should.equal('canceled');
-			subscription.canceled_at.should.be.a('date');
-			subscription.expires_at.should.be.a('date'); // in the future, even
+			demand(err).not.exist();
+			subscription.state.must.equal('canceled');
+			subscription.canceled_at.must.be.a.date();
+			subscription.expires_at.must.be.a.date(); // in the future, even
 
 			done();
 		});
@@ -359,12 +353,12 @@ describe('Subscription', function()
 	{
 		subscription.reactivate(function(err)
 		{
-			should.not.exist(err);
-			subscription.state.should.equal('active');
-			subscription.activated_at.should.be.a('date');
-			subscription.activated_at.getTime().should.equal(subscription.current_period_started_at.getTime());
-			subscription.canceled_at.should.be.a('string');
-			subscription.expires_at.should.be.a('string');
+			demand(err).not.exist();
+			subscription.state.must.equal('active');
+			subscription.activated_at.must.be.a.date();
+			subscription.activated_at.getTime().must.equal(subscription.current_period_started_at.getTime());
+			subscription.canceled_at.must.be.a.string();
+			subscription.expires_at.must.be.a.string();
 
 			done();
 		});
@@ -377,8 +371,8 @@ describe('Subscription', function()
 
 		subscription.postpone(nextDate, function(err)
 		{
-			should.not.exist(err);
-			nextDate.getTime().should.equal(subscription.current_period_ends_at.getTime());
+			demand(err).not.exist();
+			nextDate.getTime().must.equal(subscription.current_period_ends_at.getTime());
 			done();
 		});
 	});
@@ -387,9 +381,9 @@ describe('Subscription', function()
 	{
 		subscription.terminate('none', function(err)
 		{
-			should.not.exist(err);
-			subscription.state.should.equal('expired');
-			subscription.canceled_at.should.be.a('date');
+			demand(err).not.exist();
+			subscription.state.must.equal('expired');
+			subscription.canceled_at.must.be.a.date();
 			done();
 		});
 	});
@@ -415,11 +409,11 @@ describe('Coupons', function()
 
 		recurly.Coupon.create(data, function(err, coup)
 		{
-			should.not.exist(err);
-			coup.id.should.equal(coupon_code);
-			coup.state.should.equal('redeemable');
-			coup.single_use.should.equal(true);
-			coup.applies_to_all_plans.should.equal(true);
+			demand(err).not.exist();
+			coup.id.must.equal(coupon_code);
+			coup.state.must.equal('redeemable');
+			coup.single_use.must.equal(true);
+			coup.applies_to_all_plans.must.equal(true);
 			done();
 		});
 	});
@@ -430,12 +424,12 @@ describe('Coupons', function()
 		coupon.id = coupon_code;
 		coupon.fetch(function(err)
 		{
-			should.not.exist(err);
-			coupon.id.should.equal(coupon_code);
-			coupon.state.should.equal('redeemable');
-			coupon.single_use.should.equal(true);
-			coupon.applies_to_all_plans.should.equal(true);
-			coupon.name.should.equal('Test Coupon');
+			demand(err).not.exist();
+			coupon.id.must.equal(coupon_code);
+			coupon.state.must.equal('redeemable');
+			coupon.single_use.must.equal(true);
+			coupon.applies_to_all_plans.must.equal(true);
+			coupon.name.must.equal('Test Coupon');
 			done();
 		});
 	});
@@ -450,9 +444,9 @@ describe('Coupons', function()
 
 		coupon.redeem(options, function(err, redemption)
 		{
-			should.not.exist(err);
-			redemption._resources.coupon.should.equal(coupon.href);
-			redemption.single_use.should.equal(true);
+			demand(err).not.exist();
+			redemption._resources.coupon.must.equal(coupon.href);
+			redemption.single_use.must.equal(true);
 			done();
 		});
 	});
@@ -464,7 +458,7 @@ describe('Coupons', function()
 	{
 		coupon.destroy(function(err)
 		{
-			should.not.exist(err);
+			demand(err).not.exist();
 			done();
 		});
 	});
@@ -485,7 +479,7 @@ describe('Transactions', function()
 			};
 			recurly.Transaction.create(inadequate, function() {} );
 		};
-		expect(wrong).to.throw(Error);
+		wrong.must.throw(Error);
 	});
 
 	it('requires an amount_in_cents parameter when creating a transaction', function()
@@ -499,7 +493,7 @@ describe('Transactions', function()
 			};
 			recurly.Transaction.create(inadequate, function() {} );
 		};
-		expect(wrong).to.throw(Error);
+		wrong.must.throw(Error);
 	});
 
 	it('requires an currency parameter when creating a transaction', function()
@@ -513,7 +507,7 @@ describe('Transactions', function()
 			};
 			recurly.Transaction.create(inadequate, function() {} );
 		};
-		expect(wrong).to.throw(Error);
+		wrong.must.throw(Error);
 	});
 
 	it('can create a transaction', function(done)
@@ -527,17 +521,17 @@ describe('Transactions', function()
 
 		recurly.Transaction.create(options, function(err, transaction)
 		{
-			should.not.exist(err);
-			transaction.action.should.equal('purchase');
-			transaction.amount_in_cents.should.equal(100);
-			transaction.currency.should.equal('USD');
-			transaction.status.should.equal('success');
-			transaction.reference.should.be.ok;
-			transaction.voidable.should.equal(true);
-			transaction.refundable.should.equal(true);
+			demand(err).not.exist();
+			transaction.action.must.equal('purchase');
+			transaction.amount_in_cents.must.equal(100);
+			transaction.currency.must.equal('USD');
+			transaction.status.must.equal('success');
+			transaction.reference.must.exist();
+			transaction.voidable.must.equal(true);
+			transaction.refundable.must.equal(true);
 
-			transaction.details.should.have.property('account');
-			transaction.details.account.account_code.should.equal(fresh_account_id);
+			transaction.details.must.have.property('account');
+			transaction.details.account.account_code.must.equal(fresh_account_id);
 
 			trans1 = transaction;
 			done();
@@ -548,10 +542,10 @@ describe('Transactions', function()
 	{
 		trans1.refund(function(err)
 		{
-			should.not.exist(err);
-			trans1.status.should.equal('void');
-			trans1.voidable.should.equal(false);
-			trans1.refundable.should.equal(false);
+			demand(err).not.exist();
+			trans1.status.must.equal('void');
+			trans1.voidable.must.equal(false);
+			trans1.refundable.must.equal(false);
 			done();
 		});
 	});
@@ -567,14 +561,14 @@ describe('Transactions', function()
 
 		recurly.Transaction.create(options, function(err, transaction)
 		{
-			should.not.exist(err);
+			demand(err).not.exist();
 			transaction.refund(250, function(err)
 			{
-				should.not.exist(err);
-				transaction.amount_in_cents.should.equal(250);
-				transaction.status.should.equal('success');
-				transaction.voidable.should.equal(true);
-				transaction.refundable.should.equal(false);
+				demand(err).not.exist();
+				transaction.amount_in_cents.must.equal(250);
+				transaction.status.must.equal('success');
+				transaction.voidable.must.equal(true);
+				transaction.refundable.must.equal(false);
 				done();
 			});
 		});
@@ -601,10 +595,10 @@ describe('RecurlyError', function()
 
 		binfo.update(billing_data, function(err)
 		{
-			err.should.be.an('object');
-			err.should.have.property('errors');
-			err.errors.should.be.an('array');
-			err.errors.length.should.equal(2);
+			err.must.be.an.object();
+			err.must.have.property('errors');
+			err.errors.must.be.an.array();
+			err.errors.length.must.equal(2);
 			done();
 		});
 	});

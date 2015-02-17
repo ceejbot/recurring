@@ -10,7 +10,7 @@ __This code is still in development.__ I don't have complete coverage of the API
 An example of typical usage:
 
 ```javascript
-var recurly = require('recurring');
+var recurly = require('recurring')(); // note function invocation
 recurly.setAPIKey('your-api-key');
 
 var account = new recurly.Account();

@@ -1,19 +1,12 @@
 /*global describe:true, it:true, before:true, after:true */
 
 var
-	chai = require('chai'),
-	assert = chai.assert,
-	expect = chai.expect,
-	should = chai.should()
-	;
-
-var
-    fs = require('fs'),
+	demand = require('must'),
+	fs     = require('fs'),
 	parser = require('../lib/parser'),
-	path = require('path'),
-	util = require('util')
+	path   = require('path'),
+	util   = require('util')
 	;
-
 
 // ----------------------------------------------------------------------
 
@@ -47,7 +40,7 @@ describe('recurly xml parser', function()
 	{
 		rparser.parseXML(data, function(err, result)
 		{
-			should.not.exist(err);
+			demand(err).not.exist();
 			typesResult = result;
 			done();
 		});
@@ -55,8 +48,8 @@ describe('recurly xml parser', function()
 
 	it('can parse subarrays', function()
 	{
-		typesResult.should.be.an('array');
-		typesResult.length.should.equal(2);
+		typesResult.must.be.an.array();
+		typesResult.length.must.equal(2);
 	});
 
 	it('can parse single-item subarrays', function(done)
@@ -64,12 +57,12 @@ describe('recurly xml parser', function()
     	var blortdata = readFixture('single-item.xml');
 		rparser.parseXML(blortdata, function(err, result)
 		{
-			should.not.exist(err);
-			result.should.be.an('array');
-			result.length.should.equal(1);
-			result[0].should.be.an('object');
-			result[0].should.have.property('name');
-			result[0].name.should.equal('The Only Blort');
+			demand(err).not.exist();
+			result.must.be.an.array();
+			result.length.must.equal(1);
+			result[0].must.be.an.object();
+			result[0].must.have.property('name');
+			result[0].name.must.equal('The Only Blort');
 			done();
 		});
 	});
@@ -77,42 +70,42 @@ describe('recurly xml parser', function()
 	it('can parse boolean types', function()
 	{
 		var item = typesResult[0];
-		item.boolean_true.should.be.a('boolean');
-		item.boolean_true.should.equal(true);
-		item.boolean_false.should.be.a('boolean');
-		item.boolean_false.should.equal(false);
+		item.boolean_true.must.be.a.boolean();
+		item.boolean_true.must.equal(true);
+		item.boolean_false.must.be.a.boolean();
+		item.boolean_false.must.equal(false);
 	});
 
 	it('can parse integer types', function()
 	{
 		var item = typesResult[1];
-		item.integer_value.should.be.a('number');
-		item.integer_value.should.equal(3);
+		item.integer_value.must.be.a.number();
+		item.integer_value.must.equal(3);
 	});
 
 	it('can parse nil types', function()
 	{
 		var item = typesResult[0];
-		item.should.have.property('nil_value');
-		item.nil_value.should.equal('');
+		item.must.have.property('nil_value');
+		item.nil_value.must.equal('');
 	});
 
 	it('can parse datetype types', function()
 	{
 		var item = typesResult[0];
-		item.datetime_value.should.be.a('date');
+		item.datetime_value.must.be.a.date();
 		var comparisonDate = new Date('Tue Apr 19 2011 00:00:00 GMT-0700 (PDT)');
-		item.datetime_value.getTime().should.equal(comparisonDate.getTime());
+		item.datetime_value.getTime().must.equal(comparisonDate.getTime());
 	});
 
 	it('can parse subobjects', function()
 	{
 		var item = typesResult[1];
 
-		item.hash_value.should.be.an('object');
-		item.hash_value.should.have.property('one');
-		item.hash_value.should.have.property('two');
-		item.hash_value.one.should.equal(1000);
+		item.hash_value.must.be.an.object();
+		item.hash_value.must.have.property('one');
+		item.hash_value.must.have.property('two');
+		item.hash_value.one.must.equal(1000);
 	});
 
 	it('can parse sample plan xml', function(done)
@@ -120,10 +113,10 @@ describe('recurly xml parser', function()
         var data = readFixture('plans.xml');
         rparser.parseXML(data, function(err, result)
         {
-            should.not.exist(err);
-            result.should.be.an('array');
-            result.should.be.an('array');
-            result.length.should.equal(4);
+            demand(err).not.exist();
+            result.must.be.an.array();
+            result.must.be.an.array();
+            result.length.must.equal(4);
             done();
         });
 	});
@@ -133,12 +126,12 @@ describe('recurly xml parser', function()
         var data = readFixture('subscription.xml');
         rparser.parseXML(data, function(err, result)
         {
-            should.not.exist(err);
-            result.should.be.an('array');
-            result.length.should.equal(1);
+            demand(err).not.exist();
+            result.must.be.an.array();
+            result.length.must.equal(1);
             var subscription = result[0];
-            subscription.should.have.property('uuid');
-            subscription.uuid.should.equal('44f83d7cba354d5b84812419f923ea96');
+            subscription.must.have.property('uuid');
+            subscription.uuid.must.equal('44f83d7cba354d5b84812419f923ea96');
             done();
         });
 	});
@@ -148,12 +141,12 @@ describe('recurly xml parser', function()
         var data = readFixture('transactions.xml');
         rparser.parseXML(data, function(err, result)
         {
-            should.not.exist(err);
-            result.should.be.an('array');
-            result.length.should.equal(1);
+            demand(err).not.exist();
+            result.must.be.an.array();
+            result.length.must.equal(1);
             var transaction = result[0];
-            transaction.should.have.property('uuid');
-            transaction.uuid.should.equal('a13acd8fe4294916b79aec87b7ea441f');
+            transaction.must.have.property('uuid');
+            transaction.uuid.must.equal('a13acd8fe4294916b79aec87b7ea441f');
             done();
         });
 	});
@@ -163,10 +156,10 @@ describe('recurly xml parser', function()
 	    var data = readFixture('billing_info_cc.xml');
 	    rparser.parseXML(data, function(err, result)
 	    {
-            should.not.exist(err);
-            result.should.not.be.an('array');
-            result.should.have.property('href');
-            result.should.have.property('type');
+            demand(err).not.exist();
+            result.must.not.be.an.array();
+            result.must.have.property('href');
+            result.must.have.property('type');
             done();
 	    });
 	});
