@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "chai": "~1.9.2",
-    "mocha": "~1.21.5"
+    "mocha": "~2.1.0"
   },
   "scripts": {
     "test": "mocha -R spec --timeout 5000 --slow 1000"
