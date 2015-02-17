@@ -205,7 +205,7 @@ describe('BillingInfo', function()
 			last_name: account.last_name,
 			number: '4111-1111-1111-1111',
 			month: 1,
-			year: 2015,
+			year: (new Date()).getFullYear() + 3,
 			verification_value: '111',
 			address1: '760 Market Street',
 			address2: 'Suite 500',
