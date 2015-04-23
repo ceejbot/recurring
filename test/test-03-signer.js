@@ -19,10 +19,10 @@ var testTimestamp = 1329942896;
 function transactionTestFixture()
 {
 	var query = new SignedQuery(testAPIKey);
-	query.set('account', {'account_code': '123'});
+	query.set('account', { account_code: '123'});
 	query.set('nonce', testNonce);
 	query.set('timestamp', testTimestamp);
-	query.set('transaction', {'amount_in_cents': 5000, 'currency': 'USD' });
+	query.set('transaction', { amount_in_cents: 5000, currency: 'USD' });
 
 	return query;
 }
@@ -61,9 +61,9 @@ describe('recurly secure parameters signer', function()
 	it('can sign subscription form parameters', function()
 	{
 		var query = new SignedQuery(testAPIKey);
-		query.set('account', {'account_code': '123'});
+		query.set('account', { account_code: '123'});
 		query.set('nonce', testNonce);
-		query.set('subscription', {'plan_code': 'gold'});
+		query.set('subscription', { plan_code: 'gold'});
 		query.set('timestamp', testTimestamp);
 
 		var subscriptionTestExpected = '295bd0626ab03fd01053fb0784bd5187b563cbeb|account%5Baccount_code%5D=123&nonce=unique&subscription%5Bplan_code%5D=gold&timestamp=1329942896';
@@ -74,7 +74,7 @@ describe('recurly secure parameters signer', function()
 	it('can sign update billing info form parameters', function()
 	{
 		var query = new SignedQuery(testAPIKey);
-		query.set('account', {'account_code': '123'});
+		query.set('account', { account_code: '123'});
 		query.set('nonce', testNonce);
 		query.set('timestamp', testTimestamp);
 

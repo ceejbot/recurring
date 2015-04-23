@@ -1,35 +1,7 @@
 {
   "name": "recurring",
-  "version": "2.0.0",
   "description": "a recurly v2 api client for node.js",
-  "keywords": [
-    "recurly",
-    "payments"
-  ],
-  "license": "MIT",
-  "main": "lib/index.js",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {
-    "data2xml": "~0.5.0",
-    "lodash": "~3.2.0",
-    "node-uuid": "~1.4.1",
-    "qs": "~2.3.3",
-    "request": "~2.45.0",
-    "xml2js": "~0.4.0"
-  },
-  "devDependencies": {
-    "mocha": "~2.1.0",
-    "must": "~0.12.0"
-  },
-  "scripts": {
-    "test": "mocha -R spec --timeout 5000 --slow 1000"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ceejbot/recurring.git"
-  },
+  "version": "2.0.0",
   "bugs": "http://github.com/ceejbot/recurring/issues",
   "contributors": [
     "C J Silverio <ceejceej@gmail.com> (http://ceejbot.github.io/)",
@@ -40,5 +12,50 @@
     "Mark Garlanger @mgarlanger",
     "Tom Kirkpatrick @mrfelton"
   ],
-  "readmeFilename": "README.md"
+  "config": {
+    "blanket": {
+      "pattern": "lib",
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ],
+      "output-reporter": "spec"
+    }
+  },
+  "dependencies": {
+    "data2xml": "~0.5.0",
+    "lodash": "~3.7.0",
+    "mocha": "~2.2.4",
+    "node-uuid": "~1.4.3",
+    "qs": "~2.3.3",
+    "request": "~2.45.0",
+    "xml2js": "~0.4.0"
+  },
+  "devDependencies": {
+    "blanket": "~1.1.6",
+    "jscs": "~1.12.0",
+    "jshint": "~2.7.0",
+    "mocha": "~2.1.0",
+    "mocoverage": "~1.0.0",
+    "must": "~0.12.0",
+    "patched-blanket": "~1.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "recurly",
+    "payments"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ceejbot/recurring.git"
+  },
+  "scripts": {
+    "test": "mocha --check-leaks --timeout 5000  --slow 1000 --ui exports --require patched-blanket -R mocoverage",
+    "lint": "jshint lib/* test/* && jscs lib/* test/*"
+  }
 }

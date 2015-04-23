@@ -30,7 +30,6 @@ before(function()
 	rparser = parser.createParser();
 });
 
-
 describe('recurly xml parser', function()
 {
 	var data = readFixture('types.xml');
@@ -54,7 +53,7 @@ describe('recurly xml parser', function()
 
 	it('can parse single-item subarrays', function(done)
 	{
-    	var blortdata = readFixture('single-item.xml');
+		var blortdata = readFixture('single-item.xml');
 		rparser.parseXML(blortdata, function(err, result)
 		{
 			demand(err).not.exist();
@@ -110,57 +109,57 @@ describe('recurly xml parser', function()
 
 	it('can parse sample plan xml', function(done)
 	{
-        var data = readFixture('plans.xml');
-        rparser.parseXML(data, function(err, result)
-        {
-            demand(err).not.exist();
-            result.must.be.an.array();
-            result.must.be.an.array();
-            result.length.must.equal(4);
-            done();
-        });
+		var data = readFixture('plans.xml');
+		rparser.parseXML(data, function(err, result)
+		{
+			demand(err).not.exist();
+			result.must.be.an.array();
+			result.must.be.an.array();
+			result.length.must.equal(4);
+			done();
+		});
 	});
 
 	it('can parse sample subscription xml', function(done)
 	{
-        var data = readFixture('subscription.xml');
-        rparser.parseXML(data, function(err, result)
-        {
-            demand(err).not.exist();
-            result.must.be.an.array();
-            result.length.must.equal(1);
-            var subscription = result[0];
-            subscription.must.have.property('uuid');
-            subscription.uuid.must.equal('44f83d7cba354d5b84812419f923ea96');
-            done();
-        });
+		var data = readFixture('subscription.xml');
+		rparser.parseXML(data, function(err, result)
+		{
+			demand(err).not.exist();
+			result.must.be.an.array();
+			result.length.must.equal(1);
+			var subscription = result[0];
+			subscription.must.have.property('uuid');
+			subscription.uuid.must.equal('44f83d7cba354d5b84812419f923ea96');
+			done();
+		});
 	});
 
 	it('can parse sample transaction xml', function(done)
 	{
-        var data = readFixture('transactions.xml');
-        rparser.parseXML(data, function(err, result)
-        {
-            demand(err).not.exist();
-            result.must.be.an.array();
-            result.length.must.equal(1);
-            var transaction = result[0];
-            transaction.must.have.property('uuid');
-            transaction.uuid.must.equal('a13acd8fe4294916b79aec87b7ea441f');
-            done();
-        });
+		var data = readFixture('transactions.xml');
+		rparser.parseXML(data, function(err, result)
+		{
+			demand(err).not.exist();
+			result.must.be.an.array();
+			result.length.must.equal(1);
+			var transaction = result[0];
+			transaction.must.have.property('uuid');
+			transaction.uuid.must.equal('a13acd8fe4294916b79aec87b7ea441f');
+			done();
+		});
 	});
 
 	it('can parse sample billing info xml', function(done)
 	{
-	    var data = readFixture('billing_info_cc.xml');
-	    rparser.parseXML(data, function(err, result)
-	    {
-            demand(err).not.exist();
-            result.must.not.be.an.array();
-            result.must.have.property('href');
-            result.must.have.property('type');
-            done();
-	    });
+		var data = readFixture('billing_info_cc.xml');
+		rparser.parseXML(data, function(err, result)
+		{
+			demand(err).not.exist();
+			result.must.not.be.an.array();
+			result.must.have.property('href');
+			result.must.have.property('type');
+			done();
+		});
 	});
 });

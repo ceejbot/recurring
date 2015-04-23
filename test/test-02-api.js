@@ -12,9 +12,13 @@ var
 // development gateway.
 var config =
 {
-	"apikey": "8fa00f53641f45c08a1e2be7ab02d163",
-	"plan_code": "recurring-test",
-	"subdomain": "recurring-test"
+	apikey: '8fa00f53641f45c08a1e2be7ab02d163',
+	plan_code: 'recurring-test',
+	subdomain: 'recurring-test'
+};
+
+var noopFunc = function()
+{
 };
 
 var rparser, plan, account, subscription;
@@ -118,7 +122,6 @@ describe('Account', function()
 		});
 	});
 
-
 	it('can fetch a single account', function(done)
 	{
 		account = new recurly.Account();
@@ -164,7 +167,6 @@ describe('Account', function()
 			});
 		});
 	});
-
 });
 
 describe('BillingInfo', function()
@@ -185,13 +187,13 @@ describe('BillingInfo', function()
 		recurly.Account.create(data, function(err, newAccount)
 		{
 			demand(err).not.exist();
-            newAccount.fetchBillingInfo(function(err, info)
-            {
-                err.must.exist();
-                err.message.must.equal('not_found');
+			newAccount.fetchBillingInfo(function(err, info)
+			{
+				err.must.exist();
+				err.message.must.equal('not_found');
 				demand(info).not.exist();
-                done();
-            });
+				done();
+			});
 		});
 	});
 
@@ -235,7 +237,7 @@ describe('BillingInfo', function()
 				first_name: account.first_name,
 				last_name: account.last_name,
 			};
-			binfo2.update(inadequate, function() {} );
+			binfo2.update(inadequate, noopFunc);
 		};
 		wrong.must.throw(Error);
 		done();
@@ -312,7 +314,7 @@ describe('Subscription', function()
 	{
 		var wrong = function()
 		{
-			subscription.update({ inadequate: true }, function() {} );
+			subscription.update({ inadequate: true }, noopFunc);
 		};
 		wrong.must.throw(Error);
 		done();
@@ -451,7 +453,6 @@ describe('Coupons', function()
 		});
 	});
 
-
 	// examine a redemption object
 
 	it('can delete a coupon', function(done)
@@ -477,7 +478,7 @@ describe('Transactions', function()
 				amount_in_cents: 10,
 				currency: 'USD',
 			};
-			recurly.Transaction.create(inadequate, function() {} );
+			recurly.Transaction.create(inadequate, noopFunc);
 		};
 		wrong.must.throw(Error);
 	});
@@ -491,7 +492,7 @@ describe('Transactions', function()
 				account: { account_code: fresh_account_id },
 				currency: 'USD',
 			};
-			recurly.Transaction.create(inadequate, function() {} );
+			recurly.Transaction.create(inadequate, noopFunc);
 		};
 		wrong.must.throw(Error);
 	});
@@ -505,7 +506,7 @@ describe('Transactions', function()
 				account: { account_code: fresh_account_id },
 				amount_in_cents: 10,
 			};
-			recurly.Transaction.create(inadequate, function() {} );
+			recurly.Transaction.create(inadequate, noopFunc);
 		};
 		wrong.must.throw(Error);
 	});
