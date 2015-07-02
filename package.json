@@ -28,7 +28,8 @@
     "node-uuid": "~1.4.3",
     "qs": "~2.4.1",
     "request": "~2.45.0",
-    "xml2js": "~0.4.8"
+    "xml2js": "~0.4.8",
+    "async-iterators": "~0.2.2"
   },
   "devDependencies": {
     "blanket": "~1.1.6",
