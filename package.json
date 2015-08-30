@@ -27,7 +27,7 @@
     "lodash": "~3.7.0",
     "node-uuid": "~1.4.3",
     "qs": "~2.4.1",
-    "request": "~2.45.0",
+    "request": "^2.55.0",
     "xml2js": "~0.4.8"
   },
   "devDependencies": {
