@@ -34,6 +34,7 @@
   "devDependencies": {
     "async-iterators": "~0.2.2",
     "blanket": "~1.1.6",
+    "debug": "^2.2.0",
     "jscs": "~1.12.0",
     "jshint": "~2.7.0",
     "mocha": "~2.2.4",
