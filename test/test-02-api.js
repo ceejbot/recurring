@@ -628,3 +628,32 @@ describe('RecurlyError', function()
 	});
 
 });
+
+describe('Prerequsites', function()
+{
+	before(function()
+	{
+		recurly.setAPIKey('');
+	});
+	it('should raise an error if the API Key has not been set.', function(done)
+	{
+		var data =
+		{
+			id: uuid.v4(),
+			email: 'test@example.com',
+			first_name: 'John',
+			last_name: 'Whorfin',
+			company_name: 'Yoyodyne Propulsion Systems',
+		};
+		recurly.Account.create(data, function(err, newAccount)
+		{
+			demand(err).exist();
+			err.must.be.an(Error);
+			done();
+		});
+	});
+	after(function()
+	{
+		recurly.setAPIKey(config.apikey);
+	});
+});
