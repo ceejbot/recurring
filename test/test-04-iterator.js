@@ -5,7 +5,7 @@ var
 	parser    = require('../lib/parser'),
 	recurly   = require('../lib/recurly')(),
 	util      = require('util'),
-	uuid      = require('node-uuid')
+	uuid      = require('node-uuid'),
   iterators = require('async-iterators'),
   _         = require('lodash')
 	;
@@ -25,18 +25,15 @@ before(function()
 
 describe.only('Iterator', function()
 {
-
 	it('Can loop through items in an iterator', function(done)
 	{
-    this.timeout(50000);
+		this.timeout(50000);
 		var iterator = recurly.Transaction.iterator();
 		iterator.must.be.an.object();
-
-    iterators.forEachAsync(iterator, function(err, transaction, cb) {
-      transaction.must.have.an.id;
-      cb();
-    }, done)
-
+		iterators.forEachAsync(iterator, function(err, transaction, cb)
+		{
+			transaction.must.have.an.id;
+			cb();
+		}, done);
 	});
-
 });
