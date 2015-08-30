@@ -23,11 +23,11 @@ before(function()
 	recurly.setAPIKey(config.apikey);
 });
 
-describe.only('Iterator', function()
+describe('Iterator', function()
 {
 	it('Can loop through items in an iterator', function(done)
 	{
-		this.timeout(50000);
+		this.timeout(30000);
 		var iterator = recurly.Transaction.iterator();
 		iterator.must.be.an.object();
 		iterators.forEachAsync(iterator, function(err, transaction, cb)
