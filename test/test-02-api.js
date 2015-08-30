@@ -580,6 +580,29 @@ describe('Transactions', function()
 describe('RecurlyError', function()
 {
 
+	it('calls back with a RecurlyError object on account creation errors', function(done)
+	{
+		var data =
+		{
+			id: uuid.v4(),
+			email: 'test@example.com2', // Note invalid email address
+			first_name: 'John',
+			last_name: 'Whorfin',
+			company_name: 'Yoyodyne Propulsion Systems',
+		};
+
+		recurly.Account.create(data, function(err, newAccount)
+		{
+			err.must.be.an.object();
+			err.must.have.property('errors');
+			err.errors.must.be.an.array();
+			err.errors.length.must.equal(1);
+			err.errors[0].field.must.equal('account.email');
+			err.errors[0].symbol.must.equal('invalid_email');
+			done();
+		});
+	});
+
 	it('calls back with a RecurlyError object on transaction errors', function(done)
 	{
 		var binfo = new recurly.BillingInfo();
