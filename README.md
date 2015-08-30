@@ -113,6 +113,10 @@ coupon.redeem(options, function(err, redemption))
 
 ### Transaction
 
+*Transaction.all()*  
+
+Responds with an array of all transactions.
+
 *Transaction.create(options, function(err, transaction))*  
 
 Post a transaction with the given options. Fields in the hash are named exactly as in the recurly documentation. Responds with the newly-created transaction.
