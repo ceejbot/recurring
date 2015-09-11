@@ -197,6 +197,35 @@ describe('BillingInfo', function()
 		});
 	});
 
+	it('can add billing info to an account and skip card authorization', function(done)
+	{
+		binfo = new recurly.BillingInfo();
+		binfo.account_code = fresh_account_id;
+		binfo.skipAuthorization = true;
+		var billing_data =
+		{
+			first_name: account.first_name,
+			last_name: account.last_name,
+			number: '4000-0000-0000-0077',
+			month: 1,
+			year: (new Date()).getFullYear() + 3,
+			verification_value: '111',
+			address1: '760 Market Street',
+			address2: 'Suite 500',
+			city: 'San Francisco',
+			state: 'CA',
+			country: 'USA',
+			zip: '94102'
+		};
+
+		binfo.update(billing_data, function(err)
+		{
+			demand(err).not.exist();
+			binfo.last_four.must.equal('0077');
+			done();
+		});
+	});
+
 	it('can add billing info to an account', function(done)
 	{
 		binfo = new recurly.BillingInfo();
