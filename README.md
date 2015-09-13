@@ -1,133 +1,365 @@
 A node client for [recurly](https://recurly.com)'s v2 api, with support for secure parameter signing for [recurly.js](https://docs.recurly.com/recurlyjs) embedded forms.
 
-[![on npm](http://img.shields.io/npm/v/recurring.svg?style=flat)](https://www.npmjs.org/package/recurring)  [![Tests](http://img.shields.io/travis/ceejbot/recurring.svg?style=flat)](http://travis-ci.org/ceejbot/recurring)  [![Dependencies](http://img.shields.io/david/ceejbot/recurring.svg?style=flat)](https://david-dm.org/ceejbot/recurring)  ![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat)
+[![on npm](http://img.shields.io/npm/v/recurring.svg?style=flat)](https://www.npmjs.org/package/recurring)  [![Tests](http://img.shields.io/travis/ceejbot/recurring.svg?style=flat)](http://travis-ci.org/ceejbot/recurring)  [![Dependencies](http://img.shields.io/david/ceejbot/recurring.svg?style=flat)](https://david-dm.org/ceejbot/recurring)  ![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat)  
 
-__This code is still in development.__ I don't have complete coverage of the API yet.
+__This code is still in development.__ We do not have complete coverage of the API yet.
 
-## Recurly API
+# Recurly API
 
 An example of typical usage:
 
 ```javascript
 var recurly = require('recurring')(); // note function invocation
 recurly.setAPIKey('your-api-key');
+recurly.setRateLimit(400);
+recurly.setCache(false);
 
 var account = new recurly.Account();
 account.id = 'account-uuid';
-account.fetch(function(err)
-{
-    account.fetchSubscriptions(function(err, subscriptions)
-    {
-        console.log(subscriptions[0].plan);
-        subscriptions[0].cancel(function(err, updated)
-        {
-        	console.log(updated.state); // will be 'canceled'
-        });
+account.fetch(function(err) {
+  account.fetchSubscriptions(function(err, subscriptions {
+    console.log(subscriptions[0].plan);
+    subscriptions[0].cancel(function(err, updated) {
+      console.log(updated.state); // will be 'canceled'
     });
+  });
 });
 
-recurly.Account.all(function(accounts)
-{
-    // accounts is an array containing all customer accounts
+recurly.Account.all(function(accounts) {
+  // accounts is an array containing all customer accounts
 });
 
-recurly.Plan.all(function(plans)
-{
-    // plans is an array containing all plans set up for your account
+recurly.Plan.all(function(plans) {
+  // plans is an array containing all plans set up for your account
 });
 
 ```
 
-### All data types
+## Configuration
 
-Recurly is not consistent about how it names the ID fields for each data type. For some it's `uuid` and for others `foo_code`. Recurring hides this away: every data type has an `id` property that sets the correct field name for Recurly.
+**recurly.setAPIKey()**  
+In order to access the Recurly API you must supply your API key which can be setterFunc by calling the `setAPIKey()`
+method.
 
+```javascript
+var recurly = require('recurring')();
+recurly.setAPIKey('your-api-key');
+```
 
-*DataType.create(optionsHash, function(err, object))*
+**recurly.setRateLimit()**  
+The recurly API has a rate limit policy in place that prevents excessive calls being made to the API. By default
+sandbox accounts have a limit of 400 requests per second and live accounts have a limit of 1000 requests per second.
+In order to help ensure that you do not exceed these limits Recurring provides a configurable rate limiter.
+The rate limiter can be configured by calling the `setRateLimit()` method.
 
+```javascript
+var recurly = require('recurring')();
+recurly.setRateLimit(400);
+```
+
+<!-- **recurly.clearCache()**
+
+By default data fetched from Recurly will be cached in memory so that subsequent requests to fetch the same data does
+not result in additional API calls to Recurly. The cache can be flushed by calling the `clearCache()` method.
+
+```javascript
+var recurly = require('recurring')();
+recurly.clearCache();
+```
+
+**recurly.setCache()**
+
+The cache can be disabled by calling the `setCache()` method.
+
+```javascript
+var recurly = require('recurring')();
+recurly.setCache(false);
+``` -->
+
+## All data types
+
+Recurly is not consistent about how it names the ID fields for each data type. For some it's `uuid` and for others
+`foo_code`. Recurring hides this away: every data type has an `id` property that sets the correct field name for Recurly.
+
+**instance.create()**  
 Create an object of the given type by POSTing to Recurly.
 
-*instance.fetch(function(err))*
+```javascript
+DataType.create(optionsHash, function(err, object));
+```
 
+**instance.fetch()**  
 Fetch an item of a given type from Recurly. The item must have an id.
 
-*instance.destroy(function(err))*
+```javascript
+instance.fetch(function(err, instance))
+```
 
-Destroy, delete, close, cancel, or otherwise remove the specified object. Invokes http `DELETE` on the item's href. The item must have an id.
+**instance.destroy()**  
+Destroy, delete, close, cancel, or otherwise remove the specified object. Invokes http `DELETE` on the item's href. The
+item must have an id.
 
-*instance.update(options, function(err))*
+```javascript
+instance.destroy(function(err));
+```
 
+**instance.update()**  
 Most data types have an `update()` method that changes the stored data.
 
-### Plan
+```javascript
+instance.update(options, function(err, updated));
+```
 
-Plan.all()  
-plan.fetchAddOns(callback)
+## Plan
 
-### Account
+**Plan.all()**  
+Fetch a list of plans. Responds with an array of all plans.
 
-*Account.all(state, function(err, accounts))*
+```javascript
+Plan.all(function(err, plans));
+```
 
-Responds with an array of all accounts in the passed-in state. Defaults to 'active'.
+**Plan.iterator()**  
+Fetch a list of plans. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
+```javascript
+var iterators = require('async-iterators');
+var iterator = Plan.iterator();
+iterators.forEachAsync(iterator, function (err, data, next) {
+  ...
+  next();
+});
+```
 
-*account.update(data, function(err))*  
+**plan.fetchAddOns()**  
+Fetch plan addons. Responds with a array of plan addons.
 
-Modifies the account data with the passed-in hash.
+```javascript
+plan.fetchAddOns(function(err, addons));
+```
 
-*account.close()*  
+## Account
 
-Alias for delete.
+**Account.all()**  
+Fetch a list of accounts. Responds with an array of all accounts in the passed-in state. Defaults to 'active'.
 
-*account.reopen()*
+```javascript
+Account.all(state, function(err, accounts));
+```
 
-Reopens a closed account.
+**Account.iterator()**  
+Fetch a list of accounts. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
-*account.fetchBillingInfo(function(err, info))*  
+```javascript
+var iterators = require('async-iterators');
+var iterator = Account.iterator();
+iterators.forEachAsync(iterator, function (err, data, next) {
+  ...
+  next();
+});
+```
 
-Responds with a BillingInfo object for this account.
+**account.close()**  
+Close an account. Alias for delete.
 
-*account.fetchSubscriptions(function(err, subscriptions)*
+```javascript
+account.close(function(err));
+```
 
-Responds with an array of subscriptions for this account.
+**account.reopen()**  
+Reopen a closed account:
+
+```javascript
+account.reopen(function(err, updated));
+```
+
+**account.fetchBillingInfo()**  
+Fetch billing information for an account. Responds with an BillingInfo object.
+
+```javascript
+account.fetchBillingInfo(function(err, info));
+```
+
+**account.fetchSubscriptions()**  
+Fetch subscription information for an account. Responds with an array of subscriptions for this account.
+
+```javascript
+account.fetchSubscriptions(function(err, subscriptions));
+```
 
 ### Billing Info
 
-update()
+**billingInfo.update()**  
+Add/update billing information for an account.
 
-### Subscription
+```javascript
+binfo = new recurly.BillingInfo();
+binfo.account_code = '1234';
+var billing_data = {
+  first_name: 'Dummy',
+  last_name: 'User',
+  number: '4111-1111-1111-1111',
+  month: 1,
+  year: 2020,
+  verification_value: '123',
+  address1: '760 Market Street',
+  address2: 'Suite 500',
+  city: 'San Francisco',
+  state: 'CA',
+  country: 'USA',
+  zip: '94102'
+};
 
-subscription.update(options, callback)  
-subscription.reactivate(callback)  
-subscription.cancel(callback)  
-subscription.postpone(nextRenewalDate, callback)  
-subscription.terminate(refundType, callback)
+binfo.update(billing_data, function(err, binfo) {
+  demand(err).not.exist();
+  binfo.last_four.must.equal('1111');
+});
+```
 
-### Coupon
+**Using a billing token**
 
-coupon.redeem(options, function(err, redemption))
+You can also update billing information using a recurly.js billing token in place of the raw billing information
+(recommended)
 
-### Redemption
+```javascript
+binfo = new recurly.BillingInfo();
+binfo.account_code = '1234';
+var billing_data = {
+  token_id: 'bunYTdIdjfJJY6Z87j5NtA' // <- recurly.js billing token.
+};
+binfo.update(billing_data);
+```
 
+**skipAuthorization**
 
+When adding billing information to an account Recurly may ake an authorization attempt against the card which may incur
+charges depending on your payment gateway. In order to prevent Recurly from making this authorization attempt, a
+``skipAuthorization`` paramater can be supplied along with the billing information.
 
-### Transaction
+```javascript
+binfo = new recurly.BillingInfo();
+binfo.account_code = '1234';
+var billing_data = {
+  number: '4111-1111-1111-1111',
+  month: 1,
+  year: 2020,
+  skipAuthorization: true // <- do not make authorization request.
+};
+binfo.update(billing_data);
+```
 
-*Transaction.all()*  
+## Subscription
 
-Responds with an array of all transactions.
+**Subscription.all()**  
+Fetch a list of subscriptions. Responds with an array of all subscriptions in the passed-in state. Defaults to 'active'.
 
-*Transaction.create(options, function(err, transaction))*  
+```javascript
+Subscription.all(state, function(err, subscriptions));
+```
 
-Post a transaction with the given options. Fields in the hash are named exactly as in the recurly documentation. Responds with the newly-created transaction.
+**Subscription.iterator()**  
+Fetch a list of subscriptions. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
-*transaction.refund(amountInCents, function(err))*  
+```javascript
+var iterators = require('async-iterators');
+var iterator = Subscription.iterator();
+iterators.forEachAsync(iterator, function (err, data, next) {
+  ...
+  next();
+});
+```
 
-If amountInCents is omitted, the transaction is refunded in full. Responds with any errors; the transaction object is updated.
+**subscription.cancel()**  
+Cancel a subscription.
 
-### Errors
+```javascript
+subscription.cancel(function(err, updated));
+```
 
-All callbacks follow the node convention of reporting any error in the first parameter. If a transaction with Recurly succeeds but is rejected by Recurly for some reason-- inconsistent data, perhaps, or some other reason-- that err parameter is an instance of RecurlyError. The original [transaction errors](http://docs.recurly.com/api/transactions/error-codes) reported by Recurly are available as an array of structs in the `errors` parameter. For instance, here's the result of a billing info update with an invalid, expired CC:
+**subscription.reactivate()**  
+Reactivate a cancelled subscription.
+
+```javascript
+subscription.reactivate(function(err, updated));
+```
+
+**subscription.postpone()**  
+Postpone a subscription.
+
+```javascript
+subscription.postpone(nextRenewalDate, function(err, updated));
+```
+
+**subscription.terminate()**  
+Terminate a subscription using the specific refund type. Valid refund types are 'partial', 'full', and 'none'.
+
+```javascript
+subscription.terminate(refundType, function(err, updated));
+```
+
+## Coupon
+
+**Coupon.all()**  
+Fetch a list of coupons. Responds with an array of all coupons.
+
+```javascript
+Coupon.all(function(err, coupons));
+```
+
+**Coupon.iterator()**  
+Fetch a list of coupons. Responds with an async iterator that lazy loads data from recurly in batches of 200.
+
+```javascript
+var iterators = require('async-iterators');
+var iterator = Coupon.iterator();
+iterators.forEachAsync(iterator, function (err, data, next) {
+  ...
+  next();
+});
+```
+
+**coupon.redeem()**  
+Redeem a coupon.
+
+```javascript
+coupon.redeem(options, function(err, redemption));
+```
+
+## Redemption
+
+[TODO]
+
+## Transaction
+
+**Transaction.all()**  
+Fetch a list of transactions. Responds with an array of all transactions.
+
+```javascript
+Transaction.all(function(err, transactions));
+```
+
+**Transaction.iterator()**  
+Fetch a list of transactions. Responds with an async iterator that lazy loads data from recurly in batches of 200.
+
+```javascript
+var iterators = require('async-iterators');
+var iterator = Transaction.iterator();
+iterators.forEachAsync(iterator, function (err, data, next) {
+  ...
+  next();
+});
+```
+
+**transaction.refund(amountInCents, function(err))**  
+If amountInCents is omitted, the transaction is refunded in full. Responds with any errors; the transaction object is
+updated.
+
+## Errors
+
+All callbacks follow the node convention of reporting any error in the first parameter. If a transaction with Recurly
+succeeds but is rejected by Recurly for some reason-- inconsistent data, perhaps, or some other reason-- that err
+parameter is an instance of RecurlyError. The original [transaction errors](http://docs.recurly.com/api/transactions/error-codes) reported by Recurly are available as an array of structs in the `errors` parameter. For instance, here's the result of a
+billing info update with an invalid, expired CC:
 
 ```javascript
 {
@@ -149,10 +381,10 @@ All callbacks follow the node convention of reporting any error in the first par
 
 ```
 
-
 ## SignedQuery
 
-This provides the back-end support for signing parameters for forms embedded using recurly.js. See Recurly's [signature documentation](https://docs.recurly.com/api/recurlyjs/signatures) for details on which parameters must be signed for each form type.
+This provides the back-end support for signing parameters for forms embedded using recurly.js. See Recurly's [signature documentation](https://docs.recurly.com/api/recurlyjs/signatures) for details on which parameters must be signed for
+each form type.
 
 ```javascript
 var recurly = require('recurring');
@@ -173,8 +405,7 @@ results. Use a FormResponseToken object to fetch the results object represented 
 var recurly = require('recurring');
 
 var recurlyResponse = new recurly.FormResponseToken(token, 'subscription');
-recurlyResponse.process(function(err, subscription)
-{
+recurlyResponse.process(function(err, subscription) {
 	if (err)
 		return handleError(err);
 
