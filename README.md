@@ -48,7 +48,7 @@ recurly.setAPIKey('your-api-key');
 
 **recurly.setRateLimit()**  
 The recurly API has a rate limit policy in place that prevents excessive calls being made to the API. By default
-sandbox accounts have a limit of 400 requests per second and live accounts have a limit of 1000 requests per second.
+sandbox accounts have a limit of 400 requests per minute and live accounts have a limit of 1000 requests per minute.
 In order to help ensure that you do not exceed these limits Recurring provides a configurable rate limiter.
 The rate limiter can be configured by calling the `setRateLimit()` method.
 
