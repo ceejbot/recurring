@@ -609,51 +609,118 @@ describe('Transactions', function()
 describe('RecurlyError', function()
 {
 
-	it('calls back with a RecurlyError object on account creation errors', function(done)
+	describe('RecurlyError', function()
 	{
-		var data =
+		it('calls back with a RecurlyError object on account creation errors', function(done)
 		{
-			id: uuid.v4(),
-			email: 'test@example.com2', // Note invalid email address
-			first_name: 'John',
-			last_name: 'Whorfin',
-			company_name: 'Yoyodyne Propulsion Systems',
-		};
+			var data =
+			{
+				id: uuid.v4(),
+				email: 'test@example.com2', // Note invalid email address
+				first_name: 'John',
+				last_name: 'Whorfin',
+				company_name: 'Yoyodyne Propulsion Systems',
+			};
 
-		recurly.Account.create(data, function(err, newAccount)
-		{
-			err.must.be.an.object();
-			err.must.have.property('errors');
-			err.errors.must.be.an.array();
-			err.errors.length.must.equal(1);
-			err.errors[0].field.must.equal('account.email');
-			err.errors[0].symbol.must.equal('invalid_email');
-			done();
+			recurly.Account.create(data, function(err, newAccount)
+			{
+				err.must.be.an.object();
+				err.must.have.property('errors');
+				err.errors.must.be.an.array();
+				err.errors.length.must.equal(1);
+				err.errors[0].field.must.equal('account.email');
+				err.errors[0].symbol.must.equal('invalid_email');
+				done();
+			});
 		});
 	});
 
-	it('calls back with a RecurlyError object on transaction errors', function(done)
+	describe('transaction errors', function()
 	{
-		var binfo = new recurly.BillingInfo();
-		binfo.account_code = fresh_account_id;
-		var billing_data =
-		{
-			first_name: account.first_name,
-			last_name: account.last_name,
-			number: '4111-1111', // Note invalid format
-			month: 1,
-			year: 2010,
-			verification_value: '111',
-		};
 
-		binfo.update(billing_data, function(err)
+		beforeEach(function(done)
 		{
-			err.must.be.an.object();
-			err.must.have.property('errors');
-			err.errors.must.be.an.array();
-			err.errors.length.must.equal(2);
-			done();
+			var self = this;
+			var data =
+			{
+				id: uuid.v4(),
+				email: 'test@example.com',
+				first_name: 'John',
+				last_name: 'Whorfin',
+				company_name: 'Yoyodyne Propulsion Systems',
+			};
+			recurly.Account.create(data, function(err, newAccount)
+			{
+				self.account = newAccount;
+				done();
+			});
 		});
+
+		it('calls back with a RecurlyError object on transaction errors', function(done)
+		{
+			account = new recurly.Account();
+			account.id = this.account.id;
+
+			var binfo = new recurly.BillingInfo();
+			binfo.account_code = this.account.id;
+			var billing_data =
+			{
+				first_name: this.account.properties.first_name,
+				last_name: this.account.properties.last_name,
+				number: '4111-1111', // Note invalid format
+				month: 1,
+				year: 2010,
+				verification_value: '111',
+			};
+
+			binfo.update(billing_data, function(err)
+			{
+				err.must.be.an.object();
+				err.must.have.property('errors');
+				err.errors.must.be.an.array();
+				err.errors.length.must.equal(6);
+				done();
+			});
+		});
+
+		it('calls back with a RecurlyError object on transaction errors', function(done)
+		{
+			account = new recurly.Account();
+			account.id = this.account.id;
+
+			var binfo = new recurly.BillingInfo();
+			binfo.account_code = this.account.id;
+			var billing_data =
+			{
+				first_name: this.account.properties.first_name,
+				last_name: this.account.properties.last_name,
+				number: '4000-0000-0000-0101',
+				month: 1,
+				year: (new Date()).getFullYear() + 3,
+				verification_value: '111',
+				address1: '760 Market Street',
+				address2: 'Suite 500',
+				city: 'San Francisco',
+				state: 'CA',
+				country: 'USA',
+				zip: '94102'
+			};
+
+			binfo.update(billing_data, function(err)
+			{
+				err.must.be.an.object();
+				err.must.have.property('errors');
+				err.must.have.property('error_code');
+				err.must.have.property('error_category');
+				err.must.have.property('merchant_message');
+				err.must.have.property('customer_message');
+				err.errors.must.be.an.array();
+				err.errors.length.must.equal(1);
+				err.error_code.must.equal('fraud_security_code');
+				done();
+			});
+		});
+
 	});
 
 });
