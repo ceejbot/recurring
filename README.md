@@ -57,24 +57,24 @@ var recurly = require('recurring')();
 recurly.setRateLimit(400);
 ```
 
-<!-- **recurly.clearCache()**
+**recurly.setCache()**
 
-By default data fetched from Recurly will be cached in memory so that subsequent requests to fetch the same data does
-not result in additional API calls to Recurly. The cache can be flushed by calling the `clearCache()` method.
+Basic in memory result caching can be enabled by calling the `setCache()` method so that subsequent requests to fetch
+the same data does not result in additional API calls to Recurly.
+
+```javascript
+var recurly = require('recurring')();
+recurly.setCache(true);
+```
+
+**recurly.clearCache()**
+
+The recurly result cache can be cleared by calling the `clearCache()` method.
 
 ```javascript
 var recurly = require('recurring')();
 recurly.clearCache();
 ```
-
-**recurly.setCache()**
-
-The cache can be disabled by calling the `setCache()` method.
-
-```javascript
-var recurly = require('recurring')();
-recurly.setCache(false);
-``` -->
 
 ## All data types
 

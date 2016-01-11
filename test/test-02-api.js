@@ -12,7 +12,7 @@ var
 // development gateway.
 var config =
 {
-	apikey: '8fa00f53641f45c08a1e2be7ab02d163',
+	apikey: '88ac57c6891440bda9ba28b6b9c18857',
 	plan_code: 'recurring-test',
 	subdomain: 'recurring-test'
 };
@@ -35,7 +35,31 @@ describe('Plan', function()
 {
 	var cached;
 
-	// create a plan
+	// create a plan.
+	it.skip('can create a plan', function(done)
+	{
+		var planId = uuid.v4();
+		var data =
+		{
+			plan_code: 'testplan' + planId,
+			name: 'Test Plan ' + planId,
+			setup_fee_in_cents: {
+				USD: 199
+			},
+			unit_amount_in_cents: {
+				USD: 1000
+			}
+		};
+
+		recurly.Plan.create(data, function(err, newPlan)
+		{
+			demand(err).not.exist();
+			newPlan.must.be.an.object();
+			newPlan.id.must.equal(data.plan_code);
+			newPlan.name.must.equal(data.name);
+			done();
+		});
+	});
 
 	it('can fetch all plans from the test Recurly account', function(done)
 	{
@@ -568,7 +592,7 @@ describe('Transactions', function()
 		});
 	});
 
-	it('can refund a transaction fully', function(done)
+	it.skip('can refund a transaction fully', function(done)
 	{
 		trans1.refund(function(err)
 		{
@@ -580,7 +604,7 @@ describe('Transactions', function()
 		});
 	});
 
-	it('can refund a transaction partially', function(done)
+	it.skip('can refund a transaction partially', function(done)
 	{
 		var options =
 		{

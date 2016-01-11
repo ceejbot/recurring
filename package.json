@@ -57,7 +57,7 @@
     "url": "git://github.com/ceejbot/recurring.git"
   },
   "scripts": {
-    "test": "mocha --check-leaks --timeout 5000  --slow 1000 --ui exports --require patched-blanket -R mocoverage",
+    "test": "mocha --check-leaks --timeout 10000  --slow 1000 --ui exports --require patched-blanket -R mocoverage",
     "lint": "jshint lib/* test/* && jscs lib/* test/*"
   }
 }

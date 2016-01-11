@@ -14,7 +14,7 @@ var
 // development gateway.
 var config =
 {
-	apikey: '8fa00f53641f45c08a1e2be7ab02d163',
+	apikey: '88ac57c6891440bda9ba28b6b9c18857',
 	subdomain: 'recurring-test'
 };
 
