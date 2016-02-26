@@ -350,15 +350,51 @@ iterators.forEachAsync(iterator, function (err, data, next) {
 });
 ```
 
-**transaction.refund(amountInCents, function(err))**  
+**transaction.refund(amountInCents, function(err)) (DEPRECIATED)**  
 If amountInCents is omitted, the transaction is refunded in full. Responds with any errors; the transaction object is
 updated.
+
+## Invoice
+
+**Invoice.all()**  
+Fetch a list of invoices. Responds with an array of all invoices.
+
+```javascript
+Invoice.all(function(err, invoices));
+```
+
+**Invoice.iterator()**  
+Fetch a list of invoices. Responds with an async iterator that lazy loads data from recurly in batches of 200.
+
+```javascript
+var iterators = require('async-iterators');
+var iterator = Invoice.iterator();
+iterators.forEachAsync(iterator, function (err, data, next) {
+  ...
+  next();
+});
+```
+
+**invoice.refund(options, function(err))**  
+If `options.amount_in_cents` is omitted, the invoice is refunded in full. Responds with any errors; the invoice object is
+updated.
+
+*options can include:*
+
+ - `amount_in_cents` (default: undefined) - The specific amount to be refunded from the original invoice. If left empty, the remaining
+   refundable amount will be refunded.
+
+ - `refund_apply_order` (default: 'credit') - If credit line items exist on the invoice, this parameter specifies which
+   refund method to use first. Most relevant in a partial refunds, you can chose to refund credit back to the account
+   first or a transaction giving money back to the customer first. Set as 'credit' or 'transaction'.
+
 
 ## Errors
 
 All callbacks follow the node convention of reporting any error in the first parameter. If a transaction with Recurly
 succeeds but is rejected by Recurly for some reason-- inconsistent data, perhaps, or some other reason-- that err
-parameter is an instance of RecurlyError. The original [transaction errors](http://docs.recurly.com/api/transactions/error-codes) reported by Recurly are available as an array of structs in the `errors` parameter. For instance, here's the result of a
+parameter is an instance of RecurlyError. The original [transaction errors](http://docs.recurly.com/api/transactions/error-codes)
+reported by Recurly are available as an array of structs in the `errors` parameter. For instance, here's the result of a
 billing info update with an invalid, expired CC:
 
 ```javascript
