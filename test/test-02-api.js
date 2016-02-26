@@ -5,14 +5,16 @@ var
 	parser  = require('../lib/parser'),
 	recurly = require('../lib/recurly')(),
 	util    = require('util'),
-	uuid    = require('node-uuid')
+	uuid    = require('node-uuid'),
+	debug   = require('debug')('recurring:test'),
+	_       = require('lodash')
 	;
 
 // This recurly account is an empty test account connected to their
 // development gateway.
 var config =
 {
-	apikey: '8fa00f53641f45c08a1e2be7ab02d163',
+	apikey: '88ac57c6891440bda9ba28b6b9c18857',
 	plan_code: 'recurring-test',
 	subdomain: 'recurring-test'
 };
@@ -35,7 +37,31 @@ describe('Plan', function()
 {
 	var cached;
 
-	// create a plan
+	// create a plan.
+	it.skip('can create a plan', function(done)
+	{
+		var planId = uuid.v4();
+		var data =
+		{
+			plan_code: 'testplan' + planId,
+			name: 'Test Plan ' + planId,
+			setup_fee_in_cents: {
+				USD: 199
+			},
+			unit_amount_in_cents: {
+				USD: 1000
+			}
+		};
+
+		recurly.Plan.create(data, function(err, newPlan)
+		{
+			demand(err).not.exist();
+			newPlan.must.be.an.object();
+			newPlan.id.must.equal(data.plan_code);
+			newPlan.name.must.equal(data.name);
+			done();
+		});
+	});
 
 	it('can fetch all plans from the test Recurly account', function(done)
 	{
@@ -568,7 +594,7 @@ describe('Transactions', function()
 		});
 	});
 
-	it('can refund a transaction fully', function(done)
+	it.skip('can refund a transaction fully', function(done)
 	{
 		trans1.refund(function(err)
 		{
@@ -580,7 +606,7 @@ describe('Transactions', function()
 		});
 	});
 
-	it('can refund a transaction partially', function(done)
+	it.skip('can refund a transaction partially', function(done)
 	{
 		var options =
 		{
@@ -604,6 +630,99 @@ describe('Transactions', function()
 		});
 	});
 
+});
+
+describe('Invoices', function()
+{
+
+	var cached;
+
+	it('can fetch all invoices from the test Recurly account', function(done)
+	{
+		recurly.Invoice.all(function(invoices)
+		{
+			invoices.must.be.an.object();
+			var invoiceIds = Object.keys(invoices);
+			invoiceIds.length.must.be.above(0);
+			invoiceIds[0].must.not.equal('undefined');
+			cached = invoices;
+			done();
+		});
+	});
+
+	it('requires an invoice_number when refunding an invoice', function()
+	{
+		var wrong = function()
+		{
+			var invoice = new recurly.Invoice();
+			var invoiceId = Object.keys(cached)[0];
+			invoice.id = cached[invoiceId].uuid;
+			invoice.refund(noopFunc);
+		};
+		wrong.must.throw(Error);
+	});
+
+	it('can issue an open amount refund for a specific amount against an invoice', function(done)
+	{
+		var refundableInvoice = _.find(cached, function(invoice)
+		{
+			return _.get(invoice, 'a.refund');
+		});
+		debug('invoice to refund', refundableInvoice);
+		var refundOptions =
+		{
+			amount_in_cents: 5
+		};
+
+		var invoice = new recurly.Invoice();
+		invoice.id = refundableInvoice.uuid;
+		invoice.invoice_number = refundableInvoice.invoice_number;
+		invoice.refund(refundOptions, function(err)
+		{
+			demand(err).not.exist();
+			debug('new refund invoice', invoice);
+			invoice.must.have.property('_resources');
+			invoice._resources.must.be.an.object();
+			invoice._resources.must.have.property('account');
+			invoice._resources.must.have.property('original_invoice');
+			invoice.must.have.property('properties');
+			invoice.must.be.an.object();
+			invoice.must.have.property('invoice_number');
+			invoice.invoice_number.must.not.equal(refundableInvoice.invoice_number);
+			invoice.subtotal_in_cents.must.be.below(0);
+			invoice.subtotal_in_cents.must.equal(refundOptions.amount_in_cents * -1);
+			done();
+		});
+	});
+
+	it('can issue an open amount refund for the full amount against an invoice', function(done)
+	{
+		var refundableInvoice = _.findLast(cached, function(invoice)
+		{
+			return _.get(invoice, 'a.refund');
+		});
+		debug('invoice to refund', refundableInvoice);
+
+		var invoice = new recurly.Invoice();
+		invoice.id = refundableInvoice.uuid;
+		invoice.invoice_number = refundableInvoice.invoice_number;
+		invoice.refund(function(err)
+		{
+			demand(err).not.exist();
+			debug('new refund invoice', invoice);
+			invoice.must.have.property('_resources');
+			invoice._resources.must.be.an.object();
+			invoice._resources.must.have.property('account');
+			invoice._resources.must.have.property('original_invoice');
+			invoice.must.have.property('properties');
+			invoice.must.be.an.object();
+			invoice.must.have.property('invoice_number');
+			invoice.invoice_number.must.not.equal(refundableInvoice.invoice_number);
+			invoice.subtotal_in_cents.must.be.below(0);
+			invoice.subtotal_in_cents.must.equal(refundableInvoice.total_in_cents * -1);
+			done();
+		});
+	});
 });
 
 describe('RecurlyError', function()
