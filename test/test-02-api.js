@@ -199,7 +199,7 @@ describe('BillingInfo', function()
 {
 	var binfo;
 
-	it('can retrieve billing info for an account that does not exist', function(done)
+	it('can not retrieve billing info for an account that does not exist', function(done)
 	{
 		var data =
 		{
@@ -215,8 +215,9 @@ describe('BillingInfo', function()
 			demand(err).not.exist();
 			newAccount.fetchBillingInfo(function(err, info)
 			{
+				debug('Got error: %o', err);
 				err.must.exist();
-				err.message.must.equal('not_found');
+				err.error_code.must.equal('not_found');
 				demand(info).not.exist();
 				done();
 			});
