@@ -23,7 +23,6 @@ before(function()
 	recurly.setAPIKey(config.apikey);
 });
 
-
 describe('Cache', function()
 {
 

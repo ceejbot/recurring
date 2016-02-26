@@ -664,11 +664,13 @@ describe('Invoices', function()
 
 	it('can issue an open amount refund for a specific amount against an invoice', function(done)
 	{
-		var refundableInvoice = _.find(cached, function(invoice) {
+		var refundableInvoice = _.find(cached, function(invoice)
+		{
 			return _.get(invoice, 'a.refund');
 		});
 		debug('invoice to refund', refundableInvoice);
-		var refundOptions = {
+		var refundOptions =
+		{
 			amount_in_cents: 5
 		};
 
@@ -695,7 +697,8 @@ describe('Invoices', function()
 
 	it('can issue an open amount refund for the full amount against an invoice', function(done)
 	{
-		var refundableInvoice = _.findLast(cached, function(invoice) {
+		var refundableInvoice = _.findLast(cached, function(invoice)
+		{
 			return _.get(invoice, 'a.refund');
 		});
 		debug('invoice to refund', refundableInvoice);
