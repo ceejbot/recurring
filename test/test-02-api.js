@@ -728,9 +728,28 @@ describe('Invoices', function()
 describe('RecurlyError', function()
 {
 
-	describe('RecurlyError', function()
+	describe('General errors', function()
 	{
-		it('calls back with a RecurlyError object on account creation errors', function(done)
+		it('handles a general error', function(done)
+		{
+			var account = new recurly.Account();
+			account.id = 'some-invalid-id';
+			account.fetch(function(err)
+			{
+				debug('Got error: %o', err);
+				demand(err).to.exist();
+				err.must.be.an.object();
+				err.must.have.property('message');
+				demand(err.message).to.not.be.undefined();
+				err.must.have.property('errors');
+				err.errors.must.be.an.array();
+				err.errors.length.must.equal(1);
+				err.errors[0].symbol.must.equal('not_found');
+				done();
+			});
+		});
+
+		it('handles a single field validation error', function(done)
 		{
 			var data =
 			{
@@ -743,7 +762,11 @@ describe('RecurlyError', function()
 
 			recurly.Account.create(data, function(err, newAccount)
 			{
+				debug('Got error: %o', err);
+				demand(err).to.exist();
 				err.must.be.an.object();
+				err.must.have.property('message');
+				demand(err.message).to.not.be.undefined();
 				err.must.have.property('errors');
 				err.errors.must.be.an.array();
 				err.errors.length.must.equal(1);
@@ -754,7 +777,7 @@ describe('RecurlyError', function()
 		});
 	});
 
-	describe('transaction errors', function()
+	describe('Transaction errors', function()
 	{
 
 		beforeEach(function(done)
@@ -775,7 +798,7 @@ describe('RecurlyError', function()
 			});
 		});
 
-		it('calls back with a RecurlyError object on transaction errors', function(done)
+		it('handles multiple validation errors', function(done)
 		{
 			account = new recurly.Account();
 			account.id = this.account.id;
@@ -794,7 +817,11 @@ describe('RecurlyError', function()
 
 			binfo.update(billing_data, function(err)
 			{
+				debug('Got error: %o', err);
+				demand(err).to.exist();
 				err.must.be.an.object();
+				err.must.have.property('message');
+				err.message.must.not.equal('undefined');
 				err.must.have.property('errors');
 				err.errors.must.be.an.array();
 				err.errors.length.must.equal(6);
@@ -802,7 +829,7 @@ describe('RecurlyError', function()
 			});
 		});
 
-		it('calls back with a RecurlyError object on transaction errors', function(done)
+		it('handles multiple transaction errors', function(done)
 		{
 			account = new recurly.Account();
 			account.id = this.account.id;
@@ -827,7 +854,11 @@ describe('RecurlyError', function()
 
 			binfo.update(billing_data, function(err)
 			{
+				debug('Got error: %o', err);
+				demand(err).to.exist();
 				err.must.be.an.object();
+				err.must.have.property('message');
+				err.message.must.not.equal('undefined');
 				err.must.have.property('errors');
 				err.must.have.property('error_code');
 				err.must.have.property('error_category');
