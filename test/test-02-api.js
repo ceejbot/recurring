@@ -338,6 +338,52 @@ describe('Subscription', function()
 		});
 	});
 
+	it('can preview subscription for an account', function(done)
+	{
+		var preview_account_id = uuid.v4();
+		var data =
+		{
+			id: preview_account_id,
+			email: 'test@example.com',
+			first_name: 'John',
+			last_name: 'Whorfin',
+			company_name: 'Yoyodyne Propulsion Systems',
+			billing_info: {
+				first_name: account.first_name,
+				last_name: account.last_name,
+				number: '4111-1111-1111-1111',
+				month: 1,
+				year: (new Date()).getFullYear() + 3,
+				verification_value: '111',
+				address1: '760 Market Street',
+				address2: 'Suite 500',
+				city: 'San Francisco',
+				state: 'CA',
+				country: 'USA',
+				zip: '94102'
+			}
+		};
+
+		recurly.Account.create(data, function(err, newAccount)
+		{
+			demand(err).not.exist();
+			var data = {
+				plan_code: config.plan_code,
+				account: { account_code: newAccount.id },
+				currency: 'USD'
+			};
+
+			recurly.Subscription.preview(data, function(err, preview)
+			{
+				demand(err).not.exist();
+				preview.id.must.exist();
+				preview.plan.must.be.an.object();
+				preview.plan.plan_code.must.equal(config.plan_code);
+				done();
+			});
+		});
+	})
+
 	it('can fetch all subscriptions associated with an account', function(done)
 	{
 		account.fetchSubscriptions(function(err, subscriptions)
