@@ -9,7 +9,9 @@ __This code is still in development.__ We do not have complete coverage of the A
 An example of typical usage:
 
 ```javascript
-var recurly = require('recurring')(); // note function invocation
+var Recurring = require('recurring');
+var recurly = new Recurring();
+
 recurly.setAPIKey('your-api-key');
 recurly.setRateLimit(400);
 recurly.setCache(false);
@@ -42,7 +44,8 @@ In order to access the Recurly API you must supply your API key which can be set
 method.
 
 ```javascript
-var recurly = require('recurring')();
+var Recurring = require('recurring');
+var recurly = new Recurring();
 recurly.setAPIKey('your-api-key');
 ```
 
@@ -53,7 +56,8 @@ In order to help ensure that you do not exceed these limits Recurring provides a
 The rate limiter can be configured by calling the `setRateLimit()` method.
 
 ```javascript
-var recurly = require('recurring')();
+var Recurring = require('recurring');
+var recurly = new Recurring();
 recurly.setRateLimit(400);
 ```
 
@@ -63,7 +67,8 @@ Basic in memory result caching can be enabled by calling the `setCache()` method
 the same data does not result in additional API calls to Recurly.
 
 ```javascript
-var recurly = require('recurring')();
+var Recurring = require('recurring');
+var recurly = new Recurring();
 recurly.setCache(true);
 ```
 
@@ -72,7 +77,8 @@ recurly.setCache(true);
 The recurly result cache can be cleared by calling the `clearCache()` method.
 
 ```javascript
-var recurly = require('recurring')();
+var Recurring = require('recurring');
+var recurly = new Recurring();
 recurly.clearCache();
 ```
 
@@ -185,6 +191,20 @@ Fetch subscription information for an account. Responds with an array of subscri
 
 ```javascript
 account.fetchSubscriptions(function(err, subscriptions));
+```
+
+**account.fetchTransactions()**  
+Fetch transaction information for an account. Responds with an array of transactions for this account.
+
+```javascript
+account.fetchTransactions(function(err, transactions));
+```
+
+**account.fetchInvoices()**  
+Fetch invoice information for an account. Responds with an array of invoices for this account.
+
+```javascript
+account.fetchInvoices(function(err, invoices));
 ```
 
 ### Billing Info
@@ -423,7 +443,8 @@ This provides the back-end support for signing parameters for forms embedded usi
 each form type.
 
 ```javascript
-var recurly = require('recurring');
+var Recurring = require('recurring');
+var recurly = new Recurring();
 
 var signer = new recurly.SignedQuery('your-private-api-key');
 signer.set('account', { account_code: 'account-id' });
@@ -438,7 +459,8 @@ After Recurly handles a form submission, it posts to you a token pointing to the
 results. Use a FormResponseToken object to fetch the results object represented by the token.
 
 ```javascript
-var recurly = require('recurring');
+var Recurring = require('recurring');
+var recurly = new Recurring();
 
 var recurlyResponse = new recurly.FormResponseToken(token, 'subscription');
 recurlyResponse.process(function(err, subscription) {

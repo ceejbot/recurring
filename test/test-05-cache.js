@@ -3,12 +3,14 @@
 var
 	demand    = require('must'),
 	parser    = require('../lib/parser'),
-	recurly   = require('../lib/recurly')(),
+	Recurring = require('../lib/recurly'),
 	util      = require('util'),
 	uuid      = require('node-uuid'),
   iterators = require('async-iterators'),
   _         = require('lodash')
 	;
+
+var recurly = new Recurring();
 
 // This recurly account is an empty test account connected to their
 // development gateway.

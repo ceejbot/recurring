@@ -3,7 +3,7 @@
 var
 	demand  = require('must'),
 	parser  = require('../lib/parser'),
-	recurly = require('../lib/recurly')(),
+	Recurring = require('../lib/recurly'),
 	util    = require('util'),
 	uuid    = require('node-uuid'),
 	debug   = require('debug')('recurring:test'),
@@ -23,13 +23,14 @@ var noopFunc = function()
 {
 };
 
-var rparser, plan, account, subscription;
+var recurly = new Recurring();
+var plan, account, subscription;
 var old_account_id = 'test-account-1';
 var fresh_account_id;
 
 before(function()
 {
-	rparser = parser.createParser();
+
 	recurly.setAPIKey(config.apikey);
 });
 
@@ -874,6 +875,23 @@ describe('RecurlyError', function()
 
 	});
 
+});
+
+describe('Initialization', function() {
+	it('shoudl create a new Recurring instance', function() {
+		var recurly1 = new Recurring();
+		demand(recurly1.APIKEY).not.exist();
+		recurly1.setAPIKey('123');
+		recurly1.APIKEY.must.equal('123');
+
+		var recurly2 = new Recurring();
+		demand(recurly2.APIKEY).not.exist();
+		recurly2.setAPIKey('abc');
+		recurly2.APIKEY.must.equal('abc');
+
+		recurly1.APIKEY.must.equal('123');
+		recurly2.APIKEY.must.equal('abc');
+	});
 });
 
 describe('Prerequsites', function()
