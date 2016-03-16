@@ -13,6 +13,7 @@
     "Tom Kirkpatrick @mrfelton"
   ],
   "dependencies": {
+    "bluebird": "3.3.4",
     "throttled-request": "~0.1.1",
     "data2xml": "^1.2.2",
     "debug": "^2.2.0",
