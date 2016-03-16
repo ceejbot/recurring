@@ -1,41 +1,33 @@
-/*global describe:true, it:true, before:true, after:true */
+'use strict'
 
-var
-	demand    = require('must'),
-	parser    = require('../lib/parser'),
-	Recurring = require('../lib/recurly'),
-	util      = require('util'),
-	uuid      = require('node-uuid'),
-  iterators = require('async-iterators'),
-  _         = require('lodash')
-	;
+/* global describe:true, it:true, before:true, */
 
-var recurly = new Recurring();
+const demand = require('must')
+const Recurring = require('../lib/recurly')
+const iterators = require('async-iterators')
+
+const recurly = new Recurring()
 
 // This recurly account is an empty test account connected to their
 // development gateway.
-var config =
-{
-	apikey: '88ac57c6891440bda9ba28b6b9c18857',
-	subdomain: 'recurring-test'
-};
+const config = {
+  apikey: '88ac57c6891440bda9ba28b6b9c18857',
+  subdomain: 'recurring-test'
+}
 
-before(function()
-{
-	recurly.setAPIKey(config.apikey);
-});
+before(() => {
+  recurly.setAPIKey(config.apikey)
+})
 
-describe('Iterator', function()
-{
-	it('Can loop through items in an iterator', function(done)
-	{
-		this.timeout(30000);
-		var iterator = recurly.Transaction.iterator();
-		iterator.must.be.an.object();
-		iterators.forEachAsync(iterator, function(err, transaction, cb)
-		{
-			transaction.must.have.an.id;
-			cb();
-		}, done);
-	});
-});
+describe('Iterator', () => {
+  it('Can loop through items in an iterator', function(done) {
+    this.timeout(30000)
+    const iterator = recurly.Transaction().iterator()
+    iterator.must.be.an.object()
+    iterators.forEachAsync(iterator, (err, transaction, cb) => {
+      demand(err).not.exist()
+      transaction.must.have.an.id
+      cb()
+    }, done)
+  })
+})

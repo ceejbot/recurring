@@ -1,0 +1,11 @@
+{
+  "extends": "standard",
+  "parser": "babel-eslint",
+  "root": true,
+  "rules": {
+    "brace-style": [2, "stroustrup"],
+    "arrow-parens": [2, "as-needed"],
+    "comma-dangle": [2, "never"],
+    "space-before-function-paren": [2, "never"]
+  }
+}

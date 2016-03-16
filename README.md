@@ -16,7 +16,7 @@ recurly.setAPIKey('your-api-key');
 recurly.setRateLimit(400);
 recurly.setCache(false);
 
-var account = new recurly.Account();
+var account = recurly.Account();
 account.id = 'account-uuid';
 account.fetch(function(err) {
   account.fetchSubscriptions(function(err, subscriptions {
@@ -213,7 +213,7 @@ account.fetchInvoices(function(err, invoices));
 Add/update billing information for an account.
 
 ```javascript
-binfo = new recurly.BillingInfo();
+binfo = recurly.BillingInfo();
 binfo.account_code = '1234';
 var billing_data = {
   first_name: 'Dummy',
@@ -242,7 +242,7 @@ You can also update billing information using a recurly.js billing token in plac
 (recommended)
 
 ```javascript
-binfo = new recurly.BillingInfo();
+binfo = recurly.BillingInfo();
 binfo.account_code = '1234';
 var billing_data = {
   token_id: 'bunYTdIdjfJJY6Z87j5NtA' // <- recurly.js billing token.
@@ -257,7 +257,7 @@ charges depending on your payment gateway. In order to prevent Recurly from maki
 ``skipAuthorization`` paramater can be supplied along with the billing information.
 
 ```javascript
-binfo = new recurly.BillingInfo();
+binfo = recurly.BillingInfo();
 binfo.account_code = '1234';
 var billing_data = {
   number: '4111-1111-1111-1111',
