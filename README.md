@@ -408,6 +408,12 @@ updated.
    refund method to use first. Most relevant in a partial refunds, you can chose to refund credit back to the account
    first or a transaction giving money back to the customer first. Set as 'credit' or 'transaction'.
 
+**invoice.markSuccessful(function(err))**  
+Mark an Invoice as Paid Successfully.
+
+**invoice.markFailed(function(err))**  
+Mark an Invoice as Failed Collection.
+
 
 ## Errors
 

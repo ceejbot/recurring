@@ -497,6 +497,16 @@ describe('Coupons', () => {
 describe('Transactions', () => {
   let trans1
 
+  it('can fetch all transactions from the test Recurly account', done => {
+    recurly.Transaction().all(transactions => {
+      transactions.must.be.an.object()
+      const transactions_ids = Object.keys(transactions)
+      transactions_ids.length.must.be.above(0)
+      transactions_ids[0].must.not.equal('undefined')
+      done()
+    })
+  })
+
   it('requires an account parameter with account code', () => {
     const wrong = () => {
       const inadequate = { amount_in_cents: 10, currency: 'USD' }
@@ -605,62 +615,88 @@ describe('Invoices', () => {
     })
   })
 
-  it('requires an invoice_number when refunding an invoice', () => {
-    const wrong = () => {
+  describe('refunds', () => {
+    before(function(done) {
+      recurly.Invoice().all('collected', invoices => {
+        this.invoices = invoices
+        done()
+      })
+    })
+
+    it('requires an invoice_number when refunding an invoice', function() {
+      const wrong = () => {
+        const invoice = recurly.Invoice()
+        invoice.id = this.invoices[0].uuid
+        invoice.refund(_.noop)
+      }
+      wrong.must.throw(Error)
+    })
+
+    it('can issue an open amount refund for a specific amount against an invoice', function(done) {
+      const refundableInvoice = _.find(this.invoices, invoice => _.get(invoice, 'a.refund'))
+      debug('invoice to refund', refundableInvoice)
+      const refundOptions = { amount_in_cents: 5 }
+
       const invoice = recurly.Invoice()
-      const invoiceId = Object.keys(cached)[0]
-      invoice.id = cached[invoiceId].uuid
-      invoice.refund(_.noop)
-    }
-    wrong.must.throw(Error)
-  })
+      invoice.id = refundableInvoice.id
+      invoice.invoice_number = refundableInvoice.invoice_number
+      invoice.refund(refundOptions, err => {
+        demand(err).not.exist()
+        debug('new refund invoice', invoice)
+        invoice.must.have.property('_resources')
+        invoice._resources.must.be.an.object()
+        invoice._resources.must.have.property('account')
+        invoice._resources.must.have.property('original_invoice')
+        invoice.must.have.property('properties')
+        invoice.must.be.an.object()
+        invoice.must.have.property('invoice_number')
+        invoice.invoice_number.must.not.equal(refundableInvoice.invoice_number)
+        invoice.subtotal_in_cents.must.be.below(0)
+        invoice.subtotal_in_cents.must.equal(refundOptions.amount_in_cents * -1)
+        done()
+      })
+    })
 
-  it('can issue an open amount refund for a specific amount against an invoice', done => {
-    const refundableInvoice = _.find(cached, invoice => _.get(invoice, 'a.refund'))
-    debug('invoice to refund', refundableInvoice)
-    const refundOptions = { amount_in_cents: 5 }
+    it('can issue an open amount refund for the full amount against an invoice', function(done) {
+      const refundableInvoice = _.findLast(this.invoices, invoice => _.get(invoice, 'a.refund'))
+      debug('invoice to refund', refundableInvoice)
 
-    const invoice = recurly.Invoice()
-    invoice.id = refundableInvoice.uuid
-    invoice.invoice_number = refundableInvoice.invoice_number
-    invoice.refund(refundOptions, err => {
-      demand(err).not.exist()
-      debug('new refund invoice', invoice)
-      invoice.must.have.property('_resources')
-      invoice._resources.must.be.an.object()
-      invoice._resources.must.have.property('account')
-      invoice._resources.must.have.property('original_invoice')
-      invoice.must.have.property('properties')
-      invoice.must.be.an.object()
-      invoice.must.have.property('invoice_number')
-      invoice.invoice_number.must.not.equal(refundableInvoice.invoice_number)
-      invoice.subtotal_in_cents.must.be.below(0)
-      invoice.subtotal_in_cents.must.equal(refundOptions.amount_in_cents * -1)
-      done()
+      const invoice = recurly.Invoice()
+      invoice.id = refundableInvoice.id
+      invoice.invoice_number = refundableInvoice.invoice_number
+      invoice.refund(err => {
+        demand(err).not.exist()
+        debug('new refund invoice', invoice)
+        invoice.must.have.property('_resources')
+        invoice._resources.must.be.an.object()
+        invoice._resources.must.have.property('account')
+        invoice._resources.must.have.property('original_invoice')
+        invoice.must.have.property('properties')
+        invoice.must.be.an.object()
+        invoice.must.have.property('invoice_number')
+        invoice.invoice_number.must.not.equal(refundableInvoice.invoice_number)
+        invoice.total_in_cents.must.be.below(0)
+        invoice.total_in_cents.must.equal(refundableInvoice.total_in_cents * -1)
+        done()
+      })
     })
   })
 
-  it('can issue an open amount refund for the full amount against an invoice', done => {
-    const refundableInvoice = _.findLast(cached, invoice => _.get(invoice, 'a.refund'))
-    debug('invoice to refund', refundableInvoice)
+  describe('cancelations', () => {
+    before(function(done) {
+      recurly.Invoice().all('open', invoices => {
+        this.invoices = invoices
+        done()
+      })
+    })
 
-    const invoice = recurly.Invoice()
-    invoice.id = refundableInvoice.uuid
-    invoice.invoice_number = refundableInvoice.invoice_number
-    invoice.refund(err => {
-      demand(err).not.exist()
-      debug('new refund invoice', invoice)
-      invoice.must.have.property('_resources')
-      invoice._resources.must.be.an.object()
-      invoice._resources.must.have.property('account')
-      invoice._resources.must.have.property('original_invoice')
-      invoice.must.have.property('properties')
-      invoice.must.be.an.object()
-      invoice.must.have.property('invoice_number')
-      invoice.invoice_number.must.not.equal(refundableInvoice.invoice_number)
-      invoice.subtotal_in_cents.must.be.below(0)
-      invoice.subtotal_in_cents.must.equal(refundableInvoice.total_in_cents * -1)
-      done()
+    it('can mark an open invoice as failed collection', function(done) {
+      const invoice = this.invoices[0]
+      invoice.markFailed(err => {
+        demand(err).not.exist()
+        invoice.state.must.equal('failed')
+        done()
+      })
     })
   })
 })
