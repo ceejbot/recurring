@@ -602,15 +602,12 @@ describe('Transactions', () => {
 })
 
 describe('Invoices', () => {
-  let cached
-
   it('can fetch all invoices from the test Recurly account', done => {
     recurly.Invoice().all(invoices => {
       invoices.must.be.an.object()
       const invoiceIds = Object.keys(invoices)
       invoiceIds.length.must.be.above(0)
       invoiceIds[0].must.not.equal('undefined')
-      cached = invoices
       done()
     })
   })
@@ -684,9 +681,35 @@ describe('Invoices', () => {
 
   describe('cancelations', () => {
     before(function(done) {
-      recurly.Invoice().all('open', invoices => {
-        this.invoices = invoices
-        done()
+      const accountData = {
+        id: uuid.v4()
+      }
+
+      // Create a test account
+      recurly.Account().create(accountData, (err, account) => {
+        if (err) return done(err);
+
+        const adjustmentData = {
+          currency: 'USD',
+          unit_amount_in_cents: 2000,
+          quantity: 1,
+          description: 'A test charge for $20'
+        }
+
+        // add a charge to that account
+        account.createAdjustment(adjustmentData, (err, adjustment) => {
+          if (err) return done(err)
+
+          // create an invoice with the pending charges
+          account.createInvoice((err, invoice) => {
+            if (err) return done(err)
+
+            recurly.Invoice().all('open', invoices => {
+              this.invoices = invoices
+              done()
+            })
+          })
+        })
       })
     })
 
