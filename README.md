@@ -20,7 +20,6 @@ var account = recurly.Account();
 account.id = 'account-uuid';
 account.fetch(function(err) {
   account.fetchSubscriptions(function(err, subscriptions {
-    console.log(subscriptions[0].plan);
     subscriptions[0].cancel(function(err, updated) {
       console.log(updated.state); // will be 'canceled'
     });
@@ -119,10 +118,10 @@ instance.update(options, function(err, updated));
 ## Plan
 
 **Plan.all()**  
-Fetch a list of plans. Responds with an array of all plans.
+Fetch a list of plans. Responds with an array of all plans that match the passed-in (optional) filters.
 
 ```javascript
-Plan.all(function(err, plans));
+Plan.all(filter, function(err, plans));
 ```
 
 **Plan.iterator()**  
@@ -147,10 +146,10 @@ plan.fetchAddOns(function(err, addons));
 ## Account
 
 **Account.all()**  
-Fetch a list of accounts. Responds with an array of all accounts in the passed-in state. Defaults to 'active'.
+Fetch a list of accounts. Responds with an array of all accounts that match the passed-in (optional) filters.
 
 ```javascript
-Account.all(state, function(err, accounts));
+Account.all(filter, function(err, accounts));
 ```
 
 **Account.iterator()**  
@@ -271,10 +270,10 @@ binfo.update(billing_data);
 ## Subscription
 
 **Subscription.all()**  
-Fetch a list of subscriptions. Responds with an array of all subscriptions in the passed-in state. Defaults to 'active'.
+Fetch a list of subscriptions. Responds with an array of all subscriptions that match the passed-in (optional) filters.
 
 ```javascript
-Subscription.all(state, function(err, subscriptions));
+Subscription.all(filter, function(err, subscriptions));
 ```
 
 **Subscription.iterator()**  
@@ -352,10 +351,10 @@ coupon.redeem(options, function(err, redemption));
 ## Transaction
 
 **Transaction.all()**  
-Fetch a list of transactions. Responds with an array of all transactions.
+Fetch a list of transactions. Responds with an array of all transactions that match the passed-in (optional) filters.
 
 ```javascript
-Transaction.all(function(err, transactions));
+Transaction.all(filter, function(err, transactions));
 ```
 
 **Transaction.iterator()**  
@@ -377,10 +376,10 @@ updated.
 ## Invoice
 
 **Invoice.all()**  
-Fetch a list of invoices. Responds with an array of all invoices.
+Fetch a list of invoices. Responds with an array of all invoices that match the passed-in (optional) filters.
 
 ```javascript
-Invoice.all(function(err, invoices));
+Invoice.all(filter, function(err, invoices));
 ```
 
 **Invoice.iterator()**  

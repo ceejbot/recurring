@@ -649,7 +649,7 @@ describe('Invoices', () => {
 
   describe('refunds', () => {
     before(function(done) {
-      recurly.Invoice().all('collected', invoices => {
+      recurly.Invoice().all({state: 'collected'}, invoices => {
         this.invoices = invoices
         done()
       })
@@ -739,7 +739,7 @@ describe('Invoices', () => {
           account.createInvoice((err, invoice) => {
             if (err) return done(err)
 
-            recurly.Invoice().all('open', invoices => {
+            recurly.Invoice().all({state: 'open'}, invoices => {
               this.invoices = invoices
               done()
             })
