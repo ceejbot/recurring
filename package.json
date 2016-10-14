@@ -13,6 +13,7 @@
     "Tom Kirkpatrick @mrfelton"
   ],
   "dependencies": {
+    "async-iterators": "0.2.2",
     "bluebird": "3.4.6",
     "data2xml": "1.2.5",
     "debug": "2.2.0",
@@ -24,7 +25,6 @@
     "xml2js": "0.4.17"
   },
   "devDependencies": {
-    "async-iterators": "0.2.2",
     "conventional-commit-types": "2.1.0",
     "eslint": "3.8.0",
     "eslint-config-standard": "6.2.0",
