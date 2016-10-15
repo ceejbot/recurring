@@ -1,6 +1,4 @@
-'use strict';
-
-/* global describe:true, it:true, before:true, */
+'use strict'
 
 const demand = require('must')
 const fs = require('fs')

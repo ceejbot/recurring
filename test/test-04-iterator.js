@@ -1,7 +1,5 @@
 'use strict'
 
-/* global describe:true, it:true, before:true, */
-
 const demand = require('must')
 const Recurring = require('../lib/recurly')
 const iterators = require('async-iterators')

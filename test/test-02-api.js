@@ -1,6 +1,4 @@
-'use strict';
-
-/* global describe:true, it:true, before:true, after:true, beforeEach:true */
+'use strict'
 
 const demand = require('must')
 const Recurring = require('../lib/recurly')
@@ -20,7 +18,7 @@ const recurly = new Recurring()
 let plan
 let account
 let subscription
-let fresh_account_id
+let freshAccountId
 
 before(() => {
   recurly.setAPIKey(config.apikey)
@@ -55,10 +53,10 @@ describe('Plan', () => {
   it('can fetch all plans from the test Recurly account', done => {
     recurly.Plan().all(plans => {
       plans.must.be.an.object()
-      const plan_codes = Object.keys(plans)
-      plan_codes.length.must.be.above(0)
-      plan_codes[0].must.not.equal('undefined')
-      cached = plan_codes
+      const planCodes = Object.keys(plans)
+      planCodes.length.must.be.above(0)
+      planCodes[0].must.not.equal('undefined')
+      cached = planCodes
       done()
     })
   })
@@ -79,12 +77,10 @@ describe('Plan', () => {
 })
 
 describe('Account', () => {
-  let cached = null
-
   it('can create an account', done => {
-    fresh_account_id = uuid.v4()
+    freshAccountId = uuid.v4()
     const data = {
-      id: fresh_account_id,
+      id: freshAccountId,
       email: 'test@example.com',
       first_name: 'John',
       last_name: 'Whorfin',
@@ -93,7 +89,7 @@ describe('Account', () => {
     recurly.Account().create(data, (err, newAccount) => {
       demand(err).not.exist()
       newAccount.must.be.an.object()
-      newAccount.id.must.equal(fresh_account_id)
+      newAccount.id.must.equal(freshAccountId)
       newAccount.company_name.must.equal('Yoyodyne Propulsion Systems')
       done()
     })
@@ -101,7 +97,7 @@ describe('Account', () => {
 
   it('can close an account', done => {
     account = recurly.Account()
-    account.id = fresh_account_id
+    account.id = freshAccountId
     account.close((err, closed) => {
       demand(err).not.exist()
       closed.must.equal(true)
@@ -110,7 +106,7 @@ describe('Account', () => {
   })
 
   it('can create or reopen a previously-closed account, transparently', done => {
-    const data = { id: fresh_account_id }
+    const data = { id: freshAccountId }
     recurly.Account().create(data, (err, newAccount) => {
       demand(err).not.exist()
       newAccount.must.be.an.object()
@@ -122,7 +118,7 @@ describe('Account', () => {
 
   it('can fetch a single account', done => {
     account = recurly.Account()
-    account.id = fresh_account_id
+    account.id = freshAccountId
     account.fetch(err => {
       demand(err).not.exist()
       account.must.be.an.object()
@@ -138,7 +134,6 @@ describe('Account', () => {
       const uuids = Object.keys(accounts)
       uuids.length.must.be.above(0)
       uuids[0].must.not.equal('undefined')
-      cached = uuids
       done()
     })
   })
@@ -164,9 +159,9 @@ describe('BillingInfo', () => {
   let binfo
 
   // before(done => {
-  //   fresh_account_id = uuid.v4()
+  //   freshAccountId = uuid.v4()
   //   const data = {
-  //     id: fresh_account_id,
+  //     id: freshAccountId,
   //     email: 'test@example.com',
   //     first_name: 'John',
   //     last_name: 'Whorfin',
@@ -202,9 +197,9 @@ describe('BillingInfo', () => {
 
   it('can add billing info to an account and skip card authorization', done => {
     binfo = recurly.BillingInfo()
-    binfo.account_code = fresh_account_id
+    binfo.account_code = freshAccountId
     binfo.skipAuthorization = true
-    const billing_data = {
+    const billingData = {
       first_name: account.first_name,
       last_name: account.last_name,
       number: '4000-0000-0000-0077',
@@ -219,7 +214,7 @@ describe('BillingInfo', () => {
       zip: '94102'
     }
 
-    binfo.update(billing_data, err => {
+    binfo.update(billingData, err => {
       demand(err).not.exist()
       binfo.last_four.must.equal('0077')
       done()
@@ -228,8 +223,8 @@ describe('BillingInfo', () => {
 
   it('can add billing info to an account', done => {
     binfo = recurly.BillingInfo()
-    binfo.account_code = fresh_account_id
-    const billing_data = {
+    binfo.account_code = freshAccountId
+    const billingData = {
       first_name: account.first_name,
       last_name: account.last_name,
       number: '4111-1111-1111-1111',
@@ -244,7 +239,7 @@ describe('BillingInfo', () => {
       zip: '94102'
     }
 
-    binfo.update(billing_data, err => {
+    binfo.update(billingData, err => {
       demand(err).not.exist()
       binfo.last_four.must.equal('1111')
       done()
@@ -253,7 +248,7 @@ describe('BillingInfo', () => {
 
   it('throws an error when missing a required billing data field', done => {
     const binfo2 = recurly.BillingInfo()
-    binfo2.account_code = fresh_account_id
+    binfo2.account_code = freshAccountId
 
     const wrong = () => {
       const inadequate = {
@@ -282,9 +277,9 @@ describe('Subscription', () => {
   let cached
 
   // before(done => {
-  //   fresh_account_id = uuid.v4()
+  //   freshAccountId = uuid.v4()
   //   const data = {
-  //     id: fresh_account_id,
+  //     id: freshAccountId,
   //     email: 'test@example.com',
   //     first_name: 'John',
   //     last_name: 'Whorfin',
@@ -295,8 +290,8 @@ describe('Subscription', () => {
   //     account = newAccount
   //
   //     const binfo = recurly.BillingInfo()
-  //     binfo.account_code = fresh_account_id
-  //     const billing_data = {
+  //     binfo.account_code = freshAccountId
+  //     const billingData = {
   //       first_name: account.first_name,
   //       last_name: account.last_name,
   //       number: '4111-1111-1111-1111',
@@ -311,7 +306,7 @@ describe('Subscription', () => {
   //       zip: '94102'
   //     }
   //
-  //     binfo.update(billing_data, err => {
+  //     binfo.update(billingData, err => {
   //       demand(err).not.exist()
   //       binfo.last_four.must.equal('1111')
   //       done()
@@ -435,12 +430,12 @@ describe('Subscription', () => {
 
 describe('Coupons', () => {
   let coupon,
-    coupon_code
+    couponCode
 
   it('can create a coupon', done => {
-    coupon_code = uuid.v4()
+    couponCode = uuid.v4()
     const data = {
-      coupon_code,
+      coupon_code: couponCode,
       name: 'Test Coupon',
       discount_type: 'percent',
       discount_percent: 50,
@@ -451,7 +446,7 @@ describe('Coupons', () => {
 
     recurly.Coupon().create(data, (err, coup) => {
       demand(err).not.exist()
-      coup.id.must.equal(coupon_code)
+      coup.id.must.equal(couponCode)
       coup.state.must.equal('redeemable')
       coup.single_use.must.equal(true)
       coup.applies_to_all_plans.must.equal(true)
@@ -461,10 +456,10 @@ describe('Coupons', () => {
 
   it('can fetch a coupon', done => {
     coupon = recurly.Coupon()
-    coupon.id = coupon_code
+    coupon.id = couponCode
     coupon.fetch(err => {
       demand(err).not.exist()
-      coupon.id.must.equal(coupon_code)
+      coupon.id.must.equal(couponCode)
       coupon.state.must.equal('redeemable')
       coupon.single_use.must.equal(true)
       coupon.applies_to_all_plans.must.equal(true)
@@ -474,7 +469,7 @@ describe('Coupons', () => {
   })
 
   it('can redeem a coupon', done => {
-    const options = { account_code: fresh_account_id, currency: 'USD' }
+    const options = { account_code: freshAccountId, currency: 'USD' }
 
     coupon.redeem(options, (err, redemption) => {
       demand(err).not.exist()
@@ -500,9 +495,9 @@ describe('Transactions', () => {
   it('can fetch all transactions from the test Recurly account', done => {
     recurly.Transaction().all(transactions => {
       transactions.must.be.an.object()
-      const transactions_ids = Object.keys(transactions)
-      transactions_ids.length.must.be.above(0)
-      transactions_ids[0].must.not.equal('undefined')
+      const transactionsIds = Object.keys(transactions)
+      transactionsIds.length.must.be.above(0)
+      transactionsIds[0].must.not.equal('undefined')
       done()
     })
   })
@@ -519,7 +514,7 @@ describe('Transactions', () => {
     const wrong = () => {
       const inadequate = {
         account: {
-          account_code: fresh_account_id
+          account_code: freshAccountId
         },
         currency: 'USD'
       }
@@ -532,7 +527,7 @@ describe('Transactions', () => {
     const wrong = () => {
       const inadequate = {
         account: {
-          account_code: fresh_account_id
+          account_code: freshAccountId
         },
         amount_in_cents: 10
       }
@@ -546,7 +541,7 @@ describe('Transactions', () => {
       amount_in_cents: 100,
       currency: 'USD',
       account: {
-      account_code: fresh_account_id
+        account_code: freshAccountId
       }
     }
 
@@ -561,7 +556,7 @@ describe('Transactions', () => {
       transaction.refundable.must.equal(true)
 
       transaction.details.must.have.property('account')
-      transaction.details.account.account_code.must.equal(fresh_account_id)
+      transaction.details.account.account_code.must.equal(freshAccountId)
 
       trans1 = transaction
       done()
@@ -583,7 +578,7 @@ describe('Transactions', () => {
       amount_in_cents: 500,
       currency: 'USD',
       account: {
-        account_code: fresh_account_id
+        account_code: freshAccountId
       }
     }
 
@@ -687,7 +682,7 @@ describe('Invoices', () => {
 
       // Create a test account
       recurly.Account().create(accountData, (err, account) => {
-        if (err) return done(err);
+        if (err) return done(err)
 
         const adjustmentData = {
           currency: 'USD',
@@ -779,6 +774,7 @@ describe('RecurlyError', () => {
         company_name: 'Yoyodyne Propulsion Systems'
       }
       recurly.Account().create(data, (err, newAccount) => {
+        demand(err).not.exist()
         self.account = newAccount
         done()
       })
@@ -790,7 +786,7 @@ describe('RecurlyError', () => {
 
       const binfo = recurly.BillingInfo()
       binfo.account_code = this.account.id
-      const billing_data = {
+      const billingData = {
         first_name: this.account.properties.first_name,
         last_name: this.account.properties.last_name,
         number: '4111-1111', // Note invalid format
@@ -799,7 +795,7 @@ describe('RecurlyError', () => {
         verification_value: '111'
       }
 
-      binfo.update(billing_data, err => {
+      binfo.update(billingData, err => {
         debug('Got error: %o', err)
         demand(err).to.exist()
         err.must.be.an.object()
@@ -818,7 +814,7 @@ describe('RecurlyError', () => {
 
       const binfo = recurly.BillingInfo()
       binfo.account_code = this.account.id
-      const billing_data = {
+      const billingData = {
         first_name: this.account.properties.first_name,
         last_name: this.account.properties.last_name,
         number: '4000-0000-0000-0101',
@@ -833,7 +829,7 @@ describe('RecurlyError', () => {
         zip: '94102'
       }
 
-      binfo.update(billing_data, err => {
+      binfo.update(billingData, err => {
         debug('Got error: %o', err)
         demand(err).to.exist()
         err.must.be.an.object()
