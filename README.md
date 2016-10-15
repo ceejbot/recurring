@@ -26,11 +26,11 @@ account.fetch(function(err) {
   });
 });
 
-recurly.Account.all(function(accounts) {
+recurly.Account.all(function(err, accounts) {
   // accounts is an array containing all customer accounts
 });
 
-recurly.Plan.all(function(plans) {
+recurly.Plan.all(function(err, plans) {
   // plans is an array containing all plans set up for your account
 });
 
