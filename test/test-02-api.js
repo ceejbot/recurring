@@ -33,9 +33,6 @@ describe('Plan', () => {
     const data = {
       plan_code: `testplan${planId}`,
       name: `Test Plan ${planId}`,
-      setup_fee_in_cents: {
-        USD: 199
-      },
       unit_amount_in_cents: {
         USD: 1000
       }
@@ -48,6 +45,49 @@ describe('Plan', () => {
       newPlan.name.must.equal(data.name)
       done()
     })
+  })
+
+  it('cannot create a plan without a plan code', done => {
+    const planId = uuid.v4()
+    const wrong = () => {
+      const inadequate = {
+        name: `Test Plan ${planId}`,
+        unit_amount_in_cents: {
+          USD: 1000
+        }
+      }
+      recurly.Plan().create(inadequate, _.noop)
+    }
+    wrong.must.throw(Error)
+    done()
+  })
+
+  it('cannot create a plan without a plan name', done => {
+    const planId = uuid.v4()
+    const wrong = () => {
+      const inadequate = {
+        plan_code: `testplan${planId}`,
+        unit_amount_in_cents: {
+          USD: 1000
+        }
+      }
+      recurly.Plan().create(inadequate, _.noop)
+    }
+    wrong.must.throw(Error)
+    done()
+  })
+
+  it('cannot create a plan without a plan unit amount in cents', done => {
+    const planId = uuid.v4()
+    const wrong = () => {
+      const inadequate = {
+        plan_code: `testplan${planId}`,
+        name: `Test Plan ${planId}`
+      }
+      recurly.Plan().create(inadequate, _.noop)
+    }
+    wrong.must.throw(Error)
+    done()
   })
 
   it('can fetch all plans from the test Recurly account', done => {
