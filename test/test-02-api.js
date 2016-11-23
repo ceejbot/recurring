@@ -2,7 +2,7 @@
 
 const demand = require('must')
 const Recurring = require('../lib/recurly')
-const uuid = require('node-uuid')
+const uuid = require('uuid')
 const debug = require('debug')('recurring:test')
 const _ = require('lodash')
 
