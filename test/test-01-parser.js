@@ -129,13 +129,32 @@ describe('recurly xml parser', () => {
     })
   })
 
-  it('can parse sample billing info xml', done => {
+  it('can parse sample credit_card billing info xml', done => {
     const data = readFixture('billing_info_cc.xml')
     rparser.parseXML(data, (err, result) => {
       demand(err).not.exist()
       result.must.not.be.an.array()
       result.must.have.property('href')
       result.must.have.property('type')
+      result.type.must.equal('credit_card')
+      result.must.have.property('first_six')
+      result.first_six.must.equal('411111')
+      result.must.have.property('last_four')
+      result.last_four.must.equal('1111')
+      done()
+    })
+  })
+
+  it('can parse sample paypal billing info xml', done => {
+    const data = readFixture('billing_info_pp.xml')
+    rparser.parseXML(data, (err, result) => {
+      demand(err).not.exist()
+      result.must.not.be.an.array()
+      result.must.have.property('href')
+      result.must.have.property('type')
+      result.type.must.equal('paypal')
+      result.must.have.property('billing_agreement_id')
+      result.billing_agreement_id.must.equal('B-1234567890')
       done()
     })
   })
