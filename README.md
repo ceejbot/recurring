@@ -178,6 +178,13 @@ Reopen a closed account:
 account.reopen(function(err, updated));
 ```
 
+**account.fetchAdjustments()**
+Fetch adjustment information for an account. Responds with an array of adjustments for this account.
+
+```javascript
+account.fetchAdjustments(function(err, adjustments));
+```
+
 **account.fetchBillingInfo()**  
 Fetch billing information for an account. Responds with an BillingInfo object.
 

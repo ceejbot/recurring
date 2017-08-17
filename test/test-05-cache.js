@@ -8,7 +8,7 @@
 //   parser = require('../lib/parser'),
 //   Recurring = require('../lib/recurly'),
 //   util = require('util'),
-//   uuid = require('node-uuid'),
+//   uuid = require('uuid'),
 //   iterators = require('async-iterators'),
 //   _ = require('lodash')
 //
