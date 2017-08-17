@@ -32,6 +32,10 @@ describe('Iterator', () => {
 
   it('Returns an error if an error is encountered', function(done) {
     nock('https://api.recurly.com:443', {'encodedQueryParams': true})
+      .head('/v2/transactions')
+      .reply(200, null, {
+        'X-records': 10
+      })
       .get('/v2/transactions')
       .query({'per_page': '200'})
       .reply(429, '<?xml version="1.0" encoding="UTF-8"?><error></error>')
