@@ -1,7 +1,7 @@
 {
   "name": "recurring",
   "description": "a recurly v2 api client for node.js",
-  "version": "3.0.0-0",
+  "version": "3.0.0-1",
   "bugs": "http://github.com/ceejbot/recurring/issues",
   "contributors": [
     "C J Silverio <ceejceej@gmail.com> (http://ceejbot.github.io/)",
