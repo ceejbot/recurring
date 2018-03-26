@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coupon href="https://api.recurly.com/v2/coupons/test">
+  <redemptions href="https://api.recurly.com/v2/coupons/test/redemptions"/>
+  <coupon_code>test</coupon_code>
+  <name>Test Coupon</name>
+  <state>redeemable</state>
+  <description>This is a description of a coupon</description>
+  <discount_type>percent</discount_type>
+  <discount_percent type="integer">50</discount_percent>
+  <redeem_by_date nil="nil"></redeem_by_date>
+  <single_use type="boolean">true</single_use>
+  <applies_for_months nil="nil"></applies_for_months>
+  <max_redemptions nil="nil"></max_redemptions>
+  <applies_to_all_plans type="boolean">true</applies_to_all_plans>
+  <created_at type="datetime">2012-11-21T01:27:10Z</created_at>
+  <plan_codes type="array">
+    <plan_code>one</plan_code>
+  </plan_codes>
+  <a name="redeem" href="https://api.recurly.com/v2/coupons/test/redeem" method="post"/>
+</coupon>
