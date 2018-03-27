@@ -738,18 +738,17 @@ describe('Invoices', () => {
           // create an invoice with the pending charges
           account.createInvoice((err, invoice) => {
             if (err) return done(err)
-
-            recurly.Invoice().all('open', invoices => {
-              this.invoices = invoices
-              done()
-            })
+            this.invoiceToMarkAsFailed = invoice
+            done()
           })
         })
       })
     })
 
     it('can mark an open invoice as failed collection', function(done) {
-      const invoice = this.invoices[0]
+      const invoice = recurly.Invoice()
+      invoice.invoice_number = this.invoiceToMarkAsFailed.invoice_number
+
       invoice.markFailed(err => {
         demand(err).not.exist()
         invoice.state.must.equal('failed')
