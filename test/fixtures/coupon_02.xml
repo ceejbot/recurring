@@ -14,7 +14,8 @@
   <applies_to_all_plans type="boolean">true</applies_to_all_plans>
   <created_at type="datetime">2012-11-21T01:27:10Z</created_at>
   <plan_codes type="array">
+    <plan_code>one</plan_code>
+    <plan_code>two</plan_code>
   </plan_codes>
   <a name="redeem" href="https://api.recurly.com/v2/coupons/test/redeem" method="post"/>
 </coupon>
-

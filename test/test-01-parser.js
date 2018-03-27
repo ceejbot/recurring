@@ -158,4 +158,33 @@ describe('recurly xml parser', () => {
       done()
     })
   })
+
+  it('can parse sample coupon xml with one plan_code', done => {
+    const data = readFixture('coupon_01.xml')
+    rparser.parseXML(data, (err, result) => {
+      demand(err).not.exist()
+      result.must.not.be.an.array()
+      result.must.have.property('href')
+      result.must.have.property('plan_codes')
+      result.plan_codes.must.be.an.array()
+      result.plan_codes.length.must.equal(1)
+      result.plan_codes[0].must.equal('one')
+      done()
+    })
+  })
+
+  it('can parse sample coupon xml with multiple plan_codes', done => {
+    const data = readFixture('coupon_02.xml')
+    rparser.parseXML(data, (err, result) => {
+      demand(err).not.exist()
+      result.must.not.be.an.array()
+      result.must.have.property('href')
+      result.must.have.property('plan_codes')
+      result.plan_codes.must.be.an.array()
+      result.plan_codes.length.must.equal(2)
+      result.plan_codes[0].must.equal('one')
+      result.plan_codes[1].must.equal('two')
+      done()
+    })
+  })
 })
