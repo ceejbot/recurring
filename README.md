@@ -4,6 +4,15 @@ A node client for [recurly](https://recurly.com)'s v2 api, with support for secu
 
 __This code is still in development.__ We do not have complete coverage of the API yet.
 
+The recurly API has a number of different versions. In order to provide clarity as to which version of the recurly API this package supports, we aim to keep our release versions in sync with the recurly versioning scheme.
+
+The following versions of the recurring package are currently supported:
+
+| Recurly API version  | NPM dist-tag          | Git development branch
+| -------------------- | --------------------- | -----------------------
+| 2.7                  | recurly-v2.7 (latest) | 2.7 (master)
+| 2.3                  | recurly-v2.3          | 2.3
+
 # Recurly API
 
 An example of typical usage:
