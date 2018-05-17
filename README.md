@@ -496,7 +496,7 @@ Having to hint about the type of the response is clunky; TODO fix.
 
 ## Contributing
 
-Unit tests for whatever you fix/implement/improve would be awesome. Recurring's are written with [mocha](http://visionmedia.github.com/mocha/) and [chai](http://chaijs.com).
+Unit tests for whatever you fix/implement/improve would be awesome. Recurring's are written with [mocha](http://mochajs.org/) and [chai](http://chaijs.com).
 
 ## License
 
