@@ -195,6 +195,26 @@ describe('Account', () => {
       })
     })
   })
+
+  it('can update an account address', done => {
+    account.address = {
+      address1: '760 Market Street',
+      address2: 'Suite 500'
+    }
+    account.update((err, updated) => {
+      demand(err).not.exist()
+      updated.must.be.an.object()
+
+      const testAcc = recurly.Account()
+      testAcc.id = account.id
+      testAcc.fetch(err => {
+        demand(err).not.exist()
+        testAcc.address.address1.must.equal(account.address.address1)
+        testAcc.address.address2.must.equal(account.address.address2)
+        done()
+      })
+    })
+  })
 })
 
 describe('BillingInfo', () => {
