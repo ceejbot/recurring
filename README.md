@@ -8,8 +8,7 @@ NOTE FOR KONTIST
 This repo was forked https://github.com/ceejbot/recurring as it didn't seem to be actively maintained anymore. Further changes to the repo were:
 * Remove ghooks
 * Adopt yarn over npm
-
-Needed improvement: Record/replay actual HTTP requests on tests using [linkedin/sepia](https://github.com/linkedin/sepia).
+* Record/replay actual HTTP requests on tests using [linkedin/sepia](https://github.com/linkedin/sepia).
 
 __This code is still in development.__ We do not have complete coverage of the API yet.
 

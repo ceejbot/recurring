@@ -32,7 +32,8 @@
     "eslint-plugin-standard": "2.0.1",
     "mocha": "3.1.2",
     "must": "0.13.4",
-    "nock": "9.0.14"
+    "nock": "9.0.14",
+    "sepia": "^2.0.2"
   },
   "directories": {
     "test": "test"
@@ -52,7 +53,8 @@
     "lint": "eslint './{lib,test}/**/*.js'",
     "posttest": "npm run lint",
     "coverage": "cat ./coverage/lcov.info | coveralls",
-    "test": "mocha --timeout=120000 test/*.js",
+    "test-record": "VCR_MODE=record mocha --timeout=120000 test/*.js",
+    "test": "VCR_MODE=playback mocha --timeout=120000 test/*.js",
     "test:watch": "yarn test -w",
     "outdated": "npm outdated --depth=0"
   }

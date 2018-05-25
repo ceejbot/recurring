@@ -1,0 +1,40 @@
+{
+  "statusCode": 201,
+  "headers": {
+    "date": "Mon, 28 May 2018 12:33:43 GMT",
+    "content-type": "application/xml; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "set-cookie": [
+      "__cfduid=de2794a8081d98984dc747d96034d25491527510823; expires=Tue, 28-May-19 12:33:43 GMT; path=/; domain=.recurly.com; HttpOnly",
+      "account_credentials=3ff8c03497927f74671cdd3c53749c2eb9f37a47e45b4d159dfe6539f0a6b5d5991a3b33b2627e5c1c90e3bba75d9fd4eaf8626ac66d4f527311a318e3a9edea%3A%3A; domain=.recurly.com; path=/",
+      "_recurlyapp_session=5852f582eb83b22744e37bf2832fa27f; domain=.recurly.com; path=/; secure; HttpOnly"
+    ],
+    "x-api-version": "2.7",
+    "content-language": "en-US",
+    "x-ratelimit-limit": "2000",
+    "x-ratelimit-remaining": "1894",
+    "x-ratelimit-reset": "1527511080",
+    "etag": "\"0adc02b54681a1464beeb9c4bc14fde4\"",
+    "location": "https://api.recurly.com/v2/accounts/update9ee0077e-d345-4692-8ab0-8af6531f1e3e",
+    "cache-control": "max-age=0, private, must-revalidate",
+    "x-request-id": "02aj3pdqp79hdjhn9nlg",
+    "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
+    "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+    "server": "cloudflare",
+    "cf-ray": "4220c0575f3f2d83-TXL"
+  },
+  "url": "https://api.recurly.com:443/v2/accounts",
+  "time": 230,
+  "request": {
+    "method": "POST",
+    "headers": {
+      "Accept": "application/xml",
+      "Authorization": "Basic MjYwYmE3OTQ1OTJlNDBlMzhkMzBmMjMxNDNiMTM3NWI6",
+      "User-Agent": "recurring/2.7.0",
+      "X-Api-Version": "2.7",
+      "host": "api.recurly.com",
+      "content-length": 166
+    }
+  }
+}

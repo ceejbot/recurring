@@ -773,6 +773,10 @@ jsprim@^1.2.2:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/kindof/-/kindof-2.0.0.tgz#c335baf603a77cc37f8b406b73b6463fdbdf1abe"
 
+levenshtein@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/levenshtein/-/levenshtein-1.0.2.tgz#cd02e8b32075645ddcf5d059e02efa918f9fb3ec"
+
 levn@^0.3.0, levn@~0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
@@ -1136,6 +1140,12 @@ sax@>=0.6.0:
 semver@^5.3.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
+
+sepia@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/sepia/-/sepia-2.0.2.tgz#5310bb7357e7d47e5c2d20e54c02865dafec5285"
+  dependencies:
+    levenshtein "1.0.2"
 
 shelljs@^0.6.0:
   version "0.6.1"
