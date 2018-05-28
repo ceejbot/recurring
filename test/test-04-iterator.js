@@ -10,7 +10,7 @@ const nock = require('nock')
 // This recurly account is an empty test account connected to their
 // development gateway.
 const config = {
-  apikey: '88ac57c6891440bda9ba28b6b9c18857',
+  apikey: '260ba794592e40e38d30f23143b1375b',
   subdomain: 'recurring-test'
 }
 

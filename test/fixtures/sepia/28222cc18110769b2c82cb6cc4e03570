@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<errors>
+  <error field="account.account_code" symbol="taken">has already been taken</error>
+</errors>
