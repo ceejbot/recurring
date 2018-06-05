@@ -449,6 +449,16 @@ describe('Subscription', () => {
     })
   })
 
+  it('can pause a subscription', done => {
+    const remainingPauseCycles = 1;
+
+    subscription.pause(remainingPauseCycles, err => {
+      demand(err).not.exist()
+      subscription.remaining_pause_cycles.must.equal(remainingPauseCycles)
+      done()
+    })
+  })
+
   it('can postpone a subscription', done => {
     const now = new Date()
     const nextDate = new Date(now.getUTCFullYear(), now.getUTCMonth() + 1, 1)

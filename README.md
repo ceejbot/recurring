@@ -318,6 +318,13 @@ Reactivate a cancelled subscription.
 subscription.reactivate(function(err, updated));
 ```
 
+**subscription.pause()**  
+Pause a subscription.
+
+```javascript
+subscription.pause(remainingPauseCycles, function(err, updated));
+```
+
 **subscription.postpone()**  
 Postpone a subscription.
 
