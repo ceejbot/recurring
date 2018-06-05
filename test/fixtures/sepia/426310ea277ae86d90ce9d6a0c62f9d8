@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<error>
+  <symbol>not_found</symbol>
+  <description lang="en-US">Couldn't find BillingInfo with account_code = failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76</description>
+</error>

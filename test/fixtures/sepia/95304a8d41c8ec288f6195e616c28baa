@@ -1,8 +1,551 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <accounts type="array">
+  <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf">
+    <adjustments href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/transactions"/>
+    <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>test@example.com</email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name>John</first_name>
+    <last_name>Whorfin</last_name>
+    <company_name>Yoyodyne Propulsion Systems</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>tkM4N7eCCPZ87AQA2eoe57CFhu8zL3jW</hosted_login_token>
+    <created_at type="datetime">2018-06-05T12:13:08Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:13:11Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/cancelfff70f09-b4e8-47b9-b35f-9521f92fb742">
+    <adjustments href="https://api.recurly.com/v2/accounts/cancelfff70f09-b4e8-47b9-b35f-9521f92fb742/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/cancelfff70f09-b4e8-47b9-b35f-9521f92fb742/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/cancelfff70f09-b4e8-47b9-b35f-9521f92fb742/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/cancelfff70f09-b4e8-47b9-b35f-9521f92fb742/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/cancelfff70f09-b4e8-47b9-b35f-9521f92fb742/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/cancelfff70f09-b4e8-47b9-b35f-9521f92fb742/transactions"/>
+    <account_code>cancelfff70f09-b4e8-47b9-b35f-9521f92fb742</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email nil="nil"></email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name nil="nil"></first_name>
+    <last_name nil="nil"></last_name>
+    <company_name nil="nil"></company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>g4hJEbKY5sv2pGqmGxHFZsYRuqSV4TsK</hosted_login_token>
+    <created_at type="datetime">2018-06-05T12:12:49Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:12:51Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/failbilling9cffc429-82da-4935-9405-c66ce345703a">
+    <adjustments href="https://api.recurly.com/v2/accounts/failbilling9cffc429-82da-4935-9405-c66ce345703a/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/failbilling9cffc429-82da-4935-9405-c66ce345703a/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/failbilling9cffc429-82da-4935-9405-c66ce345703a/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/failbilling9cffc429-82da-4935-9405-c66ce345703a/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/failbilling9cffc429-82da-4935-9405-c66ce345703a/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/failbilling9cffc429-82da-4935-9405-c66ce345703a/transactions"/>
+    <account_code>failbilling9cffc429-82da-4935-9405-c66ce345703a</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>test2@example.com</email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name>John</first_name>
+    <last_name>Smallberries</last_name>
+    <company_name>Yoyodyne Propulsion Systems</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>X4EgFk9a3zGqjGkNPZZFRhLuGGrLZx8T</hosted_login_token>
+    <created_at type="datetime">2018-06-05T12:12:33Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:12:33Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/update013b9736-0450-44b2-9fc5-6c7b6bee2192">
+    <adjustments href="https://api.recurly.com/v2/accounts/update013b9736-0450-44b2-9fc5-6c7b6bee2192/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/update013b9736-0450-44b2-9fc5-6c7b6bee2192/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/update013b9736-0450-44b2-9fc5-6c7b6bee2192/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/update013b9736-0450-44b2-9fc5-6c7b6bee2192/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/update013b9736-0450-44b2-9fc5-6c7b6bee2192/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/update013b9736-0450-44b2-9fc5-6c7b6bee2192/transactions"/>
+    <account_code>update013b9736-0450-44b2-9fc5-6c7b6bee2192</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email nil="nil"></email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name nil="nil"></first_name>
+    <last_name nil="nil"></last_name>
+    <company_name>Yoyodyne Propulsion, International</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>z81R81hGA4RzRZknvEhCWoYVjovTyWqf</hosted_login_token>
+    <created_at type="datetime">2018-06-05T12:12:32Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:12:32Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90">
+    <adjustments href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90/balance"/>
+    <billing_info href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90/billing_info"/>
+    <invoices href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90/transactions"/>
+    <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>test@example.com</email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name>John</first_name>
+    <last_name>Whorfin</last_name>
+    <company_name>Yoyodyne Propulsion Systems</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>B4M9gRsyesFT6MtLE61siDRKgbDnhDhz</hosted_login_token>
+    <created_at type="datetime">2018-06-05T12:12:27Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:12:43Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/update7327b023-c08d-440f-bc3d-44e93c1e3179">
+    <adjustments href="https://api.recurly.com/v2/accounts/update7327b023-c08d-440f-bc3d-44e93c1e3179/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/update7327b023-c08d-440f-bc3d-44e93c1e3179/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/update7327b023-c08d-440f-bc3d-44e93c1e3179/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/update7327b023-c08d-440f-bc3d-44e93c1e3179/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/update7327b023-c08d-440f-bc3d-44e93c1e3179/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/update7327b023-c08d-440f-bc3d-44e93c1e3179/transactions"/>
+    <account_code>update7327b023-c08d-440f-bc3d-44e93c1e3179</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email nil="nil"></email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name nil="nil"></first_name>
+    <last_name nil="nil"></last_name>
+    <company_name>Yoyodyne Propulsion, International</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>odnCixKbcHhfXKUTx2KQQX2SFKEYPG51</hosted_login_token>
+    <created_at type="datetime">2018-06-05T12:11:44Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:11:45Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/freshd3eba5f5-e086-4960-9147-fdf1a100e797">
+    <adjustments href="https://api.recurly.com/v2/accounts/freshd3eba5f5-e086-4960-9147-fdf1a100e797/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/freshd3eba5f5-e086-4960-9147-fdf1a100e797/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/freshd3eba5f5-e086-4960-9147-fdf1a100e797/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/freshd3eba5f5-e086-4960-9147-fdf1a100e797/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/freshd3eba5f5-e086-4960-9147-fdf1a100e797/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/freshd3eba5f5-e086-4960-9147-fdf1a100e797/transactions"/>
+    <account_code>freshd3eba5f5-e086-4960-9147-fdf1a100e797</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>test@example.com</email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name>John</first_name>
+    <last_name>Whorfin</last_name>
+    <company_name>Yoyodyne Propulsion Systems</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>WrbFWoDqfzVwMi8hctzWK1TLpYqaKc74</hosted_login_token>
+    <created_at type="datetime">2018-06-05T12:11:43Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:11:43Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/freshed93cf7b-e594-41ae-98f8-b48324433b79">
+    <adjustments href="https://api.recurly.com/v2/accounts/freshed93cf7b-e594-41ae-98f8-b48324433b79/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/freshed93cf7b-e594-41ae-98f8-b48324433b79/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/freshed93cf7b-e594-41ae-98f8-b48324433b79/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/freshed93cf7b-e594-41ae-98f8-b48324433b79/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/freshed93cf7b-e594-41ae-98f8-b48324433b79/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/freshed93cf7b-e594-41ae-98f8-b48324433b79/transactions"/>
+    <account_code>freshed93cf7b-e594-41ae-98f8-b48324433b79</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>test@example.com</email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name>John</first_name>
+    <last_name>Whorfin</last_name>
+    <company_name>Yoyodyne Propulsion Systems</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>GJ8YjpXvK3TW8hNrukxCq9CZEqiAmzNT</hosted_login_token>
+    <created_at type="datetime">2018-05-31T15:34:18Z</created_at>
+    <updated_at type="datetime">2018-05-31T15:34:18Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/cancel21e7a84b-c554-49c0-af1b-b3847c9b412d">
+    <adjustments href="https://api.recurly.com/v2/accounts/cancel21e7a84b-c554-49c0-af1b-b3847c9b412d/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/cancel21e7a84b-c554-49c0-af1b-b3847c9b412d/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/cancel21e7a84b-c554-49c0-af1b-b3847c9b412d/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/cancel21e7a84b-c554-49c0-af1b-b3847c9b412d/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/cancel21e7a84b-c554-49c0-af1b-b3847c9b412d/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/cancel21e7a84b-c554-49c0-af1b-b3847c9b412d/transactions"/>
+    <account_code>cancel21e7a84b-c554-49c0-af1b-b3847c9b412d</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email nil="nil"></email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name nil="nil"></first_name>
+    <last_name nil="nil"></last_name>
+    <company_name nil="nil"></company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>ZpPBcuSXe6xGewbJ3pBYoY31SvUUqCEV</hosted_login_token>
+    <created_at type="datetime">2018-05-30T19:13:44Z</created_at>
+    <updated_at type="datetime">2018-05-30T19:13:48Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/failbilling0aadbffa-77ac-4f11-9728-f014cadecdc2">
+    <adjustments href="https://api.recurly.com/v2/accounts/failbilling0aadbffa-77ac-4f11-9728-f014cadecdc2/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/failbilling0aadbffa-77ac-4f11-9728-f014cadecdc2/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/failbilling0aadbffa-77ac-4f11-9728-f014cadecdc2/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/failbilling0aadbffa-77ac-4f11-9728-f014cadecdc2/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/failbilling0aadbffa-77ac-4f11-9728-f014cadecdc2/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/failbilling0aadbffa-77ac-4f11-9728-f014cadecdc2/transactions"/>
+    <account_code>failbilling0aadbffa-77ac-4f11-9728-f014cadecdc2</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>test2@example.com</email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name>John</first_name>
+    <last_name>Smallberries</last_name>
+    <company_name>Yoyodyne Propulsion Systems</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>Nm2X9iYGHWJjoF3taDGrc1hzJ64Qvpid</hosted_login_token>
+    <created_at type="datetime">2018-05-30T19:13:26Z</created_at>
+    <updated_at type="datetime">2018-05-30T19:13:26Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/updatef6f299f5-afa2-4bdb-84a3-d0b3e8856cf5">
+    <adjustments href="https://api.recurly.com/v2/accounts/updatef6f299f5-afa2-4bdb-84a3-d0b3e8856cf5/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/updatef6f299f5-afa2-4bdb-84a3-d0b3e8856cf5/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/updatef6f299f5-afa2-4bdb-84a3-d0b3e8856cf5/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/updatef6f299f5-afa2-4bdb-84a3-d0b3e8856cf5/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/updatef6f299f5-afa2-4bdb-84a3-d0b3e8856cf5/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/updatef6f299f5-afa2-4bdb-84a3-d0b3e8856cf5/transactions"/>
+    <account_code>updatef6f299f5-afa2-4bdb-84a3-d0b3e8856cf5</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email nil="nil"></email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name nil="nil"></first_name>
+    <last_name nil="nil"></last_name>
+    <company_name>Yoyodyne Propulsion, International</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>KdgKTDN2WriHgRj7xzyjDaJubWRX6XNL</hosted_login_token>
+    <created_at type="datetime">2018-05-30T19:13:24Z</created_at>
+    <updated_at type="datetime">2018-05-30T19:13:25Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e">
+    <adjustments href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e/balance"/>
+    <billing_info href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e/billing_info"/>
+    <invoices href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e/transactions"/>
+    <account_code>freshe5a4789e-1540-4245-8cca-84190439597e</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>test@example.com</email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name>John</first_name>
+    <last_name>Whorfin</last_name>
+    <company_name>Yoyodyne Propulsion Systems</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>YWXWbgqKLXjEkV4LtvWGSAG9hQDk9NoQ</hosted_login_token>
+    <created_at type="datetime">2018-05-30T19:13:14Z</created_at>
+    <updated_at type="datetime">2018-05-30T19:13:37Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/canceld62d89b9-fac4-4cdb-98dd-082d85eafd3a">
+    <adjustments href="https://api.recurly.com/v2/accounts/canceld62d89b9-fac4-4cdb-98dd-082d85eafd3a/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/canceld62d89b9-fac4-4cdb-98dd-082d85eafd3a/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/canceld62d89b9-fac4-4cdb-98dd-082d85eafd3a/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/canceld62d89b9-fac4-4cdb-98dd-082d85eafd3a/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/canceld62d89b9-fac4-4cdb-98dd-082d85eafd3a/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/canceld62d89b9-fac4-4cdb-98dd-082d85eafd3a/transactions"/>
+    <account_code>canceld62d89b9-fac4-4cdb-98dd-082d85eafd3a</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email nil="nil"></email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name nil="nil"></first_name>
+    <last_name nil="nil"></last_name>
+    <company_name nil="nil"></company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>3kVjLHzVT7NJqbFSXGHDZvHFt2sc8Fxy</hosted_login_token>
+    <created_at type="datetime">2018-05-28T12:33:56Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:57Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c">
+    <adjustments href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/transactions"/>
+    <account_code>failbilling118845e2-34b6-4705-aa51-1e153c97c73c</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email>test2@example.com</email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name>John</first_name>
+    <last_name>Smallberries</last_name>
+    <company_name>Yoyodyne Propulsion Systems</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1 nil="nil"></address1>
+      <address2 nil="nil"></address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>WtZ9bCJGY5kL2AoE2V4wNAJBLzfxbFAq</hosted_login_token>
+    <created_at type="datetime">2018-05-28T12:33:44Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:44Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
+  <account href="https://api.recurly.com/v2/accounts/update9ee0077e-d345-4692-8ab0-8af6531f1e3e">
+    <adjustments href="https://api.recurly.com/v2/accounts/update9ee0077e-d345-4692-8ab0-8af6531f1e3e/adjustments"/>
+    <account_balance href="https://api.recurly.com/v2/accounts/update9ee0077e-d345-4692-8ab0-8af6531f1e3e/balance"/>
+    <invoices href="https://api.recurly.com/v2/accounts/update9ee0077e-d345-4692-8ab0-8af6531f1e3e/invoices"/>
+    <shipping_addresses href="https://api.recurly.com/v2/accounts/update9ee0077e-d345-4692-8ab0-8af6531f1e3e/shipping_addresses"/>
+    <subscriptions href="https://api.recurly.com/v2/accounts/update9ee0077e-d345-4692-8ab0-8af6531f1e3e/subscriptions"/>
+    <transactions href="https://api.recurly.com/v2/accounts/update9ee0077e-d345-4692-8ab0-8af6531f1e3e/transactions"/>
+    <account_code>update9ee0077e-d345-4692-8ab0-8af6531f1e3e</account_code>
+    <state>active</state>
+    <username nil="nil"></username>
+    <email nil="nil"></email>
+    <cc_emails nil="nil"></cc_emails>
+    <first_name nil="nil"></first_name>
+    <last_name nil="nil"></last_name>
+    <company_name>Yoyodyne Propulsion, International</company_name>
+    <vat_number nil="nil"></vat_number>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city nil="nil"></city>
+      <state nil="nil"></state>
+      <zip nil="nil"></zip>
+      <country nil="nil"></country>
+      <phone nil="nil"></phone>
+    </address>
+    <accept_language nil="nil"></accept_language>
+    <hosted_login_token>sgj6JjfkMNJu2gupXaLih8KeXo2wRbzi</hosted_login_token>
+    <created_at type="datetime">2018-05-28T12:33:43Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:43Z</updated_at>
+    <closed_at nil="nil"></closed_at>
+    <has_live_subscription type="boolean">false</has_live_subscription>
+    <has_active_subscription type="boolean">false</has_active_subscription>
+    <has_future_subscription type="boolean">false</has_future_subscription>
+    <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+    <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+  </account>
   <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba">
     <adjustments href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba/adjustments"/>
     <account_balance href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba/balance"/>
+    <billing_info href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba/billing_info"/>
     <invoices href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba/invoices"/>
     <shipping_addresses href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba/shipping_addresses"/>
     <subscriptions href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba/subscriptions"/>
@@ -28,7 +571,7 @@
     <accept_language nil="nil"></accept_language>
     <hosted_login_token>hdVP6V8PFGaM7Ar2MaJYNBG2Mt3RqMuv</hosted_login_token>
     <created_at type="datetime">2018-05-28T12:33:39Z</created_at>
-    <updated_at type="datetime">2018-05-28T12:33:42Z</updated_at>
+    <updated_at type="datetime">2018-05-28T12:33:51Z</updated_at>
     <closed_at nil="nil"></closed_at>
     <has_live_subscription type="boolean">false</has_live_subscription>
     <has_active_subscription type="boolean">false</has_active_subscription>

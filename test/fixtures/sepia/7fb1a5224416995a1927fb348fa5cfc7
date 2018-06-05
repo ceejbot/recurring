@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice href="https://api.recurly.com/v2/invoices/1072">
+  <account href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c"/>
+  <address>
+    <address1 nil="nil"></address1>
+    <address2 nil="nil"></address2>
+    <city nil="nil"></city>
+    <state nil="nil"></state>
+    <zip nil="nil"></zip>
+    <country nil="nil"></country>
+    <phone nil="nil"></phone>
+  </address>
+  <uuid>453ea926c55988397505974d6880dedc</uuid>
+  <state>open</state>
+  <invoice_number_prefix></invoice_number_prefix>
+  <invoice_number type="integer">1072</invoice_number>
+  <vat_number nil="nil"></vat_number>
+  <tax_in_cents type="integer">0</tax_in_cents>
+  <total_in_cents type="integer">2000</total_in_cents>
+  <currency>USD</currency>
+  <created_at type="datetime">2018-06-05T12:13:36Z</created_at>
+  <updated_at type="datetime">2018-06-05T12:13:36Z</updated_at>
+  <attempt_next_collection_at type="datetime">2018-06-05T12:13:36Z</attempt_next_collection_at>
+  <closed_at nil="nil"></closed_at>
+  <customer_notes nil="nil"></customer_notes>
+  <recovery_reason nil="nil"></recovery_reason>
+  <net_terms type="integer">0</net_terms>
+  <collection_method>automatic</collection_method>
+  <po_number nil="nil"></po_number>
+  <terms_and_conditions nil="nil"></terms_and_conditions>
+  <subtotal_in_cents type="integer">2000</subtotal_in_cents>
+  <subtotal_after_discount_in_cents type="integer">2000</subtotal_after_discount_in_cents>
+  <line_items type="array">
+    <adjustment href="https://api.recurly.com/v2/adjustments/453ea9259783b3d8f91389422cbb9526" type="charge">
+      <account href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c"/>
+      <invoice href="https://api.recurly.com/v2/invoices/1072"/>
+      <uuid>453ea9259783b3d8f91389422cbb9526</uuid>
+      <state>invoiced</state>
+      <description>A test charge for $20</description>
+      <accounting_code nil="nil"></accounting_code>
+      <product_code nil="nil"></product_code>
+      <origin>debit</origin>
+      <unit_amount_in_cents type="integer">2000</unit_amount_in_cents>
+      <quantity type="integer">1</quantity>
+      <discount_in_cents type="integer">0</discount_in_cents>
+      <tax_in_cents type="integer">0</tax_in_cents>
+      <total_in_cents type="integer">2000</total_in_cents>
+      <currency>USD</currency>
+      <taxable type="boolean">false</taxable>
+      <start_date type="datetime">2018-06-05T12:13:36Z</start_date>
+      <end_date nil="nil"></end_date>
+      <created_at type="datetime">2018-06-05T12:13:36Z</created_at>
+      <updated_at type="datetime">2018-06-05T12:13:36Z</updated_at>
+      <revenue_schedule_type></revenue_schedule_type>
+    </adjustment>
+  </line_items>
+  <transactions type="array">
+  </transactions>
+  <a name="mark_successful" href="https://api.recurly.com/v2/invoices/1072/mark_successful" method="put"/>
+  <a name="mark_failed" href="https://api.recurly.com/v2/invoices/1072/mark_failed" method="put"/>
+</invoice>

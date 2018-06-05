@@ -1,5 +1,1329 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transactions type="array">
+  <transaction href="https://api.recurly.com/v2/transactions/453ea930037fe90784c9be4e5db38bde" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <uuid>453ea930037fe90784c9be4e5db38bde</uuid>
+    <action>verify</action>
+    <amount_in_cents type="integer">0</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>declined</status>
+    <payment_method>credit_card</payment_method>
+    <reference>5879631</reference>
+    <source>billing_info</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Declined, CVV did not match</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type>fraud_security_code</failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <transaction_error>
+      <error_code>fraud_security_code</error_code>
+      <error_category>fraud</error_category>
+      <merchant_message>The payment gateway declined the transaction because the security code (CVV) or expiration date did not match.</merchant_message>
+      <customer_message>The security code you entered does not match. Please update the CVV and try again.</customer_message>
+      <gateway_error_code nil="nil"></gateway_error_code>
+    </transaction_error>
+    <cvv_result code="N">No Match</cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:13:38Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:13:38Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:13:38Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>400000</first_six>
+          <last_four>0101</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea92745cf9fc2d0ae904970a76278" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1072"/>
+    <uuid>453ea92745cf9fc2d0ae904970a76278</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">2000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>declined</status>
+    <payment_method>credit_card</payment_method>
+    <reference nil="nil"></reference>
+    <source>transaction</source>
+    <recurring type="boolean">true</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>recurring</origin>
+    <description>A test charge for $20</description>
+    <message nil="nil"></message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type>no_billing_information</failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <transaction_error>
+      <error_code>no_billing_information</error_code>
+      <error_category>hard</error_category>
+      <merchant_message>This transaction cannot be processed because Recurly has no billing information for this account.</merchant_message>
+      <customer_message>Your billing information is not on file. Please add your billing information.</customer_message>
+      <gateway_error_code nil="nil"></gateway_error_code>
+    </transaction_error>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="" nil="nil"></avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:13:36Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:13:36Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:13:36Z</updated_at>
+    <details>
+      <account>
+        <account_code>cancel06065e09-1986-44e1-9dae-aec273fa522c</account_code>
+        <first_name nil="nil"></first_name>
+        <last_name nil="nil"></last_name>
+        <company nil="nil"></company>
+        <email nil="nil"></email>
+        <billing_info type="credit_card">
+          <first_name nil="nil"></first_name>
+          <last_name nil="nil"></last_name>
+          <address1 nil="nil"></address1>
+          <address2 nil="nil"></address2>
+          <city nil="nil"></city>
+          <state nil="nil"></state>
+          <zip nil="nil"></zip>
+          <country nil="nil"></country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Unknown</card_type>
+          <year nil="nil"></year>
+          <month nil="nil"></month>
+          <first_six nil="nil"></first_six>
+          <last_four nil="nil"></last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea921937f12b4e9b7b14a198ba82f" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1071"/>
+    <subscription href="https://api.recurly.com/v2/subscriptions/451588205451bfc216104e434087bed6"/>
+    <original_transaction href="https://api.recurly.com/v2/transactions/45158820e2119e2d93d3a94b428fdbb1"/>
+    <uuid>453ea921937f12b4e9b7b14a198ba82f</uuid>
+    <action>refund</action>
+    <amount_in_cents type="integer">10000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>3461449</reference>
+    <source>subscription</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">true</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:13:34Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:13:34Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:13:34Z</updated_at>
+    <details>
+      <account>
+        <account_code>freshada66c3c-1637-4b4c-aba5-314d027c73d5</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea91ec8ea5c34fc5f884bf6ada84f" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1070"/>
+    <original_transaction href="https://api.recurly.com/v2/transactions/453ea90a9176ac42c1f37d45c1982a6c"/>
+    <uuid>453ea91ec8ea5c34fc5f884bf6ada84f</uuid>
+    <action>refund</action>
+    <amount_in_cents type="integer">5</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>2496868</reference>
+    <source>transaction</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">true</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:13:34Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:13:34Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:13:34Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea90a9176ac42c1f37d45c1982a6c" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1069"/>
+    <uuid>453ea90a9176ac42c1f37d45c1982a6c</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">100</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>3984036</reference>
+    <source>transaction</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">true</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:13:29Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:13:29Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:13:34Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea8ef1d8b236ec6ae984093b4585a" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1068"/>
+    <subscription href="https://api.recurly.com/v2/subscriptions/453ea8e425bd17233b2e3d4693b9eb05"/>
+    <uuid>453ea8ef1d8b236ec6ae984093b4585a</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">3000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>984056</reference>
+    <source>subscription</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">true</voidable>
+    <refundable type="boolean">true</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin></origin>
+    <description>Test Plan b38bb4e6-a9d6-4390-ac2c-b0b2a9d6b070</description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:13:22Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:13:22Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:13:22Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea8e4a7fc91e0951ec143fd9f4b33" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1067"/>
+    <subscription href="https://api.recurly.com/v2/subscriptions/453ea8e425bd17233b2e3d4693b9eb05"/>
+    <uuid>453ea8e4a7fc91e0951ec143fd9f4b33</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">10000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>120260</reference>
+    <source>subscription</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">true</voidable>
+    <refundable type="boolean">true</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description>Test Plan b38bb4e6-a9d6-4390-ac2c-b0b2a9d6b070</description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:13:19Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:13:19Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:13:19Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea8df40065d20b4cf7f41d09378cd" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <uuid>453ea8df40065d20b4cf7f41d09378cd</uuid>
+    <action>verify</action>
+    <amount_in_cents type="integer">0</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>4639216</reference>
+    <source>billing_info</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="M">Match</cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:13:18Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:13:18Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:13:18Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea87afdd955b68425184bacabbf2e" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <uuid>453ea87afdd955b68425184bacabbf2e</uuid>
+    <action>verify</action>
+    <amount_in_cents type="integer">0</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>declined</status>
+    <payment_method>credit_card</payment_method>
+    <reference>5245792</reference>
+    <source>billing_info</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Declined, CVV did not match</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type>fraud_security_code</failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <transaction_error>
+      <error_code>fraud_security_code</error_code>
+      <error_category>fraud</error_category>
+      <merchant_message>The payment gateway declined the transaction because the security code (CVV) or expiration date did not match.</merchant_message>
+      <customer_message>The security code you entered does not match. Please update the CVV and try again.</customer_message>
+      <gateway_error_code nil="nil"></gateway_error_code>
+    </transaction_error>
+    <cvv_result code="N">No Match</cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:12:52Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:12:52Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:12:52Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>400000</first_six>
+          <last_four>0101</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea874cb429bcb171f2a4faa97142d" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/cancelfff70f09-b4e8-47b9-b35f-9521f92fb742"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1065"/>
+    <uuid>453ea874cb429bcb171f2a4faa97142d</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">2000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>declined</status>
+    <payment_method>credit_card</payment_method>
+    <reference nil="nil"></reference>
+    <source>transaction</source>
+    <recurring type="boolean">true</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>recurring</origin>
+    <description>A test charge for $20</description>
+    <message nil="nil"></message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type>no_billing_information</failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <transaction_error>
+      <error_code>no_billing_information</error_code>
+      <error_category>hard</error_category>
+      <merchant_message>This transaction cannot be processed because Recurly has no billing information for this account.</merchant_message>
+      <customer_message>Your billing information is not on file. Please add your billing information.</customer_message>
+      <gateway_error_code nil="nil"></gateway_error_code>
+    </transaction_error>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="" nil="nil"></avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:12:50Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:12:50Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:12:50Z</updated_at>
+    <details>
+      <account>
+        <account_code>cancelfff70f09-b4e8-47b9-b35f-9521f92fb742</account_code>
+        <first_name nil="nil"></first_name>
+        <last_name nil="nil"></last_name>
+        <company nil="nil"></company>
+        <email nil="nil"></email>
+        <billing_info type="credit_card">
+          <first_name nil="nil"></first_name>
+          <last_name nil="nil"></last_name>
+          <address1 nil="nil"></address1>
+          <address2 nil="nil"></address2>
+          <city nil="nil"></city>
+          <state nil="nil"></state>
+          <zip nil="nil"></zip>
+          <country nil="nil"></country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Unknown</card_type>
+          <year nil="nil"></year>
+          <month nil="nil"></month>
+          <first_six nil="nil"></first_six>
+          <last_four nil="nil"></last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea86d7bcb477b60fc62440aaabee5" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1064"/>
+    <original_transaction href="https://api.recurly.com/v2/transactions/4515870e94c0691bbaf71d417195d1b1"/>
+    <uuid>453ea86d7bcb477b60fc62440aaabee5</uuid>
+    <action>refund</action>
+    <amount_in_cents type="integer">95</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>252502</reference>
+    <source>transaction</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">true</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:12:48Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:12:48Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+    <details>
+      <account>
+        <account_code>freshd586a058-3f8d-469c-8a71-d61de0374a4d</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea86ae15d540832c8d2401f8a38bd" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1063"/>
+    <original_transaction href="https://api.recurly.com/v2/transactions/453ea8594a4de245f9052640d894877f"/>
+    <uuid>453ea86ae15d540832c8d2401f8a38bd</uuid>
+    <action>refund</action>
+    <amount_in_cents type="integer">5</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>9021637</reference>
+    <source>transaction</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">true</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:12:48Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:12:48Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea8594a4de245f9052640d894877f" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1062"/>
+    <uuid>453ea8594a4de245f9052640d894877f</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">100</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>8527118</reference>
+    <source>transaction</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">true</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:12:43Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:12:43Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea84132bbbbd24a466e4a3f8146d0" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1061"/>
+    <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+    <uuid>453ea84132bbbbd24a466e4a3f8146d0</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">3000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>3478802</reference>
+    <source>subscription</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">true</voidable>
+    <refundable type="boolean">true</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin></origin>
+    <description>Test Plan 6b0e8cc0-2581-4c49-a54b-30da0e219416</description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:12:37Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:12:37Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:12:37Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea839f448b0cc26905d4483aff236" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1060"/>
+    <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+    <uuid>453ea839f448b0cc26905d4483aff236</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">10000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>2635805</reference>
+    <source>subscription</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">true</voidable>
+    <refundable type="boolean">true</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description>Test Plan 6b0e8cc0-2581-4c49-a54b-30da0e219416</description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:12:35Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:12:35Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:12:35Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/453ea836e6a51af3121d91450f96632b" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <uuid>453ea836e6a51af3121d91450f96632b</uuid>
+    <action>verify</action>
+    <amount_in_cents type="integer">0</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>5701530</reference>
+    <source>billing_info</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="M">Match</cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-05T12:12:34Z</created_at>
+    <collected_at type="datetime">2018-06-05T12:12:34Z</collected_at>
+    <updated_at type="datetime">2018-06-05T12:12:34Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/452143ba607fd0fc2fb00d4d6bbe82a2" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e"/>
+    <uuid>452143ba607fd0fc2fb00d4d6bbe82a2</uuid>
+    <action>verify</action>
+    <amount_in_cents type="integer">0</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>declined</status>
+    <payment_method>credit_card</payment_method>
+    <reference>5408834</reference>
+    <source>billing_info</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Declined, CVV did not match</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type>fraud_security_code</failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <transaction_error>
+      <error_code>fraud_security_code</error_code>
+      <error_category>fraud</error_category>
+      <merchant_message>The payment gateway declined the transaction because the security code (CVV) or expiration date did not match.</merchant_message>
+      <customer_message>The security code you entered does not match. Please update the CVV and try again.</customer_message>
+      <gateway_error_code nil="nil"></gateway_error_code>
+    </transaction_error>
+    <cvv_result code="N">No Match</cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-05-30T19:13:50Z</created_at>
+    <collected_at type="datetime">2018-05-30T19:13:50Z</collected_at>
+    <updated_at type="datetime">2018-05-30T19:13:50Z</updated_at>
+    <details>
+      <account>
+        <account_code>freshe5a4789e-1540-4245-8cca-84190439597e</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>400000</first_six>
+          <last_four>0101</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/452143ad0ac8e22d2cce2b41e0826302" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/cancel21e7a84b-c554-49c0-af1b-b3847c9b412d"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1058"/>
+    <uuid>452143ad0ac8e22d2cce2b41e0826302</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">2000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>declined</status>
+    <payment_method>credit_card</payment_method>
+    <reference nil="nil"></reference>
+    <source>transaction</source>
+    <recurring type="boolean">true</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>recurring</origin>
+    <description>A test charge for $20</description>
+    <message nil="nil"></message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type>no_billing_information</failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <transaction_error>
+      <error_code>no_billing_information</error_code>
+      <error_category>hard</error_category>
+      <merchant_message>This transaction cannot be processed because Recurly has no billing information for this account.</merchant_message>
+      <customer_message>Your billing information is not on file. Please add your billing information.</customer_message>
+      <gateway_error_code nil="nil"></gateway_error_code>
+    </transaction_error>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="" nil="nil"></avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-05-30T19:13:46Z</created_at>
+    <collected_at type="datetime">2018-05-30T19:13:46Z</collected_at>
+    <updated_at type="datetime">2018-05-30T19:13:46Z</updated_at>
+    <details>
+      <account>
+        <account_code>cancel21e7a84b-c554-49c0-af1b-b3847c9b412d</account_code>
+        <first_name nil="nil"></first_name>
+        <last_name nil="nil"></last_name>
+        <company nil="nil"></company>
+        <email nil="nil"></email>
+        <billing_info type="credit_card">
+          <first_name nil="nil"></first_name>
+          <last_name nil="nil"></last_name>
+          <address1 nil="nil"></address1>
+          <address2 nil="nil"></address2>
+          <city nil="nil"></city>
+          <state nil="nil"></state>
+          <zip nil="nil"></zip>
+          <country nil="nil"></country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Unknown</card_type>
+          <year nil="nil"></year>
+          <month nil="nil"></month>
+          <first_six nil="nil"></first_six>
+          <last_four nil="nil"></last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/452143a29e6d62c5ac05cb4205acece8" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1057"/>
+    <subscription href="https://api.recurly.com/v2/subscriptions/451586f4d8bfa59e53be43467bba4a71"/>
+    <original_transaction href="https://api.recurly.com/v2/transactions/451586fc5f8c9bc65dcd2f408e8d95f5"/>
+    <uuid>452143a29e6d62c5ac05cb4205acece8</uuid>
+    <action>refund</action>
+    <amount_in_cents type="integer">3000</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>184895</reference>
+    <source>subscription</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-05-30T19:13:44Z</created_at>
+    <collected_at type="datetime">2018-05-30T19:13:44Z</collected_at>
+    <updated_at type="datetime">2018-05-30T19:13:44Z</updated_at>
+    <details>
+      <account>
+        <account_code>freshd586a058-3f8d-469c-8a71-d61de0374a4d</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/4521439f6e5cd85fabe17a4ed8979718" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1056"/>
+    <original_transaction href="https://api.recurly.com/v2/transactions/452143891e7e1604c9ca704942a9e1bd"/>
+    <uuid>4521439f6e5cd85fabe17a4ed8979718</uuid>
+    <action>refund</action>
+    <amount_in_cents type="integer">5</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>1322640</reference>
+    <source>transaction</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-05-30T19:13:43Z</created_at>
+    <collected_at type="datetime">2018-05-30T19:13:43Z</collected_at>
+    <updated_at type="datetime">2018-05-30T19:13:43Z</updated_at>
+    <details>
+      <account>
+        <account_code>freshe5a4789e-1540-4245-8cca-84190439597e</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/452143891e7e1604c9ca704942a9e1bd" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e"/>
+    <invoice href="https://api.recurly.com/v2/invoices/1055"/>
+    <uuid>452143891e7e1604c9ca704942a9e1bd</uuid>
+    <action>purchase</action>
+    <amount_in_cents type="integer">100</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>6217925</reference>
+    <source>transaction</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">true</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="" nil="nil"></cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-05-30T19:13:37Z</created_at>
+    <collected_at type="datetime">2018-05-30T19:13:37Z</collected_at>
+    <updated_at type="datetime">2018-05-30T19:13:43Z</updated_at>
+    <details>
+      <account>
+        <account_code>freshe5a4789e-1540-4245-8cca-84190439597e</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+  <transaction href="https://api.recurly.com/v2/transactions/4521436a31a720f31dd734415cb634f5" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e"/>
+    <uuid>4521436a31a720f31dd734415cb634f5</uuid>
+    <action>verify</action>
+    <amount_in_cents type="integer">0</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>success</status>
+    <payment_method>credit_card</payment_method>
+    <reference>1891498</reference>
+    <source>billing_info</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Successful test transaction</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type nil="nil"></failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <cvv_result code="M">Match</cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-05-30T19:13:29Z</created_at>
+    <collected_at type="datetime">2018-05-30T19:13:29Z</collected_at>
+    <updated_at type="datetime">2018-05-30T19:13:29Z</updated_at>
+    <details>
+      <account>
+        <account_code>freshe5a4789e-1540-4245-8cca-84190439597e</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>411111</first_six>
+          <last_four>1111</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
   <transaction href="https://api.recurly.com/v2/transactions/451588eca985be8080c9684172b9414a" type="credit_card">
     <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
     <uuid>451588eca985be8080c9684172b9414a</uuid>
@@ -144,7 +1468,7 @@
     <source>transaction</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
+    <voidable type="boolean">false</voidable>
     <refundable type="boolean">false</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
@@ -261,7 +1585,7 @@
     <source>subscription</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
+    <voidable type="boolean">false</voidable>
     <refundable type="boolean">true</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
@@ -320,7 +1644,7 @@
     <source>subscription</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
+    <voidable type="boolean">false</voidable>
     <refundable type="boolean">true</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
@@ -565,7 +1889,7 @@
     <source>transaction</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
+    <voidable type="boolean">false</voidable>
     <refundable type="boolean">false</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
@@ -624,7 +1948,7 @@
     <source>transaction</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
+    <voidable type="boolean">false</voidable>
     <refundable type="boolean">false</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
@@ -741,7 +2065,7 @@
     <source>subscription</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
+    <voidable type="boolean">false</voidable>
     <refundable type="boolean">true</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
@@ -800,8 +2124,8 @@
     <source>subscription</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
-    <refundable type="boolean">true</refundable>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
     <origin>api</origin>
@@ -816,7 +2140,7 @@
     <avs_result_postal nil="nil"></avs_result_postal>
     <created_at type="datetime">2018-05-28T12:33:06Z</created_at>
     <collected_at type="datetime">2018-05-28T12:33:06Z</collected_at>
-    <updated_at type="datetime">2018-05-28T12:33:06Z</updated_at>
+    <updated_at type="datetime">2018-06-05T12:13:35Z</updated_at>
     <details>
       <account>
         <account_code>freshada66c3c-1637-4b4c-aba5-314d027c73d5</account_code>
@@ -1046,7 +2370,7 @@
     <source>subscription</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
+    <voidable type="boolean">false</voidable>
     <refundable type="boolean">false</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
@@ -1105,7 +2429,7 @@
     <source>transaction</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
+    <voidable type="boolean">false</voidable>
     <refundable type="boolean">false</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
@@ -1164,7 +2488,7 @@
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
     <voidable type="boolean">false</voidable>
-    <refundable type="boolean">true</refundable>
+    <refundable type="boolean">false</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
     <origin>api</origin>
@@ -1179,7 +2503,7 @@
     <avs_result_postal nil="nil"></avs_result_postal>
     <created_at type="datetime">2018-05-28T12:31:56Z</created_at>
     <collected_at type="datetime">2018-05-28T12:31:56Z</collected_at>
-    <updated_at type="datetime">2018-05-28T12:32:00Z</updated_at>
+    <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
     <details>
       <account>
         <account_code>freshd586a058-3f8d-469c-8a71-d61de0374a4d</account_code>
@@ -1222,8 +2546,8 @@
     <source>subscription</source>
     <recurring type="boolean">false</recurring>
     <test type="boolean">true</test>
-    <voidable type="boolean">true</voidable>
-    <refundable type="boolean">true</refundable>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
     <ip_address nil="nil"></ip_address>
     <gateway_type>test</gateway_type>
     <origin></origin>
@@ -1238,7 +2562,7 @@
     <avs_result_postal nil="nil"></avs_result_postal>
     <created_at type="datetime">2018-05-28T12:31:51Z</created_at>
     <collected_at type="datetime">2018-05-28T12:31:51Z</collected_at>
-    <updated_at type="datetime">2018-05-28T12:31:51Z</updated_at>
+    <updated_at type="datetime">2018-05-30T19:13:44Z</updated_at>
     <details>
       <account>
         <account_code>freshd586a058-3f8d-469c-8a71-d61de0374a4d</account_code>
