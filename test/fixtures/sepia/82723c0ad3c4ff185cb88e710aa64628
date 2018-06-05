@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<account href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c">
-  <adjustments href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/adjustments"/>
-  <account_balance href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/balance"/>
-  <invoices href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/invoices"/>
-  <shipping_addresses href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/shipping_addresses"/>
-  <subscriptions href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/subscriptions"/>
-  <transactions href="https://api.recurly.com/v2/accounts/failbilling118845e2-34b6-4705-aa51-1e153c97c73c/transactions"/>
-  <account_code>failbilling118845e2-34b6-4705-aa51-1e153c97c73c</account_code>
+<account href="https://api.recurly.com/v2/accounts/failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76">
+  <adjustments href="https://api.recurly.com/v2/accounts/failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76/adjustments"/>
+  <account_balance href="https://api.recurly.com/v2/accounts/failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76/balance"/>
+  <invoices href="https://api.recurly.com/v2/accounts/failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76/invoices"/>
+  <shipping_addresses href="https://api.recurly.com/v2/accounts/failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76/shipping_addresses"/>
+  <subscriptions href="https://api.recurly.com/v2/accounts/failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76/subscriptions"/>
+  <transactions href="https://api.recurly.com/v2/accounts/failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76/transactions"/>
+  <account_code>failbilling3d22b5af-6d95-495a-b7e8-8baeb8bbfe76</account_code>
   <state>active</state>
   <username nil="nil"></username>
   <email>test2@example.com</email>
@@ -25,9 +25,9 @@
     <phone nil="nil"></phone>
   </address>
   <accept_language nil="nil"></accept_language>
-  <hosted_login_token>WtZ9bCJGY5kL2AoE2V4wNAJBLzfxbFAq</hosted_login_token>
-  <created_at type="datetime">2018-05-28T12:33:44Z</created_at>
-  <updated_at type="datetime">2018-05-28T12:33:44Z</updated_at>
+  <hosted_login_token>EUCYGDiaSmXsqLChr4vPa7CJQQok343r</hosted_login_token>
+  <created_at type="datetime">2018-06-05T12:13:16Z</created_at>
+  <updated_at type="datetime">2018-06-05T12:13:16Z</updated_at>
   <closed_at nil="nil"></closed_at>
   <has_live_subscription type="boolean">false</has_live_subscription>
   <has_active_subscription type="boolean">false</has_active_subscription>
