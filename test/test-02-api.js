@@ -9,43 +9,55 @@ const _ = require('lodash')
 // This recurly account is an empty test account connected to their
 // development gateway.
 const config = {
-  apikey: '88ac57c6891440bda9ba28b6b9c18857',
-  plan_code: 'recurring-test',
-  subdomain: 'recurring-test'
+  apikey: '260ba794592e40e38d30f23143b1375b'
 }
 
 const recurly = new Recurring()
-let plan
-let account
-let subscription
-let freshAccountId
+let testPlan
+let testAccount
 
-before(() => {
+before(done => {
   recurly.setAPIKey(config.apikey)
+
+  // create plan
+  const planId = uuid.v4()
+  const planData = {
+    plan_code: `testplan${planId}`,
+    name: `Test Plan ${planId}`,
+    unit_amount_in_cents: {
+      USD: 1000
+    }
+  }
+
+  recurly.Plan().create(planData, (err, newPlan) => {
+    demand(err).not.exist()
+    newPlan.must.be.an.object()
+    newPlan.id.must.exist()
+    newPlan.name.must.exist()
+
+    testPlan = newPlan
+
+    const accountData = {
+      id: `fresh${uuid.v4()}`,
+      email: 'test@example.com',
+      first_name: 'John',
+      last_name: 'Whorfin',
+      company_name: 'Yoyodyne Propulsion Systems'
+    }
+    recurly.Account().create(accountData, (err, newAccount) => {
+      demand(err).not.exist()
+      newAccount.must.be.an.object()
+      newAccount.id.must.exist()
+      newAccount.company_name.must.equal('Yoyodyne Propulsion Systems')
+
+      testAccount = newAccount
+      done()
+    })
+  })
 })
 
 describe('Plan', () => {
   let cached
-
-  // create a plan.
-  it('can create a plan', done => {
-    const planId = uuid.v4()
-    const data = {
-      plan_code: `testplan${planId}`,
-      name: `Test Plan ${planId}`,
-      unit_amount_in_cents: {
-        USD: 1000
-      }
-    }
-
-    recurly.Plan().create(data, (err, newPlan) => {
-      demand(err).not.exist()
-      newPlan.must.be.an.object()
-      newPlan.id.must.equal(data.plan_code)
-      newPlan.name.must.equal(data.name)
-      done()
-    })
-  })
 
   it('cannot create a plan without a plan code', done => {
     const planId = uuid.v4()
@@ -103,7 +115,7 @@ describe('Plan', () => {
   })
 
   it('can fetch a single plan', done => {
-    plan = recurly.Plan()
+    const plan = recurly.Plan()
     plan.id = cached[0]
     plan.fetch(err => {
       demand(err).not.exist()
@@ -118,27 +130,9 @@ describe('Plan', () => {
 })
 
 describe('Account', () => {
-  it('can create an account', done => {
-    freshAccountId = uuid.v4()
-    const data = {
-      id: freshAccountId,
-      email: 'test@example.com',
-      first_name: 'John',
-      last_name: 'Whorfin',
-      company_name: 'Yoyodyne Propulsion Systems'
-    }
-    recurly.Account().create(data, (err, newAccount) => {
-      demand(err).not.exist()
-      newAccount.must.be.an.object()
-      newAccount.id.must.equal(freshAccountId)
-      newAccount.company_name.must.equal('Yoyodyne Propulsion Systems')
-      done()
-    })
-  })
-
   it('can close an account', done => {
-    account = recurly.Account()
-    account.id = freshAccountId
+    const account = recurly.Account()
+    account.id = testAccount.id
     account.close((err, closed) => {
       demand(err).not.exist()
       closed.must.equal(true)
@@ -147,7 +141,7 @@ describe('Account', () => {
   })
 
   it('can create or reopen a previously-closed account, transparently', done => {
-    const data = { id: freshAccountId }
+    const data = { id: testAccount.id }
     recurly.Account().create(data, (err, newAccount) => {
       demand(err).not.exist()
       newAccount.must.be.an.object()
@@ -158,8 +152,8 @@ describe('Account', () => {
   })
 
   it('can fetch a single account', done => {
-    account = recurly.Account()
-    account.id = freshAccountId
+    const account = recurly.Account()
+    account.id = testAccount.id
     account.fetch(err => {
       demand(err).not.exist()
       account.must.be.an.object()
@@ -181,19 +175,35 @@ describe('Account', () => {
   })
 
   it('can update an account', done => {
-    account.company_name = 'Yoyodyne Propulsion, International'
-    account.update((err, updated) => {
-      demand(err).not.exist()
-      updated.must.be.an.object()
+    const data = {
+      id: `update${uuid.v4()}`,
+      company_name: 'Old Name'
+    }
 
-      const testAcc = recurly.Account()
-      testAcc.id = account.id
-      testAcc.fetch(err => {
+    recurly.Account()
+      .create(data, (err, account) => {
         demand(err).not.exist()
-        testAcc.company_name.must.equal(account.company_name)
-        done()
+
+        account.company_name = 'Yoyodyne Propulsion, International'
+        account.address = {
+          address1: '760 Market Street',
+          address2: 'Suite 500'
+        }
+        account.update((err, updated) => {
+          demand(err).not.exist()
+          updated.must.be.an.object()
+
+          const updatedAccount = recurly.Account()
+          updatedAccount.id = account.id
+          updatedAccount.fetch(err => {
+            demand(err).not.exist()
+            updatedAccount.company_name.must.equal(account.company_name)
+            updatedAccount.address.address1.must.equal(account.address.address1)
+            updatedAccount.address.address2.must.equal(account.address.address2)
+            done()
+          })
+        })
       })
-    })
   })
 })
 
@@ -218,7 +228,7 @@ describe('BillingInfo', () => {
 
   it('can not retrieve billing info for an account that does not exist', done => {
     const data = {
-      id: uuid.v4(),
+      id: `failbilling${uuid.v4()}`,
       email: 'test2@example.com',
       first_name: 'John',
       last_name: 'Smallberries',
@@ -239,14 +249,14 @@ describe('BillingInfo', () => {
 
   it('can add billing info to an account and skip card authorization', done => {
     binfo = recurly.BillingInfo()
-    binfo.account_code = freshAccountId
+    binfo.account_code = testAccount.id
     binfo.skipAuthorization = true
     const billingData = {
-      first_name: account.first_name,
-      last_name: account.last_name,
+      first_name: testAccount.first_name,
+      last_name: testAccount.last_name,
       number: '4000-0000-0000-0077',
       month: 1,
-      year: (new Date()).getFullYear() + 3,
+      year: 2030,
       verification_value: '111',
       address1: '760 Market Street',
       address2: 'Suite 500',
@@ -265,13 +275,13 @@ describe('BillingInfo', () => {
 
   it('can add billing info to an account', done => {
     binfo = recurly.BillingInfo()
-    binfo.account_code = freshAccountId
+    binfo.account_code = testAccount.id
     const billingData = {
-      first_name: account.first_name,
-      last_name: account.last_name,
+      first_name: testAccount.first_name,
+      last_name: testAccount.last_name,
       number: '4111-1111-1111-1111',
       month: 1,
-      year: (new Date()).getFullYear() + 3,
+      year: 2030,
       verification_value: '111',
       address1: '760 Market Street',
       address2: 'Suite 500',
@@ -290,12 +300,12 @@ describe('BillingInfo', () => {
 
   it('throws an error when missing a required billing data field', done => {
     const binfo2 = recurly.BillingInfo()
-    binfo2.account_code = freshAccountId
+    binfo2.account_code = testAccount.id
 
     const wrong = () => {
       const inadequate = {
-        first_name: account.first_name,
-        last_name: account.last_name
+        first_name: testAccount.first_name,
+        last_name: testAccount.last_name
       }
       binfo2.update(inadequate, _.noop)
     }
@@ -304,9 +314,9 @@ describe('BillingInfo', () => {
   })
 
   it('can fetch the billing info for an account', done => {
-    account.fetchBillingInfo((err, info) => {
+    testAccount.fetchBillingInfo((err, info) => {
       demand(err).not.exist()
-      info.first_name.must.equal(account.first_name)
+      info.first_name.must.equal(testAccount.first_name)
       info.last_four.must.equal('1111')
       info.address2.must.be.a.string()
       done()
@@ -315,6 +325,7 @@ describe('BillingInfo', () => {
 })
 
 describe('Subscription', () => {
+  let testSubscription
   // let account
   let cached
 
@@ -356,11 +367,11 @@ describe('Subscription', () => {
   //   })
   // })
 
-  it('can create a subscription for an account', done => {
+  before(done => {
     const data = {
-      plan_code: config.plan_code,
+      plan_code: testPlan.plan_code,
       account: {
-        account_code: account.id
+        account_code: testAccount.id
       },
       currency: 'USD',
       quantity: 10
@@ -371,15 +382,15 @@ describe('Subscription', () => {
       newsub.id.must.exist()
       newsub.quantity.must.equal(10)
       newsub.plan.must.be.an.object()
-      newsub.plan.plan_code.must.equal(config.plan_code)
+      newsub.plan.plan_code.must.equal(testPlan.plan_code)
 
-      subscription = newsub
+      testSubscription = newsub
       done()
     })
   })
 
   it('can fetch all subscriptions associated with an account', done => {
-    account.fetchSubscriptions((err, subscriptions) => {
+    testAccount.fetchSubscriptions((err, subscriptions) => {
       demand(err).not.exist()
       subscriptions.must.be.an.array()
       cached = subscriptions
@@ -389,14 +400,14 @@ describe('Subscription', () => {
 
   it('can fetch a single subscription', done => {
     const uuid = cached[0].uuid
-    subscription = recurly.Subscription()
+    const subscription = recurly.Subscription()
     subscription.id = uuid
     subscription.fetch(err => {
       demand(err).not.exist()
       subscription.must.have.property('_resources')
       subscription._resources.must.be.an.object()
       subscription._resources.must.have.property('account')
-      subscription.account_id.must.equal(account.id)
+      subscription.account_id.must.equal(testAccount.id)
 
       done()
     })
@@ -404,7 +415,7 @@ describe('Subscription', () => {
 
   it('throws an error when attempting to modify a subscription without a timeframe', done => {
     const wrong = () => {
-      subscription.update({ inadequate: true }, _.noop)
+      testSubscription.update({ inadequate: true }, _.noop)
     }
     wrong.must.throw(Error)
     done()
@@ -413,58 +424,58 @@ describe('Subscription', () => {
   it('can modify a subscription', done => {
     const mods = {
       timeframe: 'now',
-      quantity: subscription.quantity + 3
+      quantity: testSubscription.quantity + 3
     }
 
-    subscription.update(mods, err => {
+    testSubscription.update(mods, err => {
       demand(err).not.exist()
-      subscription.must.be.an.object()
-      subscription.quantity.must.equal(mods.quantity)
+      testSubscription.must.be.an.object()
+      testSubscription.quantity.must.equal(mods.quantity)
 
       done()
     })
   })
 
   it('can cancel a subscription', done => {
-    subscription.cancel(err => {
+    testSubscription.cancel(err => {
       demand(err).not.exist()
-      subscription.state.must.equal('canceled')
-      subscription.canceled_at.must.be.a.date()
-      subscription.expires_at.must.be.a.date() // in the future, even
+      testSubscription.state.must.equal('canceled')
+      testSubscription.canceled_at.must.be.a.date()
+      testSubscription.expires_at.must.be.a.date() // in the future, even
 
       done()
     })
   })
 
   it('can reactivate a subscription', done => {
-    subscription.reactivate(err => {
+    testSubscription.reactivate(err => {
       demand(err).not.exist()
-      subscription.state.must.equal('active')
-      subscription.activated_at.must.be.a.date()
-      subscription.activated_at.getTime().must.equal(subscription.current_period_started_at.getTime())
-      subscription.canceled_at.must.be.a.string()
-      subscription.expires_at.must.be.a.string()
+      testSubscription.state.must.equal('active')
+      testSubscription.activated_at.must.be.a.date()
+      testSubscription.activated_at.getTime().must.equal(testSubscription.current_period_started_at.getTime())
+      testSubscription.canceled_at.must.be.a.string()
+      testSubscription.expires_at.must.be.a.string()
 
       done()
     })
   })
 
   it('can postpone a subscription', done => {
-    const now = new Date()
-    const nextDate = new Date(now.getUTCFullYear(), now.getUTCMonth() + 1, 1)
+    const date = new Date(2030, 0, 1)
+    const nextDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000)
 
-    subscription.postpone(nextDate, err => {
+    testSubscription.postpone(nextDate, err => {
       demand(err).not.exist()
-      nextDate.getTime().must.equal(subscription.current_period_ends_at.getTime())
+      nextDate.getTime().must.equal(testSubscription.current_period_ends_at.getTime())
       done()
     })
   })
 
   it('can terminate a subscription without a refund', done => {
-    subscription.terminate('none', err => {
+    testSubscription.terminate('none', err => {
       demand(err).not.exist()
-      subscription.state.must.equal('expired')
-      subscription.canceled_at.must.be.a.date()
+      testSubscription.state.must.equal('expired')
+      testSubscription.canceled_at.must.be.a.date()
       done()
     })
   })
@@ -511,7 +522,7 @@ describe.skip('Coupons', () => {
   })
 
   it('can redeem a coupon', done => {
-    const options = { account_code: freshAccountId, currency: 'USD' }
+    const options = { account_code: testAccount.id, currency: 'USD' }
 
     coupon.redeem(options, (err, redemption) => {
       demand(err).not.exist()
@@ -558,7 +569,7 @@ describe('Transactions', () => {
     const wrong = () => {
       const inadequate = {
         account: {
-          account_code: freshAccountId
+          account_code: testAccount.id
         },
         currency: 'USD'
       }
@@ -571,7 +582,7 @@ describe('Transactions', () => {
     const wrong = () => {
       const inadequate = {
         account: {
-          account_code: freshAccountId
+          account_code: testAccount.id
         },
         amount_in_cents: 10
       }
@@ -585,7 +596,7 @@ describe('Transactions', () => {
       amount_in_cents: 100,
       currency: 'USD',
       account: {
-        account_code: freshAccountId
+        account_code: testAccount.id
       }
     }
 
@@ -600,7 +611,7 @@ describe('Transactions', () => {
       transaction.refundable.must.equal(true)
 
       transaction.details.must.have.property('account')
-      transaction.details.account.account_code.must.equal(freshAccountId)
+      transaction.details.account.account_code.must.equal(testAccount.id)
 
       trans1 = transaction
       done()
@@ -622,7 +633,7 @@ describe('Transactions', () => {
       amount_in_cents: 500,
       currency: 'USD',
       account: {
-        account_code: freshAccountId
+        account_code: testAccount.id
       }
     }
 
@@ -648,6 +659,8 @@ describe('Invoices', () => {
       const invoiceIds = Object.keys(invoices)
       invoiceIds.length.must.be.above(0)
       invoiceIds[0].must.not.equal('undefined')
+      console.log('TEST: ', invoices[invoiceIds[0]])
+      invoices[invoiceIds[0]].recurly_account_id.must.not.equal('undefined')
       done()
     })
   })
@@ -684,7 +697,6 @@ describe('Invoices', () => {
         invoice.must.have.property('_resources')
         invoice._resources.must.be.an.object()
         invoice._resources.must.have.property('account')
-        invoice._resources.must.have.property('original_invoice')
         invoice.must.have.property('properties')
         invoice.must.be.an.object()
         invoice.must.have.property('invoice_number')
@@ -708,7 +720,6 @@ describe('Invoices', () => {
         invoice.must.have.property('_resources')
         invoice._resources.must.be.an.object()
         invoice._resources.must.have.property('account')
-        invoice._resources.must.have.property('original_invoice')
         invoice.must.have.property('properties')
         invoice.must.be.an.object()
         invoice.must.have.property('invoice_number')
@@ -723,7 +734,7 @@ describe('Invoices', () => {
   describe('cancelations', () => {
     before(function(done) {
       const accountData = {
-        id: uuid.v4()
+        id: `cancel${uuid.v4()}`
       }
 
       // Create a test account
@@ -785,7 +796,7 @@ describe('RecurlyError', () => {
 
     it('handles a single field validation error', done => {
       const data = {
-        id: uuid.v4(),
+        id: `invalid${uuid.v4()}`,
         email: 'test@example.com2', // Note invalid email address
         first_name: 'John',
         last_name: 'Whorfin',
@@ -809,31 +820,12 @@ describe('RecurlyError', () => {
   })
 
   describe('Transaction errors', () => {
-    beforeEach(function(done) {
-      const self = this
-      const data = {
-        id: uuid.v4(),
-        email: 'test@example.com',
-        first_name: 'John',
-        last_name: 'Whorfin',
-        company_name: 'Yoyodyne Propulsion Systems'
-      }
-      recurly.Account().create(data, (err, newAccount) => {
-        demand(err).not.exist()
-        self.account = newAccount
-        done()
-      })
-    })
-
     it('handles multiple validation errors', function(done) {
-      account = recurly.Account()
-      account.id = this.account.id
-
       const binfo = recurly.BillingInfo()
-      binfo.account_code = this.account.id
+      binfo.account_code = testAccount.id
       const billingData = {
-        first_name: this.account.properties.first_name,
-        last_name: this.account.properties.last_name,
+        first_name: testAccount.first_name,
+        last_name: testAccount.last_name,
         number: '4111-1111', // Note invalid format
         month: 1,
         year: 2010,
@@ -848,23 +840,20 @@ describe('RecurlyError', () => {
         err.message.must.not.equal('undefined')
         err.must.have.property('errors')
         err.errors.must.be.an.array()
-        err.errors.length.must.equal(6)
+        err.errors.length.must.equal(2)
         done()
       })
     })
 
     it('handles multiple transaction errors', function(done) {
-      account = recurly.Account()
-      account.id = this.account.id
-
       const binfo = recurly.BillingInfo()
-      binfo.account_code = this.account.id
+      binfo.account_code = testAccount.id
       const billingData = {
-        first_name: this.account.properties.first_name,
-        last_name: this.account.properties.last_name,
+        first_name: testAccount.first_name,
+        last_name: testAccount.last_name,
         number: '4000-0000-0000-0101',
         month: 1,
-        year: (new Date()).getFullYear() + 3,
+        year: 2030,
         verification_value: '111',
         address1: '760 Market Street',
         address2: 'Suite 500',
@@ -917,7 +906,7 @@ describe('Prerequsites', () => {
   })
   it('should raise an error if the API Key has not been set.', done => {
     const data = {
-      id: uuid.v4(),
+      id: `noapikey${uuid.v4()}`,
       email: 'test@example.com',
       first_name: 'John',
       last_name: 'Whorfin',

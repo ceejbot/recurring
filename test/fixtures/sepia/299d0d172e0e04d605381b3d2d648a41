@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf">
+  <adjustments href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/adjustments"/>
+  <account_balance href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/balance"/>
+  <invoices href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/invoices"/>
+  <shipping_addresses href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/shipping_addresses"/>
+  <subscriptions href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/subscriptions"/>
+  <transactions href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/transactions"/>
+  <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+  <state>active</state>
+  <username nil="nil"></username>
+  <email>test@example.com</email>
+  <cc_emails nil="nil"></cc_emails>
+  <first_name>John</first_name>
+  <last_name>Whorfin</last_name>
+  <company_name>Yoyodyne Propulsion Systems</company_name>
+  <vat_number nil="nil"></vat_number>
+  <address>
+    <address1 nil="nil"></address1>
+    <address2 nil="nil"></address2>
+    <city nil="nil"></city>
+    <state nil="nil"></state>
+    <zip nil="nil"></zip>
+    <country nil="nil"></country>
+    <phone nil="nil"></phone>
+  </address>
+  <accept_language nil="nil"></accept_language>
+  <hosted_login_token>tkM4N7eCCPZ87AQA2eoe57CFhu8zL3jW</hosted_login_token>
+  <created_at type="datetime">2018-06-05T12:13:08Z</created_at>
+  <updated_at type="datetime">2018-06-05T12:13:08Z</updated_at>
+  <closed_at nil="nil"></closed_at>
+  <has_live_subscription type="boolean">false</has_live_subscription>
+  <has_active_subscription type="boolean">false</has_active_subscription>
+  <has_future_subscription type="boolean">false</has_future_subscription>
+  <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+  <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+</account>

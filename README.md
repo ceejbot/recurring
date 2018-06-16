@@ -1,6 +1,14 @@
 A node client for [recurly](https://recurly.com)'s v2 api, with support for secure parameter signing for [recurly.js](https://docs.recurly.com/recurlyjs) embedded forms.
 
-[![on npm](http://img.shields.io/npm/v/recurring.svg?style=flat)](https://www.npmjs.org/package/recurring)  [![Tests](http://img.shields.io/travis/ceejbot/recurring.svg?style=flat)](http://travis-ci.org/ceejbot/recurring)  [![Dependencies](http://img.shields.io/david/ceejbot/recurring.svg?style=flat)](https://david-dm.org/ceejbot/recurring)  ![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat)  
+[![on npm](http://img.shields.io/npm/v/recurring.svg?style=flat)](https://www.npmjs.org/package/recurring)  [![Tests](http://img.shields.io/travis/ceejbot/recurring.svg?style=flat)](http://travis-ci.org/ceejbot/recurring)  [![Dependencies](http://img.shields.io/david/ceejbot/recurring.svg?style=flat)](https://david-dm.org/ceejbot/recurring)  ![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat)
+
+NOTE FOR KONTIST
+================
+
+This repo was forked https://github.com/ceejbot/recurring as it didn't seem to be actively maintained anymore. Further changes to the repo were:
+* Remove ghooks
+* Adopt yarn over npm
+* Record/replay actual HTTP requests on tests using [linkedin/sepia](https://github.com/linkedin/sepia).
 
 __This code is still in development.__ We do not have complete coverage of the API yet.
 
@@ -47,7 +55,7 @@ recurly.Plan.all(function(err, plans) {
 
 ## Configuration
 
-**recurly.setAPIKey()**  
+**recurly.setAPIKey()**
 In order to access the Recurly API you must supply your API key which can be setterFunc by calling the `setAPIKey()`
 method.
 
@@ -57,7 +65,7 @@ var recurly = new Recurring();
 recurly.setAPIKey('your-api-key');
 ```
 
-**recurly.setRateLimit()**  
+**recurly.setRateLimit()**
 The recurly API has a rate limit policy in place that prevents excessive calls being made to the API. By default
 sandbox accounts have a limit of 400 requests per minute and live accounts have a limit of 1000 requests per minute.
 In order to help ensure that you do not exceed these limits Recurring provides a configurable rate limiter.
@@ -95,21 +103,21 @@ recurly.clearCache();
 Recurly is not consistent about how it names the ID fields for each data type. For some it's `uuid` and for others
 `foo_code`. Recurring hides this away: every data type has an `id` property that sets the correct field name for Recurly.
 
-**instance.create()**  
+**instance.create()**
 Create an object of the given type by POSTing to Recurly.
 
 ```javascript
 DataType.create(optionsHash, function(err, object));
 ```
 
-**instance.fetch()**  
+**instance.fetch()**
 Fetch an item of a given type from Recurly. The item must have an id.
 
 ```javascript
 instance.fetch(function(err, instance))
 ```
 
-**instance.destroy()**  
+**instance.destroy()**
 Destroy, delete, close, cancel, or otherwise remove the specified object. Invokes http `DELETE` on the item's href. The
 item must have an id.
 
@@ -117,7 +125,7 @@ item must have an id.
 instance.destroy(function(err));
 ```
 
-**instance.update()**  
+**instance.update()**
 Most data types have an `update()` method that changes the stored data.
 
 ```javascript
@@ -126,14 +134,14 @@ instance.update(options, function(err, updated));
 
 ## Plan
 
-**Plan.all()**  
+**Plan.all()**
 Fetch a list of plans. Responds with an array of all plans that match the passed-in (optional) filters.
 
 ```javascript
 Plan.all(filter, function(err, plans));
 ```
 
-**Plan.iterator()**  
+**Plan.iterator()**
 Fetch a list of plans. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
 ```javascript
@@ -145,7 +153,7 @@ iterators.forEachAsync(iterator, function (err, data, next) {
 });
 ```
 
-**plan.fetchAddOns()**  
+**plan.fetchAddOns()**
 Fetch plan addons. Responds with a array of plan addons.
 
 ```javascript
@@ -154,14 +162,14 @@ plan.fetchAddOns(function(err, addons));
 
 ## Account
 
-**Account.all()**  
+**Account.all()**
 Fetch a list of accounts. Responds with an array of all accounts that match the passed-in (optional) filters.
 
 ```javascript
 Account.all(filter, function(err, accounts));
 ```
 
-**Account.iterator()**  
+**Account.iterator()**
 Fetch a list of accounts. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
 ```javascript
@@ -173,14 +181,14 @@ iterators.forEachAsync(iterator, function (err, data, next) {
 });
 ```
 
-**account.close()**  
+**account.close()**
 Close an account. Alias for delete.
 
 ```javascript
 account.close(function(err));
 ```
 
-**account.reopen()**  
+**account.reopen()**
 Reopen a closed account:
 
 ```javascript
@@ -194,28 +202,28 @@ Fetch adjustment information for an account. Responds with an array of adjustmen
 account.fetchAdjustments(function(err, adjustments));
 ```
 
-**account.fetchBillingInfo()**  
+**account.fetchBillingInfo()**
 Fetch billing information for an account. Responds with an BillingInfo object.
 
 ```javascript
 account.fetchBillingInfo(function(err, info));
 ```
 
-**account.fetchSubscriptions()**  
+**account.fetchSubscriptions()**
 Fetch subscription information for an account. Responds with an array of subscriptions for this account.
 
 ```javascript
 account.fetchSubscriptions(function(err, subscriptions));
 ```
 
-**account.fetchTransactions()**  
+**account.fetchTransactions()**
 Fetch transaction information for an account. Responds with an array of transactions for this account.
 
 ```javascript
 account.fetchTransactions(function(err, transactions));
 ```
 
-**account.fetchInvoices()**  
+**account.fetchInvoices()**
 Fetch invoice information for an account. Responds with an array of invoices for this account.
 
 ```javascript
@@ -224,7 +232,7 @@ account.fetchInvoices(function(err, invoices));
 
 ### Billing Info
 
-**billingInfo.update()**  
+**billingInfo.update()**
 Add/update billing information for an account.
 
 ```javascript
@@ -285,14 +293,14 @@ binfo.update(billing_data);
 
 ## Subscription
 
-**Subscription.all()**  
+**Subscription.all()**
 Fetch a list of subscriptions. Responds with an array of all subscriptions that match the passed-in (optional) filters.
 
 ```javascript
 Subscription.all(filter, function(err, subscriptions));
 ```
 
-**Subscription.iterator()**  
+**Subscription.iterator()**
 Fetch a list of subscriptions. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
 ```javascript
@@ -304,28 +312,28 @@ iterators.forEachAsync(iterator, function (err, data, next) {
 });
 ```
 
-**subscription.cancel()**  
+**subscription.cancel()**
 Cancel a subscription.
 
 ```javascript
 subscription.cancel(function(err, updated));
 ```
 
-**subscription.reactivate()**  
+**subscription.reactivate()**
 Reactivate a cancelled subscription.
 
 ```javascript
 subscription.reactivate(function(err, updated));
 ```
 
-**subscription.postpone()**  
+**subscription.postpone()**
 Postpone a subscription.
 
 ```javascript
 subscription.postpone(nextRenewalDate, function(err, updated));
 ```
 
-**subscription.terminate()**  
+**subscription.terminate()**
 Terminate a subscription using the specific refund type. Valid refund types are 'partial', 'full', and 'none'.
 
 ```javascript
@@ -334,14 +342,14 @@ subscription.terminate(refundType, function(err, updated));
 
 ## Coupon
 
-**Coupon.all()**  
+**Coupon.all()**
 Fetch a list of coupons. Responds with an array of all coupons.
 
 ```javascript
 Coupon.all(function(err, coupons));
 ```
 
-**Coupon.iterator()**  
+**Coupon.iterator()**
 Fetch a list of coupons. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
 ```javascript
@@ -353,7 +361,7 @@ iterators.forEachAsync(iterator, function (err, data, next) {
 });
 ```
 
-**coupon.redeem()**  
+**coupon.redeem()**
 Redeem a coupon.
 
 ```javascript
@@ -366,14 +374,14 @@ coupon.redeem(options, function(err, redemption));
 
 ## Transaction
 
-**Transaction.all()**  
+**Transaction.all()**
 Fetch a list of transactions. Responds with an array of all transactions that match the passed-in (optional) filters.
 
 ```javascript
 Transaction.all(filter, function(err, transactions));
 ```
 
-**Transaction.iterator()**  
+**Transaction.iterator()**
 Fetch a list of transactions. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
 ```javascript
@@ -385,20 +393,20 @@ iterators.forEachAsync(iterator, function (err, data, next) {
 });
 ```
 
-**transaction.refund(amountInCents, function(err)) (DEPRECIATED)**  
+**transaction.refund(amountInCents, function(err)) (DEPRECIATED)**
 If amountInCents is omitted, the transaction is refunded in full. Responds with any errors; the transaction object is
 updated.
 
 ## Invoice
 
-**Invoice.all()**  
+**Invoice.all()**
 Fetch a list of invoices. Responds with an array of all invoices that match the passed-in (optional) filters.
 
 ```javascript
 Invoice.all(filter, function(err, invoices));
 ```
 
-**Invoice.iterator()**  
+**Invoice.iterator()**
 Fetch a list of invoices. Responds with an async iterator that lazy loads data from recurly in batches of 200.
 
 ```javascript
@@ -410,7 +418,7 @@ iterators.forEachAsync(iterator, function (err, data, next) {
 });
 ```
 
-**invoice.refund(options, function(err))**  
+**invoice.refund(options, function(err))**
 If `options.amount_in_cents` is omitted, the invoice is refunded in full. Responds with any errors; the invoice object is
 updated.
 
@@ -423,10 +431,10 @@ updated.
    refund method to use first. Most relevant in a partial refunds, you can chose to refund credit back to the account
    first or a transaction giving money back to the customer first. Set as 'credit' or 'transaction'.
 
-**invoice.markSuccessful(function(err))**  
+**invoice.markSuccessful(function(err))**
 Mark an Invoice as Paid Successfully.
 
-**invoice.markFailed(function(err))**  
+**invoice.markFailed(function(err))**
 Mark an Invoice as Failed Collection.
 
 

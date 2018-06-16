@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<account href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c">
+  <adjustments href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c/adjustments"/>
+  <account_balance href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c/balance"/>
+  <invoices href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c/invoices"/>
+  <shipping_addresses href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c/shipping_addresses"/>
+  <subscriptions href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c/subscriptions"/>
+  <transactions href="https://api.recurly.com/v2/accounts/cancel06065e09-1986-44e1-9dae-aec273fa522c/transactions"/>
+  <account_code>cancel06065e09-1986-44e1-9dae-aec273fa522c</account_code>
+  <state>active</state>
+  <username nil="nil"></username>
+  <email nil="nil"></email>
+  <cc_emails nil="nil"></cc_emails>
+  <first_name nil="nil"></first_name>
+  <last_name nil="nil"></last_name>
+  <company_name nil="nil"></company_name>
+  <vat_number nil="nil"></vat_number>
+  <address>
+    <address1 nil="nil"></address1>
+    <address2 nil="nil"></address2>
+    <city nil="nil"></city>
+    <state nil="nil"></state>
+    <zip nil="nil"></zip>
+    <country nil="nil"></country>
+    <phone nil="nil"></phone>
+  </address>
+  <accept_language nil="nil"></accept_language>
+  <hosted_login_token>S1WaFL3rALFPtvidWe8NyoTQbWfpUhah</hosted_login_token>
+  <created_at type="datetime">2018-06-05T12:13:35Z</created_at>
+  <updated_at type="datetime">2018-06-05T12:13:35Z</updated_at>
+  <closed_at nil="nil"></closed_at>
+  <has_live_subscription type="boolean">false</has_live_subscription>
+  <has_active_subscription type="boolean">false</has_active_subscription>
+  <has_future_subscription type="boolean">false</has_future_subscription>
+  <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+  <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+</account>
