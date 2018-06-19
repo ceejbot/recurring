@@ -659,6 +659,7 @@ describe('Invoices', () => {
       const invoiceIds = Object.keys(invoices)
       invoiceIds.length.must.be.above(0)
       invoiceIds[0].must.not.equal('undefined')
+      invoices[invoiceIds[0]].recurly_account_id.must.not.equal('undefined')
       done()
     })
   })
