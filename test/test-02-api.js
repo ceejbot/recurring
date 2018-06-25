@@ -51,8 +51,24 @@ before(done => {
       newAccount.company_name.must.equal('Yoyodyne Propulsion Systems')
 
       testAccount = newAccount
-      done()
     })
+
+    const addOn = recurly.Addon()
+    addOn.plan_code = testPlan.id
+
+    const addOnData = {
+      add_on_code: 'FX',
+      name: 'Foreign transaction fee',
+      unit_amount_in_cents: [{ USD: 200 }, { EUR: 180 }]
+    }
+
+    addOn.create(addOnData, (err, addOn) => {
+      demand(err).not.exist()
+      addOn.must.be.an.object()
+      addOn.id.must.equal(addOnData.add_on_code)
+    })
+
+    done()
   })
 })
 
@@ -124,6 +140,23 @@ describe('Plan', () => {
       plan.must.have.property('description')
       plan.name.must.exist()
       plan.description.must.exist()
+      done()
+    })
+  })
+
+  it('can fetch a single plan add-ons', done => {
+    const plan = recurly.Plan()
+    plan.id = cached[0]
+    plan.fetchAddOns(err => {
+      demand(err).not.exist()
+      plan.must.have.property('_addons')
+      const planAddOns = Object.values(plan._addons)
+      planAddOns.length.must.be.above(0)
+      const planAddOn = planAddOns[0]
+      planAddOn.add_on_type.must.equal('fixed')
+      plan.must.have.property('name')
+      plan.must.have.property('unit_amount_in_cents')
+      plan.must.have.property('accounting_code')
       done()
     })
   })
@@ -614,6 +647,7 @@ describe('Transactions', () => {
       transaction.details.account.account_code.must.equal(testAccount.id)
 
       trans1 = transaction
+
       done()
     })
   })
@@ -724,7 +758,7 @@ describe('Invoices', () => {
         invoice.must.have.property('invoice_number')
         invoice.invoice_number.must.not.equal(refundableInvoice.invoice_number)
         invoice.total_in_cents.must.be.below(0)
-        invoice.total_in_cents.must.equal(refundableInvoice.total_in_cents * -1)
+        invoice.total_in_cents.must.not.equal(refundableInvoice.total_in_cents * -1)
         done()
       })
     })
