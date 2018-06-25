@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<account href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051">
+  <adjustments href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/adjustments"/>
+  <account_balance href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/balance"/>
+  <invoices href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/invoices"/>
+  <shipping_addresses href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/shipping_addresses"/>
+  <subscriptions href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/subscriptions"/>
+  <transactions href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/transactions"/>
+  <account_code>updatee12412c9-87a8-4bd7-bd01-e2389e4a0051</account_code>
+  <state>active</state>
+  <username nil="nil"/>
+  <email nil="nil"/>
+  <cc_emails nil="nil"/>
+  <first_name nil="nil"/>
+  <last_name nil="nil"/>
+  <company_name>Yoyodyne Propulsion, International</company_name>
+  <vat_number nil="nil"/>
+  <address>
+    <address1>760 Market Street</address1>
+    <address2>Suite 500</address2>
+    <city nil="nil"/>
+    <state nil="nil"/>
+    <zip nil="nil"/>
+    <country nil="nil"/>
+    <phone nil="nil"/>
+  </address>
+  <accept_language nil="nil"/>
+  <hosted_login_token>CnL1cr5qJtsFaP7PDLc1UyAjdAR9wyj1</hosted_login_token>
+  <created_at type="datetime">2018-06-25T11:33:34Z</created_at>
+  <updated_at type="datetime">2018-06-25T11:33:35Z</updated_at>
+  <closed_at nil="nil"/>
+  <has_live_subscription type="boolean">false</has_live_subscription>
+  <has_active_subscription type="boolean">false</has_active_subscription>
+  <has_future_subscription type="boolean">false</has_future_subscription>
+  <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+  <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+</account>
