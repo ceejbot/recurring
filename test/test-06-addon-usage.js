@@ -6,7 +6,7 @@ const recurly = new Recurring()
 
 const nock = require('nock')
 
-describe('Addon Usage', function() {
+describe.only('Addon Usage', function() {
   it('addon usage creation', function(done) {
     const amount = 1234
     const usageTimestamp = '1970-01-01T12:00:00Z'
