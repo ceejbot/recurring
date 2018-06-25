@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<account href="https://api.recurly.com/v2/accounts/failbilling26cdb9ee-55e4-425f-81db-a171d0632ac9">
-  <adjustments href="https://api.recurly.com/v2/accounts/failbilling26cdb9ee-55e4-425f-81db-a171d0632ac9/adjustments"/>
-  <account_balance href="https://api.recurly.com/v2/accounts/failbilling26cdb9ee-55e4-425f-81db-a171d0632ac9/balance"/>
-  <invoices href="https://api.recurly.com/v2/accounts/failbilling26cdb9ee-55e4-425f-81db-a171d0632ac9/invoices"/>
-  <shipping_addresses href="https://api.recurly.com/v2/accounts/failbilling26cdb9ee-55e4-425f-81db-a171d0632ac9/shipping_addresses"/>
-  <subscriptions href="https://api.recurly.com/v2/accounts/failbilling26cdb9ee-55e4-425f-81db-a171d0632ac9/subscriptions"/>
-  <transactions href="https://api.recurly.com/v2/accounts/failbilling26cdb9ee-55e4-425f-81db-a171d0632ac9/transactions"/>
-  <account_code>failbilling26cdb9ee-55e4-425f-81db-a171d0632ac9</account_code>
+<account href="https://api.recurly.com/v2/accounts/failbilling9686566e-295d-443a-adc8-517879f8eb83">
+  <adjustments href="https://api.recurly.com/v2/accounts/failbilling9686566e-295d-443a-adc8-517879f8eb83/adjustments"/>
+  <account_balance href="https://api.recurly.com/v2/accounts/failbilling9686566e-295d-443a-adc8-517879f8eb83/balance"/>
+  <invoices href="https://api.recurly.com/v2/accounts/failbilling9686566e-295d-443a-adc8-517879f8eb83/invoices"/>
+  <shipping_addresses href="https://api.recurly.com/v2/accounts/failbilling9686566e-295d-443a-adc8-517879f8eb83/shipping_addresses"/>
+  <subscriptions href="https://api.recurly.com/v2/accounts/failbilling9686566e-295d-443a-adc8-517879f8eb83/subscriptions"/>
+  <transactions href="https://api.recurly.com/v2/accounts/failbilling9686566e-295d-443a-adc8-517879f8eb83/transactions"/>
+  <account_code>failbilling9686566e-295d-443a-adc8-517879f8eb83</account_code>
   <state>active</state>
   <username nil="nil"/>
   <email>test2@example.com</email>
@@ -25,9 +25,9 @@
     <phone nil="nil"/>
   </address>
   <accept_language nil="nil"/>
-  <hosted_login_token>M4cKn3fW5BUgpvhfgjTsvS3DR6PpJWK8</hosted_login_token>
-  <created_at type="datetime">2018-06-25T11:33:35Z</created_at>
-  <updated_at type="datetime">2018-06-25T11:33:35Z</updated_at>
+  <hosted_login_token>5KeUKjGuDbFgVrdqEyFj6RP7Z9tP4wyW</hosted_login_token>
+  <created_at type="datetime">2018-06-25T15:44:18Z</created_at>
+  <updated_at type="datetime">2018-06-25T15:44:18Z</updated_at>
   <closed_at nil="nil"/>
   <has_live_subscription type="boolean">false</has_live_subscription>
   <has_active_subscription type="boolean">false</has_active_subscription>

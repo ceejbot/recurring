@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice href="https://api.recurly.com/v2/invoices/1130">
+  <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+  <address>
+    <address1>760 Market Street</address1>
+    <address2>Suite 500</address2>
+    <city>San Francisco</city>
+    <state>CA</state>
+    <zip>94102</zip>
+    <country>USA</country>
+    <phone nil="nil"></phone>
+  </address>
+  <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+  <uuid>45a668a4d6c85a5cfee06f40d49aefed</uuid>
+  <state>collected</state>
+  <invoice_number_prefix></invoice_number_prefix>
+  <invoice_number type="integer">1130</invoice_number>
+  <vat_number></vat_number>
+  <tax_in_cents type="integer">0</tax_in_cents>
+  <total_in_cents type="integer">-3000</total_in_cents>
+  <currency>USD</currency>
+  <created_at type="datetime">2018-06-25T15:43:39Z</created_at>
+  <updated_at type="datetime">2018-06-25T15:43:39Z</updated_at>
+  <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+  <closed_at type="datetime">2018-06-25T15:43:39Z</closed_at>
+  <customer_notes nil="nil"></customer_notes>
+  <recovery_reason nil="nil"></recovery_reason>
+  <net_terms nil="nil"></net_terms>
+  <collection_method nil="nil"></collection_method>
+  <po_number nil="nil"></po_number>
+  <terms_and_conditions nil="nil"></terms_and_conditions>
+  <subtotal_in_cents type="integer">-3000</subtotal_in_cents>
+  <subtotal_after_discount_in_cents type="integer">-3000</subtotal_after_discount_in_cents>
+  <line_items type="array">
+    <adjustment href="https://api.recurly.com/v2/adjustments/45a668a4c332b53b5896da4514aabb5b" type="credit">
+      <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+      <invoice href="https://api.recurly.com/v2/invoices/1130"/>
+      <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+      <uuid>45a668a4c332b53b5896da4514aabb5b</uuid>
+      <state>invoiced</state>
+      <description>Test Plan 6b0e8cc0-2581-4c49-a54b-30da0e219416</description>
+      <accounting_code nil="nil"></accounting_code>
+      <product_code>testplan6b0e8cc0-2581-4c49-a54b-30da0e219416</product_code>
+      <origin>plan</origin>
+      <unit_amount_in_cents type="integer">-3000</unit_amount_in_cents>
+      <quantity type="integer">1</quantity>
+      <quantity_remaining type="integer">0</quantity_remaining>
+      <original_adjustment_uuid>453ea841075ac466c8e1d249f59c3771</original_adjustment_uuid>
+      <discount_in_cents type="integer">0</discount_in_cents>
+      <tax_in_cents type="integer">0</tax_in_cents>
+      <total_in_cents type="integer">-3000</total_in_cents>
+      <currency>USD</currency>
+      <taxable type="boolean">false</taxable>
+      <start_date type="datetime">2018-06-05T12:12:37Z</start_date>
+      <end_date type="datetime">2018-07-05T12:12:35Z</end_date>
+      <created_at type="datetime">2018-06-25T15:43:39Z</created_at>
+      <updated_at type="datetime">2018-06-25T15:43:39Z</updated_at>
+      <revenue_schedule_type>evenly</revenue_schedule_type>
+    </adjustment>
+  </line_items>
+  <transactions type="array">
+    <transaction href="https://api.recurly.com/v2/transactions/45a668a57c9d08fe1017bd491c8e6236" type="credit_card">
+      <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+      <invoice href="https://api.recurly.com/v2/invoices/1130"/>
+      <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+      <original_transaction href="https://api.recurly.com/v2/transactions/453ea84132bbbbd24a466e4a3f8146d0"/>
+      <uuid>45a668a57c9d08fe1017bd491c8e6236</uuid>
+      <action>refund</action>
+      <amount_in_cents type="integer">3000</amount_in_cents>
+      <tax_in_cents type="integer">0</tax_in_cents>
+      <currency>USD</currency>
+      <status>success</status>
+      <payment_method>credit_card</payment_method>
+      <reference>4617504</reference>
+      <source>subscription</source>
+      <recurring type="boolean">false</recurring>
+      <test type="boolean">true</test>
+      <voidable type="boolean">true</voidable>
+      <refundable type="boolean">false</refundable>
+      <ip_address nil="nil"></ip_address>
+      <gateway_type>test</gateway_type>
+      <origin>api</origin>
+      <description nil="nil"></description>
+      <message>Successful test transaction</message>
+      <approval_code nil="nil"></approval_code>
+      <failure_type nil="nil"></failure_type>
+      <gateway_error_codes nil="nil"></gateway_error_codes>
+      <cvv_result code="" nil="nil"></cvv_result>
+      <avs_result code="D">Street address and postal code match.</avs_result>
+      <avs_result_street nil="nil"></avs_result_street>
+      <avs_result_postal nil="nil"></avs_result_postal>
+      <created_at type="datetime">2018-06-25T15:43:39Z</created_at>
+      <collected_at type="datetime">2018-06-25T15:43:39Z</collected_at>
+      <updated_at type="datetime">2018-06-25T15:43:39Z</updated_at>
+      <details>
+        <account>
+          <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <company>Yoyodyne Propulsion Systems</company>
+          <email>test@example.com</email>
+          <billing_info type="credit_card">
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <address1>760 Market Street</address1>
+            <address2>Suite 500</address2>
+            <city>San Francisco</city>
+            <state>CA</state>
+            <zip>94102</zip>
+            <country>USA</country>
+            <phone nil="nil"></phone>
+            <vat_number nil="nil"></vat_number>
+            <card_type>Visa</card_type>
+            <year type="integer">2030</year>
+            <month type="integer">1</month>
+            <first_six>411111</first_six>
+            <last_four>1111</last_four>
+          </billing_info>
+        </account>
+      </details>
+    </transaction>
+  </transactions>
+</invoice>

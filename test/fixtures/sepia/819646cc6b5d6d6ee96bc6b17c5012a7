@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<errors>
+  <transaction_error>
+    <error_code>fraud_security_code</error_code>
+    <error_category>fraud</error_category>
+    <merchant_message>The payment gateway declined the transaction because the security code (CVV) or expiration date did not match.</merchant_message>
+    <customer_message>The security code you entered does not match. Please update the CVV and try again.</customer_message>
+    <gateway_error_code nil="nil"></gateway_error_code>
+  </transaction_error>
+  <error field="billing_info.billing_info.credit_card_verification_value" symbol="declined_bad">did not match</error>
+  <transaction href="https://api.recurly.com/v2/transactions/45a66999e4828eacdadd594908b454d2" type="credit_card">
+    <account href="https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad"/>
+    <uuid>45a66999e4828eacdadd594908b454d2</uuid>
+    <action>verify</action>
+    <amount_in_cents type="integer">0</amount_in_cents>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <currency>USD</currency>
+    <status>declined</status>
+    <payment_method>credit_card</payment_method>
+    <reference>9542658</reference>
+    <source>billing_info</source>
+    <recurring type="boolean">false</recurring>
+    <test type="boolean">true</test>
+    <voidable type="boolean">false</voidable>
+    <refundable type="boolean">false</refundable>
+    <ip_address nil="nil"></ip_address>
+    <gateway_type>test</gateway_type>
+    <origin>api</origin>
+    <description nil="nil"></description>
+    <message>Declined, CVV did not match</message>
+    <approval_code nil="nil"></approval_code>
+    <failure_type>fraud_security_code</failure_type>
+    <gateway_error_codes nil="nil"></gateway_error_codes>
+    <transaction_error>
+      <error_code>fraud_security_code</error_code>
+      <error_category>fraud</error_category>
+      <merchant_message>The payment gateway declined the transaction because the security code (CVV) or expiration date did not match.</merchant_message>
+      <customer_message>The security code you entered does not match. Please update the CVV and try again.</customer_message>
+      <gateway_error_code nil="nil"></gateway_error_code>
+    </transaction_error>
+    <cvv_result code="N">No Match</cvv_result>
+    <avs_result code="D">Street address and postal code match.</avs_result>
+    <avs_result_street nil="nil"></avs_result_street>
+    <avs_result_postal nil="nil"></avs_result_postal>
+    <created_at type="datetime">2018-06-25T15:44:41Z</created_at>
+    <collected_at type="datetime">2018-06-25T15:44:41Z</collected_at>
+    <updated_at type="datetime">2018-06-25T15:44:41Z</updated_at>
+    <details>
+      <account>
+        <account_code>fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad</account_code>
+        <first_name>John</first_name>
+        <last_name>Whorfin</last_name>
+        <company>Yoyodyne Propulsion Systems</company>
+        <email>test@example.com</email>
+        <billing_info type="credit_card">
+          <first_name>John</first_name>
+          <last_name>Whorfin</last_name>
+          <address1>760 Market Street</address1>
+          <address2>Suite 500</address2>
+          <city>San Francisco</city>
+          <state>CA</state>
+          <zip>94102</zip>
+          <country>USA</country>
+          <phone nil="nil"></phone>
+          <vat_number nil="nil"></vat_number>
+          <card_type>Visa</card_type>
+          <year type="integer">2030</year>
+          <month type="integer">1</month>
+          <first_six>400000</first_six>
+          <last_four>0101</last_four>
+        </billing_info>
+      </account>
+    </details>
+  </transaction>
+</errors>

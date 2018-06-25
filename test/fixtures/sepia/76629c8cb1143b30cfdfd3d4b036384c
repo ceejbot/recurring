@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<add_on href="https://api.recurly.com/v2/plans/testplan188fa78d-bbfa-43ff-813c-a5de955c07e2/add_ons/FX">
+  <plan href="https://api.recurly.com/v2/plans/testplan188fa78d-bbfa-43ff-813c-a5de955c07e2"/>
+  <add_on_code>FX</add_on_code>
+  <name>Foreign transaction fee</name>
+  <default_quantity type="integer">1</default_quantity>
+  <display_quantity_on_hosted_page type="boolean">false</display_quantity_on_hosted_page>
+  <unit_amount_in_cents>
+    <EUR type="integer">180</EUR>
+  </unit_amount_in_cents>
+  <accounting_code nil="nil"></accounting_code>
+  <add_on_type>fixed</add_on_type>
+  <optional type="boolean">true</optional>
+  <revenue_schedule_type>evenly</revenue_schedule_type>
+  <created_at type="datetime">2018-06-25T15:44:11Z</created_at>
+  <updated_at type="datetime">2018-06-25T15:44:11Z</updated_at>
+</add_on>

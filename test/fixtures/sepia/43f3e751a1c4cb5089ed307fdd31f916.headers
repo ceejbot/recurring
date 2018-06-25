@@ -1,29 +1,29 @@
 {
   "statusCode": 201,
   "headers": {
-    "date": "Mon, 25 Jun 2018 11:33:38 GMT",
+    "date": "Mon, 25 Jun 2018 15:44:21 GMT",
     "content-type": "application/xml; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
     "set-cookie": [
-      "__cfduid=d018034f3947e374929e719b075d44da51529926417; expires=Tue, 25-Jun-19 11:33:37 GMT; path=/; domain=.recurly.com; HttpOnly"
+      "__cfduid=dff749c027dd5202810056e6989c887c51529941460; expires=Tue, 25-Jun-19 15:44:20 GMT; path=/; domain=.recurly.com; HttpOnly"
     ],
     "x-api-version": "2.7",
     "content-language": "en-US",
     "x-ratelimit-limit": "2000",
-    "x-ratelimit-remaining": "1977",
-    "x-ratelimit-reset": "1529926680",
-    "etag": "\"5d032078a9856234c54949224161acf6\"",
-    "location": "https://api.recurly.com/v2/subscriptions/45a583bc5106962049a4524a9b80ddfc",
+    "x-ratelimit-remaining": "1927",
+    "x-ratelimit-reset": "1529941740",
+    "etag": "\"468bad43a11efc0b3555a7249a5441e4\"",
+    "location": "https://api.recurly.com/v2/subscriptions/45a66945eb1d866125c5b74dfdab88c0",
     "cache-control": "max-age=0, private, must-revalidate",
-    "x-request-id": "02sj1a17ue6fpmpk6cc0",
+    "x-request-id": "02smk2jlkcbv3bua7g70",
     "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
     "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
     "server": "cloudflare",
-    "cf-ray": "43071ecd0a6b2d5f-TXL"
+    "cf-ray": "43088e0f48cc2d3b-TXL"
   },
   "url": "http://api.recurly.com:443/v2/subscriptions",
-  "time": 873,
+  "time": 983,
   "request": {
     "method": "POST",
     "headers": {

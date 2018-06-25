@@ -1,29 +1,29 @@
 {
   "statusCode": 200,
   "headers": {
-    "date": "Mon, 25 Jun 2018 11:33:30 GMT",
+    "date": "Mon, 25 Jun 2018 15:44:13 GMT",
     "content-type": "application/xml; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
     "set-cookie": [
-      "__cfduid=dd4c530b61becc59d112ff4ca1bbf359e1529926408; expires=Tue, 25-Jun-19 11:33:28 GMT; path=/; domain=.recurly.com; HttpOnly"
+      "__cfduid=dc0737299c93f5d68d878d6258b694da61529941452; expires=Tue, 25-Jun-19 15:44:12 GMT; path=/; domain=.recurly.com; HttpOnly"
     ],
     "vary": "Accept-Encoding",
     "x-api-version": "2.7",
     "content-language": "en-US",
     "x-ratelimit-limit": "2000",
-    "x-ratelimit-remaining": "1995",
-    "x-ratelimit-reset": "1529926680",
-    "etag": "W/\"217cb7606a196266ed1fa37e9ff7137a\"",
+    "x-ratelimit-remaining": "1945",
+    "x-ratelimit-reset": "1529941740",
+    "etag": "W/\"f7b4d2e4350ee6710e3fa54f1972ad01\"",
     "cache-control": "max-age=0, private, must-revalidate",
-    "x-request-id": "02sj180rdqj2aoei31l0",
+    "x-request-id": "02smk0l3ubic38egk60g",
     "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
     "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
     "server": "cloudflare",
-    "cf-ray": "43071e97c8722d8f-TXL"
+    "cf-ray": "43088ddd2b3e2d6b-TXL"
   },
   "url": "https://api.recurly.com:443/v2/plans?per_page=200",
-  "time": 1456,
+  "time": 1418,
   "request": {
     "method": "GET",
     "headers": {

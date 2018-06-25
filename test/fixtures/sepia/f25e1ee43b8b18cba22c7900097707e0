@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<billing_info href="https://api.recurly.com/v2/accounts/fresha42cffcf-242f-41dd-b53c-1e564d2f7bf4/billing_info" type="credit_card">
+  <account href="https://api.recurly.com/v2/accounts/fresha42cffcf-242f-41dd-b53c-1e564d2f7bf4"/>
+  <first_name>John</first_name>
+  <last_name>Whorfin</last_name>
+  <company nil="nil"></company>
+  <address1>760 Market Street</address1>
+  <address2>Suite 500</address2>
+  <city>San Francisco</city>
+  <state>CA</state>
+  <zip>94102</zip>
+  <country>USA</country>
+  <phone nil="nil"></phone>
+  <vat_number nil="nil"></vat_number>
+  <ip_address nil="nil"></ip_address>
+  <ip_address_country nil="nil"></ip_address_country>
+  <card_type>Visa</card_type>
+  <year type="integer">2030</year>
+  <month type="integer">1</month>
+  <first_six>411111</first_six>
+  <last_four>1111</last_four>
+  <updated_at type="datetime">2018-06-25T15:39:38Z</updated_at>
+</billing_info>

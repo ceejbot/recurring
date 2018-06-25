@@ -1,31 +1,31 @@
 {
   "statusCode": 201,
   "headers": {
-    "date": "Mon, 25 Jun 2018 11:33:28 GMT",
+    "date": "Mon, 25 Jun 2018 15:44:11 GMT",
     "content-type": "application/xml; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
     "set-cookie": [
-      "__cfduid=ddff655ae77ac8ddb04a18b321ea95f681529926408; expires=Tue, 25-Jun-19 11:33:28 GMT; path=/; domain=.recurly.com; HttpOnly",
-      "account_credentials=b34b15ec787081c902066048c707a23d723d3a04e4ef23024f8da38560daed8ad526b47c3730b80446d5df1295433fad1a828425879f51b0f5704a867b9d6915%3A%3A; domain=.recurly.com; path=/",
-      "_recurlyapp_session=4f4c48ac2feb23e7530e9065bf7bb059; domain=.recurly.com; path=/; secure; HttpOnly"
+      "__cfduid=d3b3c43cb813a21b24c061005eafd91e11529941451; expires=Tue, 25-Jun-19 15:44:11 GMT; path=/; domain=.recurly.com; HttpOnly",
+      "account_credentials=966e0f80ce670350a37a03141e88c3227ab2388695febb05e8fd631fa695d4d5e88499d7ca16bd42908dd836fafbf23de7103ae5dbd42ac50883458af9467fda%3A%3A; domain=.recurly.com; path=/",
+      "_recurlyapp_session=0d1ab55c0588d8660c19095cfb21b3bc; domain=.recurly.com; path=/; secure; HttpOnly"
     ],
     "x-api-version": "2.7",
     "content-language": "en-US",
     "x-ratelimit-limit": "2000",
-    "x-ratelimit-remaining": "1996",
-    "x-ratelimit-reset": "1529926680",
-    "etag": "\"8d571ca59e85feb7e0f68cac017f7e84\"",
-    "location": "https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491",
+    "x-ratelimit-remaining": "1948",
+    "x-ratelimit-reset": "1529941740",
+    "etag": "\"ef846394e948e0cc09a43451178f8595\"",
+    "location": "https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad",
     "cache-control": "max-age=0, private, must-revalidate",
-    "x-request-id": "02sj17smtu2vhbad088g",
+    "x-request-id": "02smk0gaq7opo7im7lo0",
     "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
     "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
     "server": "cloudflare",
-    "cf-ray": "43071e947ccd2d47-TXL"
+    "cf-ray": "43088dd95a8b2d83-TXL"
   },
   "url": "http://api.recurly.com:443/v2/accounts",
-  "time": 622,
+  "time": 288,
   "request": {
     "method": "POST",
     "headers": {
