@@ -1,0 +1,3090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoices type="array">
+  <invoice href="https://api.recurly.com/v2/invoices/1069">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>453ea90a7c92ca456e25df4a138e5a13</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1069</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-06-05T12:13:29Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:13:29Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-06-05T12:13:29Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/453ea90a6c6e88f2e883294fe2a68207" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1069"/>
+        <uuid>453ea90a6c6e88f2e883294fe2a68207</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-06-05T12:13:29Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-06-05T12:13:29Z</created_at>
+        <updated_at type="datetime">2018-06-05T12:13:29Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/453ea90a9176ac42c1f37d45c1982a6c" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1069"/>
+        <uuid>453ea90a9176ac42c1f37d45c1982a6c</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>3984036</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">true</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-06-05T12:13:29Z</created_at>
+        <collected_at type="datetime">2018-06-05T12:13:29Z</collected_at>
+        <updated_at type="datetime">2018-06-05T12:13:29Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1069/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1068">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/453ea8e425bd17233b2e3d4693b9eb05"/>
+    <uuid>453ea8ef04847c7b825bd9475db37e9f</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1068</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">3000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-06-05T12:13:22Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:13:22Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-06-05T12:13:22Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">3000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">3000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/453ea8eef9fc84a599e09e4f7db4dc98" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1068"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/453ea8e425bd17233b2e3d4693b9eb05"/>
+        <uuid>453ea8eef9fc84a599e09e4f7db4dc98</uuid>
+        <state>invoiced</state>
+        <description>Test Plan b38bb4e6-a9d6-4390-ac2c-b0b2a9d6b070</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplanb38bb4e6-a9d6-4390-ac2c-b0b2a9d6b070</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">3000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-06-05T12:13:22Z</start_date>
+        <end_date type="datetime">2018-07-05T12:13:19Z</end_date>
+        <created_at type="datetime">2018-06-05T12:13:22Z</created_at>
+        <updated_at type="datetime">2018-06-05T12:13:22Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/453ea8ef1d8b236ec6ae984093b4585a" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1068"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/453ea8e425bd17233b2e3d4693b9eb05"/>
+        <uuid>453ea8ef1d8b236ec6ae984093b4585a</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">3000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>984056</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">true</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin></origin>
+        <description>Test Plan b38bb4e6-a9d6-4390-ac2c-b0b2a9d6b070</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-06-05T12:13:22Z</created_at>
+        <collected_at type="datetime">2018-06-05T12:13:22Z</collected_at>
+        <updated_at type="datetime">2018-06-05T12:13:22Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1068/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1067">
+    <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/453ea8e425bd17233b2e3d4693b9eb05"/>
+    <uuid>453ea8e48ba1efd420193b45c986cb5a</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1067</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">10000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-06-05T12:13:19Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:13:19Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-06-05T12:13:19Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">10000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">10000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/453ea8e4839a69b10fb5a54c7f84ba34" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1067"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/453ea8e425bd17233b2e3d4693b9eb05"/>
+        <uuid>453ea8e4839a69b10fb5a54c7f84ba34</uuid>
+        <state>invoiced</state>
+        <description>Test Plan b38bb4e6-a9d6-4390-ac2c-b0b2a9d6b070</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplanb38bb4e6-a9d6-4390-ac2c-b0b2a9d6b070</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">10000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-06-05T12:13:19Z</start_date>
+        <end_date type="datetime">2018-07-05T12:13:19Z</end_date>
+        <created_at type="datetime">2018-06-05T12:13:19Z</created_at>
+        <updated_at type="datetime">2018-06-05T12:13:19Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/453ea8e4a7fc91e0951ec143fd9f4b33" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1067"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/453ea8e425bd17233b2e3d4693b9eb05"/>
+        <uuid>453ea8e4a7fc91e0951ec143fd9f4b33</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">10000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>120260</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">true</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description>Test Plan b38bb4e6-a9d6-4390-ac2c-b0b2a9d6b070</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-06-05T12:13:19Z</created_at>
+        <collected_at type="datetime">2018-06-05T12:13:19Z</collected_at>
+        <updated_at type="datetime">2018-06-05T12:13:19Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1067/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1062">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>453ea8593665a4791fddbd4bbd8b415d</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1062</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-06-05T12:12:43Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-06-05T12:12:43Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/453ea85928203cfe810a9d45829278e5" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1062"/>
+        <uuid>453ea85928203cfe810a9d45829278e5</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-06-05T12:12:43Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-06-05T12:12:43Z</created_at>
+        <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/453ea8594a4de245f9052640d894877f" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1062"/>
+        <uuid>453ea8594a4de245f9052640d894877f</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>8527118</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-06-05T12:12:43Z</created_at>
+        <collected_at type="datetime">2018-06-05T12:12:43Z</collected_at>
+        <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1062/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1061">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+    <uuid>453ea84114d2a288cbe0fa45ecafac11</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1061</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">3000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-06-05T12:12:37Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:12:37Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-06-05T12:12:37Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">3000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">3000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/453ea841075ac466c8e1d249f59c3771" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1061"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+        <uuid>453ea841075ac466c8e1d249f59c3771</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 6b0e8cc0-2581-4c49-a54b-30da0e219416</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan6b0e8cc0-2581-4c49-a54b-30da0e219416</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">3000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-06-05T12:12:37Z</start_date>
+        <end_date type="datetime">2018-07-05T12:12:35Z</end_date>
+        <created_at type="datetime">2018-06-05T12:12:37Z</created_at>
+        <updated_at type="datetime">2018-06-05T12:12:37Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/453ea84132bbbbd24a466e4a3f8146d0" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1061"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+        <uuid>453ea84132bbbbd24a466e4a3f8146d0</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">3000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>3478802</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">true</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin></origin>
+        <description>Test Plan 6b0e8cc0-2581-4c49-a54b-30da0e219416</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-06-05T12:12:37Z</created_at>
+        <collected_at type="datetime">2018-06-05T12:12:37Z</collected_at>
+        <updated_at type="datetime">2018-06-05T12:12:37Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1061/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1060">
+    <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+    <uuid>453ea839dc77c07e166c0a457aac575d</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1060</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">10000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-06-05T12:12:35Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:12:35Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-06-05T12:12:35Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">10000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">10000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/453ea839d5cba8b5ce30e348988f0450" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1060"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+        <uuid>453ea839d5cba8b5ce30e348988f0450</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 6b0e8cc0-2581-4c49-a54b-30da0e219416</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan6b0e8cc0-2581-4c49-a54b-30da0e219416</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">10000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-06-05T12:12:35Z</start_date>
+        <end_date type="datetime">2018-07-05T12:12:35Z</end_date>
+        <created_at type="datetime">2018-06-05T12:12:35Z</created_at>
+        <updated_at type="datetime">2018-06-05T12:12:35Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/453ea839f448b0cc26905d4483aff236" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1060"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/453ea839799bb822bcea1b435a87dc53"/>
+        <uuid>453ea839f448b0cc26905d4483aff236</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">10000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>2635805</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">true</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description>Test Plan 6b0e8cc0-2581-4c49-a54b-30da0e219416</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-06-05T12:12:35Z</created_at>
+        <collected_at type="datetime">2018-06-05T12:12:35Z</collected_at>
+        <updated_at type="datetime">2018-06-05T12:12:35Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh6b3dc764-472c-4d52-86ee-3885ae2f1c90</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1060/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1055">
+    <account href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>4521438909197e7cb9c3dc4c31b0a4c9</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1055</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-30T19:13:37Z</created_at>
+    <updated_at type="datetime">2018-05-30T19:13:43Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-30T19:13:37Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45214388fbb45fe391c78542b89c2e09" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1055"/>
+        <uuid>45214388fbb45fe391c78542b89c2e09</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-30T19:13:37Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-30T19:13:37Z</created_at>
+        <updated_at type="datetime">2018-05-30T19:13:43Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/452143891e7e1604c9ca704942a9e1bd" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/freshe5a4789e-1540-4245-8cca-84190439597e"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1055"/>
+        <uuid>452143891e7e1604c9ca704942a9e1bd</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>6217925</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-30T19:13:37Z</created_at>
+        <collected_at type="datetime">2018-05-30T19:13:37Z</collected_at>
+        <updated_at type="datetime">2018-05-30T19:13:43Z</updated_at>
+        <details>
+          <account>
+            <account_code>freshe5a4789e-1540-4245-8cca-84190439597e</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1055/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1050">
+    <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>451588d1b9097d2a3435b04af7b61437</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1050</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:33:51Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:55Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:33:51Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/451588d1adc28e9a119aa5488990f752" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1050"/>
+        <uuid>451588d1adc28e9a119aa5488990f752</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:33:51Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-28T12:33:51Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:33:55Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/451588d1d09e2b9de0352e48a890acda" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1050"/>
+        <uuid>451588d1d09e2b9de0352e48a890acda</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>3774758</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:33:51Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:33:51Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:33:55Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh9a08295a-2183-4ed8-adf3-0973644f96ba</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1050/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1049">
+    <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/451588baa9c8f936720eab40d7b70b33"/>
+    <uuid>451588c07d537ad2c1bb5a4b0e91a01f</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1049</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">3000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:33:47Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:47Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:33:47Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">3000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">3000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/451588c07449ffb7cda3934f11931d83" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1049"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451588baa9c8f936720eab40d7b70b33"/>
+        <uuid>451588c07449ffb7cda3934f11931d83</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 1c9e6969-24e5-4a12-a091-47c6aa2be5f9</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan1c9e6969-24e5-4a12-a091-47c6aa2be5f9</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">3000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:33:47Z</start_date>
+        <end_date type="datetime">2018-06-28T12:33:45Z</end_date>
+        <created_at type="datetime">2018-05-28T12:33:47Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:33:47Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/451588c096fe6c943dda25451ead5d18" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1049"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451588baa9c8f936720eab40d7b70b33"/>
+        <uuid>451588c096fe6c943dda25451ead5d18</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">3000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>1482379</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin></origin>
+        <description>Test Plan 1c9e6969-24e5-4a12-a091-47c6aa2be5f9</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:33:47Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:33:47Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:33:47Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh9a08295a-2183-4ed8-adf3-0973644f96ba</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1049/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1048">
+    <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/451588baa9c8f936720eab40d7b70b33"/>
+    <uuid>451588bb21c0c0d1eb81c44d54bd5804</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1048</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">10000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:33:45Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:45Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:33:45Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">10000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">10000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/451588bb1323f17a5c9c82417c82771b" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1048"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451588baa9c8f936720eab40d7b70b33"/>
+        <uuid>451588bb1323f17a5c9c82417c82771b</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 1c9e6969-24e5-4a12-a091-47c6aa2be5f9</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan1c9e6969-24e5-4a12-a091-47c6aa2be5f9</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">10000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:33:45Z</start_date>
+        <end_date type="datetime">2018-06-28T12:33:45Z</end_date>
+        <created_at type="datetime">2018-05-28T12:33:45Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:33:45Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/451588bb3c9ef20f80d51d4b05996dc3" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh9a08295a-2183-4ed8-adf3-0973644f96ba"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1048"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451588baa9c8f936720eab40d7b70b33"/>
+        <uuid>451588bb3c9ef20f80d51d4b05996dc3</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">10000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>127548</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description>Test Plan 1c9e6969-24e5-4a12-a091-47c6aa2be5f9</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:33:45Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:33:45Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:33:45Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh9a08295a-2183-4ed8-adf3-0973644f96ba</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1048/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1043">
+    <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>45158838e7969a9f672521422fb4972a</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1043</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:33:12Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:15Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:33:12Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45158838d9d5970bea541e4673a394b8" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1043"/>
+        <uuid>45158838d9d5970bea541e4673a394b8</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:33:12Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-28T12:33:12Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:33:15Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/45158838fc9d03b17a188b49cd8e364f" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1043"/>
+        <uuid>45158838fc9d03b17a188b49cd8e364f</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>8739813</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:33:12Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:33:12Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:33:16Z</updated_at>
+        <details>
+          <account>
+            <account_code>freshada66c3c-1637-4b4c-aba5-314d027c73d5</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1043/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1042">
+    <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/451588205451bfc216104e434087bed6"/>
+    <uuid>4515882a252a2174d8921343e5b40578</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1042</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">3000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:33:08Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:08Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:33:08Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">3000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">3000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/4515882a192eb465eadf264eaa93e267" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1042"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451588205451bfc216104e434087bed6"/>
+        <uuid>4515882a192eb465eadf264eaa93e267</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 12a02b89-7462-447f-89dc-1d0fd5a2e4c4</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan12a02b89-7462-447f-89dc-1d0fd5a2e4c4</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">3000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:33:08Z</start_date>
+        <end_date type="datetime">2018-06-28T12:33:06Z</end_date>
+        <created_at type="datetime">2018-05-28T12:33:08Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:33:08Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/4515882a3a7b4045642efe4d349b8737" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1042"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451588205451bfc216104e434087bed6"/>
+        <uuid>4515882a3a7b4045642efe4d349b8737</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">3000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>4876574</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin></origin>
+        <description>Test Plan 12a02b89-7462-447f-89dc-1d0fd5a2e4c4</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:33:08Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:33:08Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:33:08Z</updated_at>
+        <details>
+          <account>
+            <account_code>freshada66c3c-1637-4b4c-aba5-314d027c73d5</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1042/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1041">
+    <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/451588205451bfc216104e434087bed6"/>
+    <uuid>45158820c993afc0cfaa91468fa65694</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1041</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">10000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:33:06Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:06Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:33:06Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">10000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">10000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45158820c1e8e8d153d9ab4ae8807cfe" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1041"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451588205451bfc216104e434087bed6"/>
+        <uuid>45158820c1e8e8d153d9ab4ae8807cfe</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 12a02b89-7462-447f-89dc-1d0fd5a2e4c4</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan12a02b89-7462-447f-89dc-1d0fd5a2e4c4</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">10000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:33:06Z</start_date>
+        <end_date type="datetime">2018-06-28T12:33:06Z</end_date>
+        <created_at type="datetime">2018-05-28T12:33:06Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:33:06Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/45158820e2119e2d93d3a94b428fdbb1" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/freshada66c3c-1637-4b4c-aba5-314d027c73d5"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1041"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451588205451bfc216104e434087bed6"/>
+        <uuid>45158820e2119e2d93d3a94b428fdbb1</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">10000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>4149094</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">true</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description>Test Plan 12a02b89-7462-447f-89dc-1d0fd5a2e4c4</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:33:06Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:33:06Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:33:06Z</updated_at>
+        <details>
+          <account>
+            <account_code>freshada66c3c-1637-4b4c-aba5-314d027c73d5</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+    <a name="refund" href="https://api.recurly.com/v2/invoices/1041/refund" method="post"/>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1036">
+    <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>4515870e8005d2a3501c9045fb8c28e3</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1036</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:31:56Z</created_at>
+    <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:31:56Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/4515870e6dccb37ed6d5fa4dddbb946f" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1036"/>
+        <uuid>4515870e6dccb37ed6d5fa4dddbb946f</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:31:56Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-28T12:31:56Z</created_at>
+        <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/4515870e94c0691bbaf71d417195d1b1" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1036"/>
+        <uuid>4515870e94c0691bbaf71d417195d1b1</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>1769987</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:31:56Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:31:56Z</collected_at>
+        <updated_at type="datetime">2018-06-05T12:12:48Z</updated_at>
+        <details>
+          <account>
+            <account_code>freshd586a058-3f8d-469c-8a71-d61de0374a4d</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1035">
+    <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/451586f4d8bfa59e53be43467bba4a71"/>
+    <uuid>451586fc4d9a8e80af43db48aaa8cd9c</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1035</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">3000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:31:51Z</created_at>
+    <updated_at type="datetime">2018-05-30T19:13:44Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:31:51Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">3000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">3000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/451586fc43e45a214fa88d4cf3b271bc" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1035"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451586f4d8bfa59e53be43467bba4a71"/>
+        <uuid>451586fc43e45a214fa88d4cf3b271bc</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 92b18856-16ac-432d-b44b-3f16ed72753c</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan92b18856-16ac-432d-b44b-3f16ed72753c</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">3000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:31:51Z</start_date>
+        <end_date type="datetime">2018-06-28T12:31:49Z</end_date>
+        <created_at type="datetime">2018-05-28T12:31:51Z</created_at>
+        <updated_at type="datetime">2018-05-30T19:13:44Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/451586fc5f8c9bc65dcd2f408e8d95f5" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1035"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451586f4d8bfa59e53be43467bba4a71"/>
+        <uuid>451586fc5f8c9bc65dcd2f408e8d95f5</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">3000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>2301773</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin></origin>
+        <description>Test Plan 92b18856-16ac-432d-b44b-3f16ed72753c</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:31:51Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:31:51Z</collected_at>
+        <updated_at type="datetime">2018-05-30T19:13:44Z</updated_at>
+        <details>
+          <account>
+            <account_code>freshd586a058-3f8d-469c-8a71-d61de0374a4d</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1034">
+    <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/451586f4d8bfa59e53be43467bba4a71"/>
+    <uuid>451586f54220796d81ea934662b3e278</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1034</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">10000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-28T12:31:49Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:56Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-28T12:31:49Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">10000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">10000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/451586f53a89778cf225004568a0c8b3" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1034"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451586f4d8bfa59e53be43467bba4a71"/>
+        <uuid>451586f53a89778cf225004568a0c8b3</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 92b18856-16ac-432d-b44b-3f16ed72753c</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan92b18856-16ac-432d-b44b-3f16ed72753c</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">10000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-28T12:31:49Z</start_date>
+        <end_date type="datetime">2018-06-28T12:31:49Z</end_date>
+        <created_at type="datetime">2018-05-28T12:31:49Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:33:56Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/451586f55c53fa69e3c0024868bb69e0" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/freshd586a058-3f8d-469c-8a71-d61de0374a4d"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1034"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/451586f4d8bfa59e53be43467bba4a71"/>
+        <uuid>451586f55c53fa69e3c0024868bb69e0</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">10000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>void</status>
+        <payment_method>credit_card</payment_method>
+        <reference>239258</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description>Test Plan 92b18856-16ac-432d-b44b-3f16ed72753c</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-28T12:31:49Z</created_at>
+        <collected_at type="datetime">2018-05-28T12:31:49Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:33:56Z</updated_at>
+        <details>
+          <account>
+            <account_code>freshd586a058-3f8d-469c-8a71-d61de0374a4d</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1029">
+    <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>4505cf5a8fae07ee23516b475eba2fa0</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1029</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-25T11:16:58Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:33:16Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-25T11:16:58Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/4505cf5a82fbd5f1a1ed8d47ba8d0eec" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1029"/>
+        <uuid>4505cf5a82fbd5f1a1ed8d47ba8d0eec</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-25T11:16:58Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-25T11:16:58Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:33:16Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/4505cf5aa419310cc1047243f1b34648" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1029"/>
+        <uuid>4505cf5aa419310cc1047243f1b34648</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>3483389</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-25T11:16:58Z</created_at>
+        <collected_at type="datetime">2018-05-25T11:16:58Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:33:16Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1028">
+    <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/4505cf4272982306964cb44a8bb85407"/>
+    <uuid>4505cf4a9d3a4b52296b1e4fa9a3225f</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1028</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">3000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-25T11:16:54Z</created_at>
+    <updated_at type="datetime">2018-05-28T12:32:01Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-25T11:16:54Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">3000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">3000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/4505cf4a943152f7e9c48f4b5b93ee6b" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1028"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/4505cf4272982306964cb44a8bb85407"/>
+        <uuid>4505cf4a943152f7e9c48f4b5b93ee6b</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 5259b5a5-d6f2-447d-8a17-0ac252229a22</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan5259b5a5-d6f2-447d-8a17-0ac252229a22</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">3000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-25T11:16:54Z</start_date>
+        <end_date type="datetime">2018-06-25T11:16:52Z</end_date>
+        <created_at type="datetime">2018-05-25T11:16:54Z</created_at>
+        <updated_at type="datetime">2018-05-28T12:32:01Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/4505cf4ab34ca498456ee44d3a80323a" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1028"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/4505cf4272982306964cb44a8bb85407"/>
+        <uuid>4505cf4ab34ca498456ee44d3a80323a</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">3000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>1005324</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin></origin>
+        <description>Test Plan 5259b5a5-d6f2-447d-8a17-0ac252229a22</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-25T11:16:54Z</created_at>
+        <collected_at type="datetime">2018-05-25T11:16:54Z</collected_at>
+        <updated_at type="datetime">2018-05-28T12:32:01Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1027">
+    <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/4505cf4272982306964cb44a8bb85407"/>
+    <uuid>4505cf42e11e4ed3b291854820a2a1e5</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1027</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">10000</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-25T11:16:52Z</created_at>
+    <updated_at type="datetime">2018-05-25T11:17:02Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-25T11:16:52Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">10000</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">10000</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/4505cf42d6e99f562a7a3d47bc914e7c" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1027"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/4505cf4272982306964cb44a8bb85407"/>
+        <uuid>4505cf42d6e99f562a7a3d47bc914e7c</uuid>
+        <state>invoiced</state>
+        <description>Test Plan 5259b5a5-d6f2-447d-8a17-0ac252229a22</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>testplan5259b5a5-d6f2-447d-8a17-0ac252229a22</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">10000</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-25T11:16:52Z</start_date>
+        <end_date type="datetime">2018-06-25T11:16:52Z</end_date>
+        <created_at type="datetime">2018-05-25T11:16:52Z</created_at>
+        <updated_at type="datetime">2018-05-25T11:17:02Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/4505cf42f9a5288a6c06304420b58b07" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1027"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/4505cf4272982306964cb44a8bb85407"/>
+        <uuid>4505cf42f9a5288a6c06304420b58b07</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">10000</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>void</status>
+        <payment_method>credit_card</payment_method>
+        <reference>4889927</reference>
+        <source>subscription</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description>Test Plan 5259b5a5-d6f2-447d-8a17-0ac252229a22</description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-25T11:16:52Z</created_at>
+        <collected_at type="datetime">2018-05-25T11:16:52Z</collected_at>
+        <updated_at type="datetime">2018-05-25T11:17:03Z</updated_at>
+        <details>
+          <account>
+            <account_code>fresh93fc89cd-f928-4dd1-99e9-b9d2fcbb6550</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion Systems</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2030</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1022">
+    <account href="https://api.recurly.com/v2/accounts/91b0a1c7-a559-41a8-b959-dabe46444b89"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>45018d50e6c9e3433d5f1b4a28bbed96</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1022</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:26:22Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:26:26Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:26:22Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45018d50d9ea6fc596308f41c689159e" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/91b0a1c7-a559-41a8-b959-dabe46444b89"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1022"/>
+        <uuid>45018d50d9ea6fc596308f41c689159e</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:26:21Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-24T15:26:22Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:26:26Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/45018d50f99dc5c6d0680a4464a912f6" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/91b0a1c7-a559-41a8-b959-dabe46444b89"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1022"/>
+        <uuid>45018d50f99dc5c6d0680a4464a912f6</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>4199053</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-24T15:26:21Z</created_at>
+        <collected_at type="datetime">2018-05-24T15:26:21Z</collected_at>
+        <updated_at type="datetime">2018-05-24T15:26:26Z</updated_at>
+        <details>
+          <account>
+            <account_code>91b0a1c7-a559-41a8-b959-dabe46444b89</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion, International</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2021</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1021">
+    <account href="https://api.recurly.com/v2/accounts/91b0a1c7-a559-41a8-b959-dabe46444b89"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/45018d3538c42d5c216e06489187e22b"/>
+    <uuid>45018d407ba68bcc49a53c4b86b32e92</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1021</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">0</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:26:17Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:26:17Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:26:17Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">0</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">0</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45018d4072db61de0b844841f4b712da" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/91b0a1c7-a559-41a8-b959-dabe46444b89"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1021"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/45018d3538c42d5c216e06489187e22b"/>
+        <uuid>45018d4072db61de0b844841f4b712da</uuid>
+        <state>invoiced</state>
+        <description>Recurring Test</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>recurring-test</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">0</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">0</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:26:17Z</start_date>
+        <end_date type="datetime">2018-06-24T15:26:14Z</end_date>
+        <created_at type="datetime">2018-05-24T15:26:17Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:26:17Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1020">
+    <account href="https://api.recurly.com/v2/accounts/91b0a1c7-a559-41a8-b959-dabe46444b89"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/45018d3538c42d5c216e06489187e22b"/>
+    <uuid>45018d35a33fdfb2094df04b6099c7fa</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1020</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">0</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:26:14Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:26:14Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:26:15Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">0</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">0</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45018d3599e428a4bade2b4be3ba5791" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/91b0a1c7-a559-41a8-b959-dabe46444b89"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1020"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/45018d3538c42d5c216e06489187e22b"/>
+        <uuid>45018d3599e428a4bade2b4be3ba5791</uuid>
+        <state>invoiced</state>
+        <description>Recurring Test</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>recurring-test</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">0</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">0</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:26:14Z</start_date>
+        <end_date type="datetime">2018-06-24T15:26:14Z</end_date>
+        <created_at type="datetime">2018-05-24T15:26:14Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:26:14Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1015">
+    <account href="https://api.recurly.com/v2/accounts/02d9c9a0-66e3-4fd0-b252-bcb35acee8dc"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>45018a9b786d19dc9d7740477bb547fc</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1015</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:23:24Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:23:28Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:23:24Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45018a9b6be373ca22084a42f483bbda" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/02d9c9a0-66e3-4fd0-b252-bcb35acee8dc"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1015"/>
+        <uuid>45018a9b6be373ca22084a42f483bbda</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:23:24Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-24T15:23:24Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:23:28Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/45018a9b8ccd67192ba4504146b11d06" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/02d9c9a0-66e3-4fd0-b252-bcb35acee8dc"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1015"/>
+        <uuid>45018a9b8ccd67192ba4504146b11d06</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>1474242</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-24T15:23:24Z</created_at>
+        <collected_at type="datetime">2018-05-24T15:23:24Z</collected_at>
+        <updated_at type="datetime">2018-05-24T15:23:28Z</updated_at>
+        <details>
+          <account>
+            <account_code>02d9c9a0-66e3-4fd0-b252-bcb35acee8dc</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion, International</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2021</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1014">
+    <account href="https://api.recurly.com/v2/accounts/02d9c9a0-66e3-4fd0-b252-bcb35acee8dc"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/45018a7fd0522cb5bf5df24e918bc5f8"/>
+    <uuid>45018a8ae96b65831c78044cffb3725d</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1014</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">0</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:23:20Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:23:20Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:23:20Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">0</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">0</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45018a8ae004744b5b5a794e83af18b6" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/02d9c9a0-66e3-4fd0-b252-bcb35acee8dc"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1014"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/45018a7fd0522cb5bf5df24e918bc5f8"/>
+        <uuid>45018a8ae004744b5b5a794e83af18b6</uuid>
+        <state>invoiced</state>
+        <description>Recurring Test</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>recurring-test</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">0</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">0</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:23:20Z</start_date>
+        <end_date type="datetime">2018-06-24T15:23:17Z</end_date>
+        <created_at type="datetime">2018-05-24T15:23:20Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:23:20Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1013">
+    <account href="https://api.recurly.com/v2/accounts/02d9c9a0-66e3-4fd0-b252-bcb35acee8dc"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/45018a7fd0522cb5bf5df24e918bc5f8"/>
+    <uuid>45018a803f59149ed3cd3640b49d0e3c</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1013</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">0</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:23:17Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:23:17Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:23:17Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">0</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">0</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45018a80304a51d4fa7e864ba9b3d8c5" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/02d9c9a0-66e3-4fd0-b252-bcb35acee8dc"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1013"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/45018a7fd0522cb5bf5df24e918bc5f8"/>
+        <uuid>45018a80304a51d4fa7e864ba9b3d8c5</uuid>
+        <state>invoiced</state>
+        <description>Recurring Test</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>recurring-test</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">0</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">0</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:23:17Z</start_date>
+        <end_date type="datetime">2018-06-24T15:23:17Z</end_date>
+        <created_at type="datetime">2018-05-24T15:23:17Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:23:17Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1008">
+    <account href="https://api.recurly.com/v2/accounts/7b156fc1-4b87-455c-9868-4917fb3d7277"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>45018922830e63b8a654364f8ba0d118</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1008</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:21:48Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:21:51Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:21:48Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/4501892274f6f735de79cc47308a5ee6" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/7b156fc1-4b87-455c-9868-4917fb3d7277"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1008"/>
+        <uuid>4501892274f6f735de79cc47308a5ee6</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:21:47Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-24T15:21:48Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:21:51Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/45018922995aa900836bc04ea6aa4346" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/7b156fc1-4b87-455c-9868-4917fb3d7277"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1008"/>
+        <uuid>45018922995aa900836bc04ea6aa4346</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>1692026</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-24T15:21:47Z</created_at>
+        <collected_at type="datetime">2018-05-24T15:21:47Z</collected_at>
+        <updated_at type="datetime">2018-05-24T15:21:51Z</updated_at>
+        <details>
+          <account>
+            <account_code>7b156fc1-4b87-455c-9868-4917fb3d7277</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion, International</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2021</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1007">
+    <account href="https://api.recurly.com/v2/accounts/7b156fc1-4b87-455c-9868-4917fb3d7277"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/45018902c0a9b37f3bc9fe4b9b82dba3"/>
+    <uuid>4501890ec7a0176aa89be841dfa36aba</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1007</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">0</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:21:42Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:21:42Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:21:42Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">0</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">0</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/4501890ebe2d89efc905d2406e9d7fea" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/7b156fc1-4b87-455c-9868-4917fb3d7277"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1007"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/45018902c0a9b37f3bc9fe4b9b82dba3"/>
+        <uuid>4501890ebe2d89efc905d2406e9d7fea</uuid>
+        <state>invoiced</state>
+        <description>Recurring Test</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>recurring-test</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">0</unit_amount_in_cents>
+        <quantity type="integer">3</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">0</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:21:42Z</start_date>
+        <end_date type="datetime">2018-06-24T15:21:39Z</end_date>
+        <created_at type="datetime">2018-05-24T15:21:42Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:21:42Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1006">
+    <account href="https://api.recurly.com/v2/accounts/7b156fc1-4b87-455c-9868-4917fb3d7277"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <subscription href="https://api.recurly.com/v2/subscriptions/45018902c0a9b37f3bc9fe4b9b82dba3"/>
+    <uuid>45018903205906960dd68340009a1b31</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1006</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">0</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:21:39Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:21:39Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:21:39Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">0</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">0</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45018903174066097ab49c489580459f" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/7b156fc1-4b87-455c-9868-4917fb3d7277"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1006"/>
+        <subscription href="https://api.recurly.com/v2/subscriptions/45018902c0a9b37f3bc9fe4b9b82dba3"/>
+        <uuid>45018903174066097ab49c489580459f</uuid>
+        <state>invoiced</state>
+        <description>Recurring Test</description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code>recurring-test</product_code>
+        <origin>plan</origin>
+        <unit_amount_in_cents type="integer">0</unit_amount_in_cents>
+        <quantity type="integer">10</quantity>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">0</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:21:39Z</start_date>
+        <end_date type="datetime">2018-06-24T15:21:39Z</end_date>
+        <created_at type="datetime">2018-05-24T15:21:39Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:21:39Z</updated_at>
+        <revenue_schedule_type>evenly</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+    </transactions>
+  </invoice>
+  <invoice href="https://api.recurly.com/v2/invoices/1001">
+    <account href="https://api.recurly.com/v2/accounts/b79cf1b6-456d-4599-900d-53cb343bf7e8"/>
+    <address>
+      <address1>760 Market Street</address1>
+      <address2>Suite 500</address2>
+      <city>San Francisco</city>
+      <state>CA</state>
+      <zip>94102</zip>
+      <country>USA</country>
+      <phone nil="nil"></phone>
+    </address>
+    <uuid>45018712f7c1ac82ae3d254890975702</uuid>
+    <state>collected</state>
+    <invoice_number_prefix></invoice_number_prefix>
+    <invoice_number type="integer">1001</invoice_number>
+    <vat_number nil="nil"></vat_number>
+    <tax_in_cents type="integer">0</tax_in_cents>
+    <total_in_cents type="integer">100</total_in_cents>
+    <currency>USD</currency>
+    <created_at type="datetime">2018-05-24T15:19:32Z</created_at>
+    <updated_at type="datetime">2018-05-24T15:19:36Z</updated_at>
+    <attempt_next_collection_at nil="nil"></attempt_next_collection_at>
+    <closed_at type="datetime">2018-05-24T15:19:32Z</closed_at>
+    <customer_notes nil="nil"></customer_notes>
+    <recovery_reason nil="nil"></recovery_reason>
+    <net_terms type="integer">0</net_terms>
+    <collection_method>automatic</collection_method>
+    <po_number nil="nil"></po_number>
+    <terms_and_conditions nil="nil"></terms_and_conditions>
+    <subtotal_in_cents type="integer">100</subtotal_in_cents>
+    <subtotal_after_discount_in_cents type="integer">100</subtotal_after_discount_in_cents>
+    <line_items type="array">
+      <adjustment href="https://api.recurly.com/v2/adjustments/45018712ea0b2fa7e0ae934a4c96b875" type="charge">
+        <account href="https://api.recurly.com/v2/accounts/b79cf1b6-456d-4599-900d-53cb343bf7e8"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1001"/>
+        <uuid>45018712ea0b2fa7e0ae934a4c96b875</uuid>
+        <state>invoiced</state>
+        <description nil="nil"></description>
+        <accounting_code nil="nil"></accounting_code>
+        <product_code nil="nil"></product_code>
+        <origin>one_time</origin>
+        <unit_amount_in_cents type="integer">100</unit_amount_in_cents>
+        <quantity type="integer">1</quantity>
+        <quantity_remaining type="integer">0</quantity_remaining>
+        <discount_in_cents type="integer">0</discount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <total_in_cents type="integer">100</total_in_cents>
+        <currency>USD</currency>
+        <taxable type="boolean">false</taxable>
+        <start_date type="datetime">2018-05-24T15:19:32Z</start_date>
+        <end_date nil="nil"></end_date>
+        <created_at type="datetime">2018-05-24T15:19:32Z</created_at>
+        <updated_at type="datetime">2018-05-24T15:19:36Z</updated_at>
+        <revenue_schedule_type>at_invoice</revenue_schedule_type>
+      </adjustment>
+    </line_items>
+    <transactions type="array">
+      <transaction href="https://api.recurly.com/v2/transactions/450187130cae756f7e59894cf58c0714" type="credit_card">
+        <account href="https://api.recurly.com/v2/accounts/b79cf1b6-456d-4599-900d-53cb343bf7e8"/>
+        <invoice href="https://api.recurly.com/v2/invoices/1001"/>
+        <uuid>450187130cae756f7e59894cf58c0714</uuid>
+        <action>purchase</action>
+        <amount_in_cents type="integer">100</amount_in_cents>
+        <tax_in_cents type="integer">0</tax_in_cents>
+        <currency>USD</currency>
+        <status>success</status>
+        <payment_method>credit_card</payment_method>
+        <reference>9478473</reference>
+        <source>transaction</source>
+        <recurring type="boolean">false</recurring>
+        <test type="boolean">true</test>
+        <voidable type="boolean">false</voidable>
+        <refundable type="boolean">false</refundable>
+        <ip_address nil="nil"></ip_address>
+        <gateway_type>test</gateway_type>
+        <origin>api</origin>
+        <description nil="nil"></description>
+        <message>Successful test transaction</message>
+        <approval_code nil="nil"></approval_code>
+        <failure_type nil="nil"></failure_type>
+        <gateway_error_codes nil="nil"></gateway_error_codes>
+        <cvv_result code="" nil="nil"></cvv_result>
+        <avs_result code="D">Street address and postal code match.</avs_result>
+        <avs_result_street nil="nil"></avs_result_street>
+        <avs_result_postal nil="nil"></avs_result_postal>
+        <created_at type="datetime">2018-05-24T15:19:32Z</created_at>
+        <collected_at type="datetime">2018-05-24T15:19:32Z</collected_at>
+        <updated_at type="datetime">2018-05-24T15:19:36Z</updated_at>
+        <details>
+          <account>
+            <account_code>b79cf1b6-456d-4599-900d-53cb343bf7e8</account_code>
+            <first_name>John</first_name>
+            <last_name>Whorfin</last_name>
+            <company>Yoyodyne Propulsion, International</company>
+            <email>test@example.com</email>
+            <billing_info type="credit_card">
+              <first_name>John</first_name>
+              <last_name>Whorfin</last_name>
+              <address1>760 Market Street</address1>
+              <address2>Suite 500</address2>
+              <city>San Francisco</city>
+              <state>CA</state>
+              <zip>94102</zip>
+              <country>USA</country>
+              <phone nil="nil"></phone>
+              <vat_number nil="nil"></vat_number>
+              <card_type>Visa</card_type>
+              <year type="integer">2021</year>
+              <month type="integer">1</month>
+              <first_six>411111</first_six>
+              <last_four>1111</last_four>
+            </billing_info>
+          </account>
+        </details>
+      </transaction>
+    </transactions>
+  </invoice>
+</invoices>
