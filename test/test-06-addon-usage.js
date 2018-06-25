@@ -53,7 +53,7 @@ describe('computeUnitAmountAndPercentage', function() {
 
   it('should work with valid unit amount', function() {
     const percentage = this.usage.getPercentage()
-    const amountInCents = this.usage.getAmountInCents()
+    const amountInCents = this.usage.getUnitAmount()
     demand(percentage).be(1.7)
     amountInCents.must.equal(100)
   })
@@ -61,7 +61,7 @@ describe('computeUnitAmountAndPercentage', function() {
   it('should work with no unit amount and usage_percentage', function() {
     this.usage.unit_amount_in_cents = ''
     const percentage = this.usage.getPercentage()
-    const amountInCents = this.usage.getAmountInCents()
+    const amountInCents = this.usage.getUnitAmount()
     percentage.must.equal(1.7)
     amountInCents.must.equal(17)
   })
@@ -70,7 +70,7 @@ describe('computeUnitAmountAndPercentage', function() {
     this.usage.unit_amount_in_cents = ''
     this.usage.usage_percentage = 1.7
     const percentage = this.usage.getPercentage()
-    const amountInCents = this.usage.getAmountInCents()
+    const amountInCents = this.usage.getUnitAmount()
     demand(percentage).be(null)
     demand(amountInCents).be(null)
   })
@@ -79,7 +79,7 @@ describe('computeUnitAmountAndPercentage', function() {
     this.usage.unit_amount_in_cents = ''
     this.usage.usage_percentage = { percentage: 1.7 }
     const percentage = this.usage.getPercentage()
-    const amountInCents = this.usage.getAmountInCents()
+    const amountInCents = this.usage.getUnitAmount()
     demand(percentage).be(null)
     demand(amountInCents).be(null)
   })
