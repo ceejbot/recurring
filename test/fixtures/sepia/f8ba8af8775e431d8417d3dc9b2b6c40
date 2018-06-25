@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plan href="https://api.recurly.com/v2/plans/testplanbfe78c23-3e2c-4776-b5a6-efccd5662f0b">
-  <add_ons href="https://api.recurly.com/v2/plans/testplanbfe78c23-3e2c-4776-b5a6-efccd5662f0b/add_ons"/>
-  <plan_code>testplanbfe78c23-3e2c-4776-b5a6-efccd5662f0b</plan_code>
-  <name>Test Plan bfe78c23-3e2c-4776-b5a6-efccd5662f0b</name>
+<plan href="https://api.recurly.com/v2/plans/testplan188fa78d-bbfa-43ff-813c-a5de955c07e2">
+  <add_ons href="https://api.recurly.com/v2/plans/testplan188fa78d-bbfa-43ff-813c-a5de955c07e2/add_ons"/>
+  <plan_code>testplan188fa78d-bbfa-43ff-813c-a5de955c07e2</plan_code>
+  <name>Test Plan 188fa78d-bbfa-43ff-813c-a5de955c07e2</name>
   <description nil="nil"></description>
   <success_url nil="nil"></success_url>
   <cancel_url nil="nil"></cancel_url>
@@ -19,8 +19,8 @@
   <total_billing_cycles nil="nil"></total_billing_cycles>
   <accounting_code nil="nil"></accounting_code>
   <setup_fee_accounting_code nil="nil"></setup_fee_accounting_code>
-  <created_at type="datetime">2018-06-25T11:33:27Z</created_at>
-  <updated_at type="datetime">2018-06-25T11:33:27Z</updated_at>
+  <created_at type="datetime">2018-06-25T15:44:11Z</created_at>
+  <updated_at type="datetime">2018-06-25T15:44:11Z</updated_at>
   <revenue_schedule_type>evenly</revenue_schedule_type>
   <setup_fee_revenue_schedule_type>evenly</setup_fee_revenue_schedule_type>
   <trial_requires_billing_info type="boolean">true</trial_requires_billing_info>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<account href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051">
-  <adjustments href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/adjustments"/>
-  <account_balance href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/balance"/>
-  <invoices href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/invoices"/>
-  <shipping_addresses href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/shipping_addresses"/>
-  <subscriptions href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/subscriptions"/>
-  <transactions href="https://api.recurly.com/v2/accounts/updatee12412c9-87a8-4bd7-bd01-e2389e4a0051/transactions"/>
-  <account_code>updatee12412c9-87a8-4bd7-bd01-e2389e4a0051</account_code>
+<account href="https://api.recurly.com/v2/accounts/updateff6ce6c2-42ee-43bc-a059-9aec2bb72d3f">
+  <adjustments href="https://api.recurly.com/v2/accounts/updateff6ce6c2-42ee-43bc-a059-9aec2bb72d3f/adjustments"/>
+  <account_balance href="https://api.recurly.com/v2/accounts/updateff6ce6c2-42ee-43bc-a059-9aec2bb72d3f/balance"/>
+  <invoices href="https://api.recurly.com/v2/accounts/updateff6ce6c2-42ee-43bc-a059-9aec2bb72d3f/invoices"/>
+  <shipping_addresses href="https://api.recurly.com/v2/accounts/updateff6ce6c2-42ee-43bc-a059-9aec2bb72d3f/shipping_addresses"/>
+  <subscriptions href="https://api.recurly.com/v2/accounts/updateff6ce6c2-42ee-43bc-a059-9aec2bb72d3f/subscriptions"/>
+  <transactions href="https://api.recurly.com/v2/accounts/updateff6ce6c2-42ee-43bc-a059-9aec2bb72d3f/transactions"/>
+  <account_code>updateff6ce6c2-42ee-43bc-a059-9aec2bb72d3f</account_code>
   <state>active</state>
   <username nil="nil"/>
   <email nil="nil"/>
@@ -25,9 +25,9 @@
     <phone nil="nil"/>
   </address>
   <accept_language nil="nil"/>
-  <hosted_login_token>CnL1cr5qJtsFaP7PDLc1UyAjdAR9wyj1</hosted_login_token>
-  <created_at type="datetime">2018-06-25T11:33:34Z</created_at>
-  <updated_at type="datetime">2018-06-25T11:33:34Z</updated_at>
+  <hosted_login_token>gqxRTTopiXHpCAS5ShMce6a7ezn23tTY</hosted_login_token>
+  <created_at type="datetime">2018-06-25T15:44:17Z</created_at>
+  <updated_at type="datetime">2018-06-25T15:44:17Z</updated_at>
   <closed_at nil="nil"/>
   <has_live_subscription type="boolean">false</has_live_subscription>
   <has_active_subscription type="boolean">false</has_active_subscription>

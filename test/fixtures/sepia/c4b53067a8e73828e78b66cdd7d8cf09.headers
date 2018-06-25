@@ -1,28 +1,28 @@
 {
   "statusCode": 404,
   "headers": {
-    "date": "Mon, 25 Jun 2018 11:33:53 GMT",
+    "date": "Mon, 25 Jun 2018 15:44:41 GMT",
     "content-type": "application/xml; charset=utf-8",
     "transfer-encoding": "chunked",
     "connection": "keep-alive",
     "set-cookie": [
-      "__cfduid=d09cb941894193c382a7df27649e1b2f91529926433; expires=Tue, 25-Jun-19 11:33:53 GMT; path=/; domain=.recurly.com; HttpOnly"
+      "__cfduid=d21a57a11ae9046336a1fb625f8b1f72e1529941480; expires=Tue, 25-Jun-19 15:44:40 GMT; path=/; domain=.recurly.com; HttpOnly"
     ],
     "vary": "Accept-Encoding",
     "x-api-version": "2.7",
     "content-language": "en-US",
     "x-ratelimit-limit": "2000",
-    "x-ratelimit-remaining": "1955",
-    "x-ratelimit-reset": "1529926680",
+    "x-ratelimit-remaining": "1905",
+    "x-ratelimit-reset": "1529941740",
     "cache-control": "no-cache",
-    "x-request-id": "02sj1ds5b0j7blpg4d40",
+    "x-request-id": "02smk7jlq74ohpp4glug",
     "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
     "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
     "server": "cloudflare",
-    "cf-ray": "43071f2f6d782d8f-TXL"
+    "cf-ray": "43088e8f3b3c2d4d-TXL"
   },
   "url": "https://api.recurly.com:443/v2/accounts/some-invalid-id",
-  "time": 193,
+  "time": 501,
   "request": {
     "method": "GET",
     "headers": {

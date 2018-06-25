@@ -1,0 +1,39 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "date": "Mon, 25 Jun 2018 15:44:26 GMT",
+    "content-type": "application/xml; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "set-cookie": [
+      "__cfduid=d362713643bcb284aec934742d3a6f16e1529941465; expires=Tue, 25-Jun-19 15:44:25 GMT; path=/; domain=.recurly.com; HttpOnly"
+    ],
+    "vary": "Accept-Encoding",
+    "x-api-version": "2.7",
+    "content-language": "en-US",
+    "x-ratelimit-limit": "2000",
+    "x-ratelimit-remaining": "1920",
+    "x-ratelimit-reset": "1529941740",
+    "location": "https://api.recurly.com/v2/subscriptions/45a66945eb1d866125c5b74dfdab88c0",
+    "etag": "W/\"b18bbb9abe5689a8b9415e512a15ba4f\"",
+    "cache-control": "max-age=0, private, must-revalidate",
+    "x-request-id": "02smk3vbihpps36sje7g",
+    "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
+    "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+    "server": "cloudflare",
+    "cf-ray": "43088e3238442d83-TXL"
+  },
+  "url": "http://api.recurly.com:443/v2/subscriptions/45a66945eb1d866125c5b74dfdab88c0/postpone?next_renewal_date=2030-01-01T00%3A00%3A00.000Z",
+  "time": 404,
+  "request": {
+    "method": "PUT",
+    "headers": {
+      "Accept": "application/xml",
+      "Authorization": "Basic MjYwYmE3OTQ1OTJlNDBlMzhkMzBmMjMxNDNiMTM3NWI6",
+      "User-Agent": "recurring/2.7.0",
+      "X-Api-Version": "2.7",
+      "host": "api.recurly.com",
+      "content-length": 0
+    }
+  }
+}

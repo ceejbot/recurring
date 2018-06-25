@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<account href="https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad">
+  <adjustments href="https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad/adjustments"/>
+  <account_balance href="https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad/balance"/>
+  <invoices href="https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad/invoices"/>
+  <shipping_addresses href="https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad/shipping_addresses"/>
+  <subscriptions href="https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad/subscriptions"/>
+  <transactions href="https://api.recurly.com/v2/accounts/fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad/transactions"/>
+  <account_code>fresh1e425a78-cd3b-4135-9d0f-fc4c6d08ccad</account_code>
+  <state>active</state>
+  <username nil="nil"/>
+  <email>test@example.com</email>
+  <cc_emails nil="nil"/>
+  <first_name>John</first_name>
+  <last_name>Whorfin</last_name>
+  <company_name>Yoyodyne Propulsion Systems</company_name>
+  <vat_number nil="nil"/>
+  <address>
+    <address1 nil="nil"/>
+    <address2 nil="nil"/>
+    <city nil="nil"/>
+    <state nil="nil"/>
+    <zip nil="nil"/>
+    <country nil="nil"/>
+    <phone nil="nil"/>
+  </address>
+  <accept_language nil="nil"/>
+  <hosted_login_token>wY4VvXg1iBsDiiJe72M8ndiYrtVyxf1d</hosted_login_token>
+  <created_at type="datetime">2018-06-25T15:44:11Z</created_at>
+  <updated_at type="datetime">2018-06-25T15:44:15Z</updated_at>
+  <closed_at nil="nil"/>
+  <has_live_subscription type="boolean">false</has_live_subscription>
+  <has_active_subscription type="boolean">false</has_active_subscription>
+  <has_future_subscription type="boolean">false</has_future_subscription>
+  <has_canceled_subscription type="boolean">false</has_canceled_subscription>
+  <has_past_due_invoice type="boolean">false</has_past_due_invoice>
+</account>
