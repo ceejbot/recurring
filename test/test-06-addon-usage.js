@@ -6,7 +6,7 @@ const recurly = new Recurring()
 
 const nock = require('nock')
 
-describe.only('Addon Usage', function() {
+describe('Addon Usage', function() {
   it('addon usage creation', function(done) {
     const amount = 1234
     const usageTimestamp = '1970-01-01T12:00:00Z'
@@ -47,40 +47,25 @@ describe('computeUnitAmountAndPercentage', function() {
   beforeEach(function() {
     this.usage = recurly.AddonUsage()
     this.usage.unit_amount_in_cents = 100
-    this.usage.usage_percentage = { '#': '1.7' }
+    this.usage.usage_percentage = 1.7
     this.usage.amount = 1000
   })
 
   it('should work with valid unit amount', function() {
-    const percentage = this.usage.getPercentage()
     const amountInCents = this.usage.getUnitAmount()
-    demand(percentage).be(1.7)
     amountInCents.must.equal(100)
   })
 
   it('should work with no unit amount and usage_percentage', function() {
-    this.usage.unit_amount_in_cents = ''
-    const percentage = this.usage.getPercentage()
+    this.usage.unit_amount_in_cents = null
     const amountInCents = this.usage.getUnitAmount()
-    percentage.must.equal(1.7)
     amountInCents.must.equal(17)
   })
 
   it('should not work with no unit amount and invalid usage_percentage', function() {
-    this.usage.unit_amount_in_cents = ''
-    this.usage.usage_percentage = 1.7
-    const percentage = this.usage.getPercentage()
+    this.usage.unit_amount_in_cents = null
+    this.usage.usage_percentage = null
     const amountInCents = this.usage.getUnitAmount()
-    demand(percentage).be(null)
-    demand(amountInCents).be(null)
-  })
-
-  it('should not work with no unit amount and invalid format usage_percentage', function() {
-    this.usage.unit_amount_in_cents = ''
-    this.usage.usage_percentage = { percentage: 1.7 }
-    const percentage = this.usage.getPercentage()
-    const amountInCents = this.usage.getUnitAmount()
-    demand(percentage).be(null)
     demand(amountInCents).be(null)
   })
 })
