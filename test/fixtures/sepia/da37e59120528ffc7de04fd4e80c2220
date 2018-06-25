@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf">
-  <adjustments href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/adjustments"/>
-  <account_balance href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/balance"/>
-  <invoices href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/invoices"/>
-  <shipping_addresses href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/shipping_addresses"/>
-  <subscriptions href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/subscriptions"/>
-  <transactions href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf/transactions"/>
-  <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+<account href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491">
+  <adjustments href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491/adjustments"/>
+  <account_balance href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491/balance"/>
+  <invoices href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491/invoices"/>
+  <shipping_addresses href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491/shipping_addresses"/>
+  <subscriptions href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491/subscriptions"/>
+  <transactions href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491/transactions"/>
+  <account_code>fresh96f2f690-22bf-48db-83c5-afcee198a491</account_code>
   <state>active</state>
-  <username nil="nil"></username>
+  <username nil="nil"/>
   <email>test@example.com</email>
-  <cc_emails nil="nil"></cc_emails>
+  <cc_emails nil="nil"/>
   <first_name>John</first_name>
   <last_name>Whorfin</last_name>
   <company_name>Yoyodyne Propulsion Systems</company_name>
-  <vat_number nil="nil"></vat_number>
+  <vat_number nil="nil"/>
   <address>
-    <address1 nil="nil"></address1>
-    <address2 nil="nil"></address2>
-    <city nil="nil"></city>
-    <state nil="nil"></state>
-    <zip nil="nil"></zip>
-    <country nil="nil"></country>
-    <phone nil="nil"></phone>
+    <address1 nil="nil"/>
+    <address2 nil="nil"/>
+    <city nil="nil"/>
+    <state nil="nil"/>
+    <zip nil="nil"/>
+    <country nil="nil"/>
+    <phone nil="nil"/>
   </address>
-  <accept_language nil="nil"></accept_language>
-  <hosted_login_token>tkM4N7eCCPZ87AQA2eoe57CFhu8zL3jW</hosted_login_token>
-  <created_at type="datetime">2018-06-05T12:13:08Z</created_at>
-  <updated_at type="datetime">2018-06-05T12:13:08Z</updated_at>
-  <closed_at nil="nil"></closed_at>
+  <accept_language nil="nil"/>
+  <hosted_login_token>o9HsiWisbT3VsyECNPTj1rtwXUz63qee</hosted_login_token>
+  <created_at type="datetime">2018-06-25T11:33:28Z</created_at>
+  <updated_at type="datetime">2018-06-25T11:33:28Z</updated_at>
+  <closed_at nil="nil"/>
   <has_live_subscription type="boolean">false</has_live_subscription>
   <has_active_subscription type="boolean">false</has_active_subscription>
   <has_future_subscription type="boolean">false</has_future_subscription>

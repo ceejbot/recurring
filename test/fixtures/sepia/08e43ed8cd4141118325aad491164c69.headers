@@ -1,29 +1,29 @@
 {
   "statusCode": 200,
   "headers": {
-    "date": "Tue, 05 Jun 2018 12:13:12 GMT",
+    "date": "Mon, 25 Jun 2018 11:33:33 GMT",
     "content-type": "application/xml",
     "connection": "keep-alive",
     "set-cookie": [
-      "__cfduid=dce80ff52026b84293e975c9f5bdf63661528200792; expires=Wed, 05-Jun-19 12:13:12 GMT; path=/; domain=.recurly.com; HttpOnly"
+      "__cfduid=d26026a7e92e9c2debacb85d2623bfb3b1529926413; expires=Tue, 25-Jun-19 11:33:33 GMT; path=/; domain=.recurly.com; HttpOnly"
     ],
     "vary": "Accept-Encoding",
     "x-api-version": "2.7",
     "content-language": "en-US",
     "x-ratelimit-limit": "2000",
-    "x-ratelimit-remaining": "1938",
-    "x-ratelimit-reset": "1528201080",
-    "x-records": "53",
+    "x-ratelimit-remaining": "1987",
+    "x-ratelimit-reset": "1529926680",
+    "x-records": "81",
     "etag": "W/\"6666cd76f96956469e7be39d750cc7d9\"",
     "cache-control": "max-age=0, private, must-revalidate",
-    "x-request-id": "02fnjqs3ai7691ju8f90",
+    "x-request-id": "02sj194vpjn2bog454gg",
     "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
     "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
     "server": "cloudflare",
-    "cf-ray": "42628d491bd52d8f-TXL"
+    "cf-ray": "43071eb679492d89-TXL"
   },
   "url": "https://api.recurly.com:443/v2/accounts",
-  "time": 260,
+  "time": 181,
   "request": {
     "method": "HEAD",
     "headers": {

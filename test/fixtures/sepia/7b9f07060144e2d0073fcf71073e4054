@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<transaction href="https://api.recurly.com/v2/transactions/453ea90a9176ac42c1f37d45c1982a6c" type="credit_card">
-  <account href="https://api.recurly.com/v2/accounts/fresha580998d-52f7-48d6-a594-171cbb668acf"/>
-  <invoice href="https://api.recurly.com/v2/invoices/1069"/>
-  <uuid>453ea90a9176ac42c1f37d45c1982a6c</uuid>
+<transaction href="https://api.recurly.com/v2/transactions/45a583d87063c73df2a2594e5099737d" type="credit_card">
+  <account href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491"/>
+  <invoice href="https://api.recurly.com/v2/invoices/1114"/>
+  <uuid>45a583d87063c73df2a2594e5099737d</uuid>
   <action>purchase</action>
   <amount_in_cents type="integer">100</amount_in_cents>
   <tax_in_cents type="integer">0</tax_in_cents>
   <currency>USD</currency>
   <status>success</status>
   <payment_method>credit_card</payment_method>
-  <reference>3984036</reference>
+  <reference>1339387</reference>
   <source>transaction</source>
   <recurring type="boolean">false</recurring>
   <test type="boolean">true</test>
@@ -27,12 +27,12 @@
   <avs_result code="D">Street address and postal code match.</avs_result>
   <avs_result_street nil="nil"></avs_result_street>
   <avs_result_postal nil="nil"></avs_result_postal>
-  <created_at type="datetime">2018-06-05T12:13:29Z</created_at>
-  <collected_at type="datetime">2018-06-05T12:13:29Z</collected_at>
-  <updated_at type="datetime">2018-06-05T12:13:29Z</updated_at>
+  <created_at type="datetime">2018-06-25T11:33:44Z</created_at>
+  <collected_at type="datetime">2018-06-25T11:33:44Z</collected_at>
+  <updated_at type="datetime">2018-06-25T11:33:44Z</updated_at>
   <details>
     <account>
-      <account_code>fresha580998d-52f7-48d6-a594-171cbb668acf</account_code>
+      <account_code>fresh96f2f690-22bf-48db-83c5-afcee198a491</account_code>
       <first_name>John</first_name>
       <last_name>Whorfin</last_name>
       <company>Yoyodyne Propulsion Systems</company>

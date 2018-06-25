@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subscription href="https://api.recurly.com/v2/subscriptions/45a583bc5106962049a4524a9b80ddfc">
+  <account href="https://api.recurly.com/v2/accounts/fresh96f2f690-22bf-48db-83c5-afcee198a491"/>
+  <invoice href="https://api.recurly.com/v2/invoices/1113"/>
+  <plan href="https://api.recurly.com/v2/plans/testplanbfe78c23-3e2c-4776-b5a6-efccd5662f0b">
+    <plan_code>testplanbfe78c23-3e2c-4776-b5a6-efccd5662f0b</plan_code>
+    <name>Test Plan bfe78c23-3e2c-4776-b5a6-efccd5662f0b</name>
+  </plan>
+  <revenue_schedule_type>evenly</revenue_schedule_type>
+  <uuid>45a583bc5106962049a4524a9b80ddfc</uuid>
+  <state>active</state>
+  <unit_amount_in_cents type="integer">1000</unit_amount_in_cents>
+  <currency>USD</currency>
+  <quantity type="integer">13</quantity>
+  <activated_at type="datetime">2018-06-25T11:33:37Z</activated_at>
+  <canceled_at nil="nil"></canceled_at>
+  <expires_at nil="nil"></expires_at>
+  <updated_at type="datetime">2018-06-25T11:33:39Z</updated_at>
+  <total_billing_cycles nil="nil"></total_billing_cycles>
+  <remaining_billing_cycles nil="nil"></remaining_billing_cycles>
+  <current_period_started_at type="datetime">2018-06-25T11:33:37Z</current_period_started_at>
+  <current_period_ends_at type="datetime">2018-07-25T11:33:37Z</current_period_ends_at>
+  <trial_started_at nil="nil"></trial_started_at>
+  <trial_ends_at nil="nil"></trial_ends_at>
+  <terms_and_conditions nil="nil"></terms_and_conditions>
+  <customer_notes nil="nil"></customer_notes>
+  <started_with_gift type="boolean">false</started_with_gift>
+  <converted_at nil="nil"></converted_at>
+  <no_billing_info_reason></no_billing_info_reason>
+  <po_number nil="nil"></po_number>
+  <net_terms type="integer">0</net_terms>
+  <collection_method>automatic</collection_method>
+  <subscription_add_ons type="array">
+  </subscription_add_ons>
+  <a name="cancel" href="https://api.recurly.com/v2/subscriptions/45a583bc5106962049a4524a9b80ddfc/cancel" method="put"/>
+  <a name="terminate" href="https://api.recurly.com/v2/subscriptions/45a583bc5106962049a4524a9b80ddfc/terminate" method="put"/>
+  <a name="postpone" href="https://api.recurly.com/v2/subscriptions/45a583bc5106962049a4524a9b80ddfc/postpone" method="put"/>
+  <a name="notes" href="https://api.recurly.com/v2/subscriptions/45a583bc5106962049a4524a9b80ddfc/notes" method="put"/>
+</subscription>
