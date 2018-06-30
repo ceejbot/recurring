@@ -33,7 +33,8 @@
     "mocha": "3.1.2",
     "must": "0.13.4",
     "nock": "9.0.14",
-    "sepia": "^2.0.2"
+    "sepia": "^2.0.2",
+    "sinon": "^6.0.1"
   },
   "directories": {
     "test": "test"
