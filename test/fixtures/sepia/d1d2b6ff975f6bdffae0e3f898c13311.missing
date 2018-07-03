@@ -1,0 +1,13 @@
+{
+  "url": "https://api.recurly.com:443/v2/accounts/update2eff39c8-0280-4d85-be53-c88e97dbe42f",
+  "method": "PUT",
+  "headers": {
+    "Accept": "application/xml",
+    "Authorization": "Basic MjYwYmE3OTQ1OTJlNDBlMzhkMzBmMjMxNDNiMTM3NWI6",
+    "User-Agent": "recurring/2.7.0",
+    "X-Api-Version": "2.7",
+    "host": "api.recurly.com",
+    "content-length": 283
+  },
+  "body": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<account><username/><email/><first_name/><last_name/><company_name>Yoyodyne Propulsion, International</company_name><accept_language/><address><address1>760 Market Street</address1><address2>Suite 500</address2></address><vat_number/></account>"
+}

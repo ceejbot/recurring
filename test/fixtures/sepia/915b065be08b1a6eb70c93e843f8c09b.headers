@@ -1,0 +1,37 @@
+{
+  "statusCode": 201,
+  "headers": {
+    "date": "Mon, 25 Jun 2018 15:43:39 GMT",
+    "content-type": "application/xml; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "set-cookie": [
+      "__cfduid=deb9a58a00daae3c40cc322157d84571c1529941419; expires=Tue, 25-Jun-19 15:43:39 GMT; path=/; domain=.recurly.com; HttpOnly"
+    ],
+    "x-api-version": "2.7",
+    "content-language": "en-US",
+    "x-ratelimit-limit": "2000",
+    "x-ratelimit-remaining": "1913",
+    "x-ratelimit-reset": "1529941680",
+    "etag": "W/\"2c1e39edb1bd2abfe60b5a842ab6eef7\"",
+    "cache-control": "max-age=0, private, must-revalidate",
+    "x-request-id": "02smjoh4k5dn32b7p36g",
+    "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
+    "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+    "server": "cloudflare",
+    "cf-ray": "43088d0d3af32d7d-TXL"
+  },
+  "url": "http://api.recurly.com:443/v2/invoices/1061/refund",
+  "time": 807,
+  "request": {
+    "method": "POST",
+    "headers": {
+      "Accept": "application/xml",
+      "Authorization": "Basic MjYwYmE3OTQ1OTJlNDBlMzhkMzBmMjMxNDNiMTM3NWI6",
+      "User-Agent": "recurring/2.7.0",
+      "X-Api-Version": "2.7",
+      "host": "api.recurly.com",
+      "content-length": 140
+    }
+  }
+}

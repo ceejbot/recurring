@@ -1,0 +1,34 @@
+{
+  "statusCode": 401,
+  "headers": {
+    "date": "Mon, 25 Jun 2018 15:44:42 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "keep-alive",
+    "set-cookie": [
+      "__cfduid=d3fe2c91fe2ab96ba3cc706d97093b2e01529941482; expires=Tue, 25-Jun-19 15:44:42 GMT; path=/; domain=.recurly.com; HttpOnly"
+    ],
+    "x-api-version": "2.7",
+    "content-language": "en-US",
+    "www-authenticate": "Basic realm=\"Application\"",
+    "cache-control": "no-cache",
+    "x-request-id": "02smk7ukp9rj76157afg",
+    "strict-transport-security": "max-age=15552000; includeSubDomains; preload",
+    "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+    "server": "cloudflare",
+    "cf-ray": "43088e980fee2d4d-TXL"
+  },
+  "url": "http://api.recurly.com:443/v2/accounts",
+  "time": 182,
+  "request": {
+    "method": "POST",
+    "headers": {
+      "Accept": "application/xml",
+      "Authorization": "Basic Og==",
+      "User-Agent": "recurring/2.7.0",
+      "X-Api-Version": "2.7",
+      "host": "api.recurly.com",
+      "content-length": 277
+    }
+  }
+}
