@@ -246,13 +246,13 @@ describe('BillingInfo', () => {
       last_name: account.last_name,
       number: '4000-0000-0000-0077',
       month: 1,
-      year: (new Date()).getFullYear() + 3,
+      year: new Date().getFullYear() + 3,
       verification_value: '111',
       address1: '760 Market Street',
       address2: 'Suite 500',
       city: 'San Francisco',
       state: 'CA',
-      country: 'USA',
+      country: 'US',
       zip: '94102'
     }
 
@@ -271,13 +271,13 @@ describe('BillingInfo', () => {
       last_name: account.last_name,
       number: '4111-1111-1111-1111',
       month: 1,
-      year: (new Date()).getFullYear() + 3,
+      year: new Date().getFullYear() + 3,
       verification_value: '111',
       address1: '760 Market Street',
       address2: 'Suite 500',
       city: 'San Francisco',
       state: 'CA',
-      country: 'USA',
+      country: 'US',
       zip: '94102'
     }
 
@@ -344,7 +344,7 @@ describe('Subscription', () => {
   //       address2: 'Suite 500',
   //       city: 'San Francisco',
   //       state: 'CA',
-  //       country: 'USA',
+  //       country: 'US',
   //       zip: '94102'
   //     }
   //
@@ -441,7 +441,9 @@ describe('Subscription', () => {
       demand(err).not.exist()
       subscription.state.must.equal('active')
       subscription.activated_at.must.be.a.date()
-      subscription.activated_at.getTime().must.equal(subscription.current_period_started_at.getTime())
+      subscription.activated_at
+        .getTime()
+        .must.equal(subscription.current_period_started_at.getTime())
       subscription.canceled_at.must.be.a.string()
       subscription.expires_at.must.be.a.string()
 
@@ -455,7 +457,9 @@ describe('Subscription', () => {
 
     subscription.postpone(nextDate, err => {
       demand(err).not.exist()
-      nextDate.getTime().must.equal(subscription.current_period_ends_at.getTime())
+      nextDate
+        .getTime()
+        .must.equal(subscription.current_period_ends_at.getTime())
       done()
     })
   })
@@ -471,8 +475,7 @@ describe('Subscription', () => {
 })
 
 describe.skip('Coupons', () => {
-  let coupon,
-    couponCode
+  let coupon, couponCode
 
   it('can create a coupon', done => {
     couponCode = uuid.v4()
@@ -654,7 +657,7 @@ describe('Invoices', () => {
 
   describe('refunds', () => {
     before(function(done) {
-      recurly.Invoice().all({state: 'collected'}, (err, invoices) => {
+      recurly.Invoice().all({ state: 'paid' }, (err, invoices) => {
         demand(err).not.exist()
         this.invoices = invoices
         done()
@@ -671,7 +674,9 @@ describe('Invoices', () => {
     })
 
     it('can issue an open amount refund for a specific amount against an invoice', function(done) {
-      const refundableInvoice = _.find(this.invoices, invoice => _.get(invoice, 'a.refund'))
+      const refundableInvoice = _.find(this.invoices, invoice =>
+        _.get(invoice, 'a.refund')
+      )
       debug('invoice to refund', refundableInvoice)
       const refundOptions = { amount_in_cents: 5 }
 
@@ -696,7 +701,9 @@ describe('Invoices', () => {
     })
 
     it('can issue an open amount refund for the full amount against an invoice', function(done) {
-      const refundableInvoice = _.findLast(this.invoices, invoice => _.get(invoice, 'a.refund'))
+      const refundableInvoice = _.findLast(this.invoices, invoice =>
+        _.get(invoice, 'a.refund')
+      )
       debug('invoice to refund', refundableInvoice)
 
       const invoice = recurly.Invoice()
@@ -864,13 +871,13 @@ describe('RecurlyError', () => {
         last_name: this.account.properties.last_name,
         number: '4000-0000-0000-0101',
         month: 1,
-        year: (new Date()).getFullYear() + 3,
+        year: new Date().getFullYear() + 3,
         verification_value: '111',
         address1: '760 Market Street',
         address2: 'Suite 500',
         city: 'San Francisco',
         state: 'CA',
-        country: 'USA',
+        country: 'US',
         zip: '94102'
       }
 
