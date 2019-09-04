@@ -4,8 +4,8 @@ const qs = require('qs')
 const SignedQuery = require('../lib/signer').SignedQuery
 
 // For all tests the expected values are borrowed from recurly's own Ruby gem test suite.
-  // Thus we can test that we're generating exactly the values recurly expects for its
-  // form signatures.
+// Thus we can test that we're generating exactly the values recurly expects for its
+// form signatures.
 
 var testAPIKey = '0123456789abcdef0123456789abcdef'
 var testNonce = 'unique'
