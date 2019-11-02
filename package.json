@@ -17,7 +17,7 @@
     "bluebird": "3.5.0",
     "data2xml": "1.2.5",
     "debug": "3.0.0",
-    "lodash": "4.17.4",
+    "lodash": "4.17.13",
     "qs": "6.5.0",
     "request": "2.81.0",
     "throttled-request": "0.1.1",
