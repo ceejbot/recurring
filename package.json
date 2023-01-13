@@ -16,7 +16,7 @@
     "async-iterators": "0.2.2",
     "bluebird": "3.5.0",
     "data2xml": "1.2.5",
-    "debug": "3.0.0",
+    "debug": "3.1.0",
     "lodash": "4.17.4",
     "qs": "6.5.0",
     "request": "2.81.0",
